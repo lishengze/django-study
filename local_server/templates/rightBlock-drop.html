@@ -1,0 +1,122 @@
+<div  class="col-md-9" >
+  <div class="searchLeftContainer " style = 'float: left;width: 70%' >
+    <div style = 'border-bottom: 1px solid #BDBDBD;'>
+         <div class="form-group">
+           <label style= 'width:150px;float:left'><h4>对象选择：</h4></label>
+           <input  class="form-control" style= 'width:100px;' id="dropInputObject" >
+         </div>
+         <div style="margin-top: 20px">
+           <label style= 'width:150px;float:left'><h4>版本信息:</h4></label>
+           <input  class="form-control" style= 'width:300px' id="dropInputVersion" placeholder=" ver=VERSION | dt=DATE_TIME | seq=number">
+           <div style="clear: both;width:600px;margin-top:20px;border:2px solid gray;"> <span style= 'font: bold 25px arial;'>版本信息输入提示：</span><br>
+             <br><span style= 'font-weight: bold'>ver =VERSION</span>&nbsp&nbsp&nbsp&nbsp-- 回退到指定版本，VERSION like: 1.1.0  1.0.0.1 ...
+             <br><span style= 'font-weight: bold'>dt= DATE_TIME</span>	&nbsp-- 回退到用时间日期指定版本，DATE_TIME like 20121011_153026；
+             <br><span style= 'font-weight: bold'>seq=number</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	-- 回退至倒数第number个版本，number必须是一个正数。
+           </div>
+         </div>
+         <div class="form-group">
+           <div class="=col-md-2">
+             <button type="button" class="btn btn-primary btn-default" onclick ='reqdropVersion()'>删除</button>
+           </div>
+         </div>
+     <!-- <div id = 'releaseResult'></div> -->
+   </div>
+    <div id = 'dropResult'></div>
+  </div>
+  <div class="searchRightContainer" style = 'float: right;width: 30%;height:550px;border-left: 1px solid #BDBDBD;' >版本信息(最近5次)：
+    <div style= 'border-top: 1px solid #BDBDBD;' > XML:<br>
+      <table border="1" id = 'dropXmlContext'>
+      </table>
+    </div>
+    <div style= 'border-top: 1px solid #BDBDBD;' > Server:<br>
+      <table border="1" id = 'dropServerContext'>
+      </table>
+    </div>
+    <div style= 'border-top: 1px solid #BDBDBD;' > Client:<br>
+      <table id = 'dropClientContext'>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+  $('#dropInputObject').kendoDropDownList({
+      dataSource : ['xml','server','client']
+  })
+  function reqdropVersion() {
+    var objType = $('#dropInputObject').val();
+    var versionName = $('#dropInputVersion').val();
+    var args = objType + ':' + versionName
+    if( versionName == '') {
+      alert('请输入版本信息！！')
+    } else {
+      var req_data = {
+        'type': 'version_control',
+        "--cmd" : "drop",
+        "--args": args
+      }
+      $.ajax({
+        url: '/AJAX/Request_Task_Rpc/',
+        data: {'req_json': JSON.stringify(req_data)},
+        dataType: 'json',
+        type: 'POST',
+        traditional: true,
+        success: function (responseJSON) {
+        console.log (responseJSON)
+        }
+      });
+    }
+  }
+  $.getJSON('/AJAX/Request_All_Version/', function(getData) {
+    var data1 = getData;
+    console.log(data1)
+    var xmlCount = 0;
+    var serverCount = 0;
+    var clientCount = 0;
+    var xmlContext = ''
+    var serverContext = ''
+    var clientContext = ''
+    var title = '<tr><td>version</td><td>datetime</td></tr>'
+    for(var i = 0; i < data1.length; i++) {
+      if(data1[i].object == 'xml' && xmlCount< 5) {
+          if(xmlCount == 0){
+           xmlContext = title;
+          }
+          xmlContext += statusJudge(data1[i])
+          xmlCount++;
+
+        } else if(data1[i].object == 'server' && serverCount< 5){
+          if(serverCount == 0){
+            serverContext = title;
+          }
+          serverContext += statusJudge(data1[i]);
+          serverCount ++;
+        } else if(data1[i].object == 'client' && clientCount< 5){
+          if(clientCount == 0) {
+            clientContext = title;
+          }
+          clientContext += statusJudge(data1[i])
+          clientCount ++;
+        }
+      }
+      $('#dropXmlContext').append(xmlContext );
+      $('#dropServerContext').append(serverContext );
+      $('#dropClientContext').append(clientContext )
+
+  })
+
+  function statusJudge(data) {
+    var text = ''
+    if(data.status == 'C') {
+      text +='<tr style ="background-color:blue"><td>'+ data.version + '</td>';
+      text +='<td>'+ data.datetime + '</td></tr>';
+    } else if(data.status == 'D'){
+      text +='<tr style ="background-color:gray"><td>'+ data.version + '</td>';
+      text +='<td>'+ data.datetime + '</td></tr>';
+    } else if(data.status == 'H'){
+      text +='<tr style ="background-color:#6699FF"><td>'+ data.version + '</td>';
+      text +='<td>'+ data.datetime + '</td></tr>';
+    }
+    return text;
+
+  }
+</script>

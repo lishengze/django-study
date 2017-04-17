@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>上期技术版本控制登录系统</title>
+  {% include 'dependence.html' %}
+<style>
+  body{
+  	overflow:hidden;
+  	width: 100%;
+    height: 100%;
+  	margin: 0;
+  	padding: 0;
+  	background: url(/static/images/bg1.jpg) ;
+  }
+ .login-form{
+	 background: #2b0036;
+	 position: relative;
+	 width: 30%;
+   /*height:50%;*/
+	 margin: 2em auto 0 auto;
+   padding: 20px;
+	 text-align: center;
+	 border-radius: 15px;
+  }
+  h1 {
+  	font-family: 'Exo 2', sans-serif;
+  	  text-align: center;
+  	  padding-top: 4em;
+  	  font-weight: 400;
+  	  color: #2B2B36;
+  	  font-size: 2em;
+  }
+  .inputLabel {
+  	/*padding: 1em 2em 1em 3em;*/
+  	padding: 10px ;
+  	font-size: 20px;
+    color: #003399;
+  }
+.form-control{
+	 width: 100%;
+	 padding: 1em 2em 1em 3em;
+	 /*color: #dd3e3e;*/
+	 font-size: 18px;
+	 outline: none;
+	 border: none;
+	 font-weight: 100;
+	 /*border-bottom: 1px solid#484856;*/
+	 margin-bottom: 1em;
+  }
+  .submitBtn {
+  	font-size: 30px;
+  	color: #fff;
+  	outline: none;
+  	border: none;
+  	background: #3ea751;
+  	width: 100%;
+  	padding: 8px 0;
+  }
+  .submitBtn:hover {
+  	background: #ff2775;
+    border-bottom-left-radius: 15px;
+  	-webkit-border-bottom-left-radius: 15px;
+  	-moz-border-bottom-left-radius: 15px;
+  	-o-border-bottom-left-radius: 15px;
+  	border-bottom-right-radius: 15px;
+  	-webkit-border-bottom-right-radius: 15px;
+  	-moz-border-bottom-right-radius: 15px;
+  	-o-border-bottom-right-radius: 15px;
+    transition: 1s all;
+  	-webkit-transition: 1s all;
+  	-moz-transition: 1s all;
+  	-o-transition: 1s all;
+  }
+  .EvrKeySelect{
+    width: 100%;
+    padding: 8px 0em 8px 3em;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    font-weight: 100;
+    border-bottom: 1px solid#484856;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+</style>
+<script src="/static/js/developer/cookie.js"></script>
+
+ <!--SIGN UP-->
+ <h1>上期技术版本控制登录系统</h1>
+<div class="login-form">
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="col-sm-4 control-label inputLabel">用户名</label>
+      <div class="col-sm-8">
+        <input  type= 'text' class="form-control" id="loginName" placeholder="请输入用户名">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label inputLabel">密码</label>
+      <div class="col-sm-8">
+        <input type="password" class="form-control" id = 'loginPassword'  placeholder="请输入密码">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label inputLabel">环境选择</label>
+      <div class="col-sm-8 ">
+          <select class = 'EvrKeySelect'>
+            {% for item in ENV_KEY %}
+            <option >{{ item }}</option>
+            {% endfor %}
+         </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12" >
+        <button  id = 'loginBtn' class="col-sm-12 submitBtn btn btn-default" onclick="loginFunction()">登录</button>
+      </div>
+    </div>
+  </form>
+</div>
+ <script>
+    function loginFunction() {
+      var logName = $('#loginName').val();
+      var logPassword = $('#loginPassword').val();
+      var getType = $('.EvrKeySelect').val()
+      if(logName == '') {
+        alert('请输入用户名');
+      } else if(logPassword == '') {
+        alert('请输入密码');
+      } else if(logName === "admin" && logPassword === "admin") {
+        setCookie('username',logName,30);
+        setCookie('password',logPassword,30);
+        setCookie('EvrKeySelect',getType,30);
+          var ENV_KEY = getType;
+          $.ajax({
+            url: '/AJAX/Set_ENV_KEY/',
+            data: {'env_key_value': ENV_KEY},
+            dataType: 'json',
+            type: 'POST',
+            traditional: true,
+            success: function (responseJSON) {
+                 console.log(responseJSON)
+                window.location.href="/home.html";
+
+            }
+          });
+          // alert('aaa')
+        // window.location.href="/home/";
+      } else {
+        alert('用户名或者密码错误！');
+      }
+    }
+    // $('#loginDrop').kendoDropDownList({//该函数嵌套在 ajax 函数里面
+    //     dataSource : ['xml','server','client']
+    // });
+    $('input').keyup(function(e){
+      var keyCode = e.which;
+      if( keyCode === 13){
+        loginFunction()
+      }
+    })
+ </script>
+</body>
+</html>

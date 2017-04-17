@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% include 'dependence.html' %}
+  <title>aaa</title>
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+<style>
+  body{
+  	overflow:hidden;
+  	width: 100%;
+    height: 100%;
+  	margin: 0;
+  	padding: 0;
+  	background: url(/static/images/bg1.jpg) ;
+  }
+ .login-form{
+	 background: #2b0036;
+	 position: relative;
+	 width: 30%;
+   /*height:50%;*/
+	 margin: 2em auto 0 auto;
+   padding: 20px;
+	 text-align: center;
+	 border-radius: 15px;
+  }
+  h1 {
+  	font-family: 'Exo 2', sans-serif;
+  	  text-align: center;
+  	  padding-top: 4em;
+  	  font-weight: 400;
+  	  color: #2B2B36;
+  	  font-size: 2em;
+  }
+  .inputLabel {
+  	/*padding: 1em 2em 1em 3em;*/
+  	padding: 10px ;
+  	font-size: 20px;
+    color: #003399;
+  }
+  .form-control{
+  	 width: 100%;
+  	 padding: 0em 2em;
+  	 /*color: #dd3e3e;*/
+  	 font-size: 18px;
+  	 /*outline: none;
+  	 border: none;*/
+  	 font-weight: 100;
+  	 /*border-bottom: 1px solid#484856;*/
+  	 margin-bottom: 1em;
+    }
+  .submitBtn {
+  	font-size: 30px;
+  	color: #fff;
+  	outline: none;
+  	border: none;
+  	background: #3ea751;
+  	width: 100%;
+  	padding: 8px 0;
+  }
+  .submitBtn:hover {
+  	background: #ff2775;
+    border-bottom-left-radius: 15px;
+  	-webkit-border-bottom-left-radius: 15px;
+  	-moz-border-bottom-left-radius: 15px;
+  	-o-border-bottom-left-radius: 15px;
+  	border-bottom-right-radius: 15px;
+  	-webkit-border-bottom-right-radius: 15px;
+  	-moz-border-bottom-right-radius: 15px;
+  	-o-border-bottom-right-radius: 15px;
+    transition: 1s all;
+  	-webkit-transition: 1s all;
+  	-moz-transition: 1s all;
+  	-o-transition: 1s all;
+  }
+</style>
+</head>
+<body>
+  <div id="container">
+    <h1>慧眼监控发布控制系统</h1>
+    <div class="login-form">
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-sm-4 control-label inputLabel">用户名</label>
+          <div class="col-sm-8">
+            <input  type= 'text' class="form-control" id="loginName" placeholder="请输入用户名">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-4 control-label inputLabel">密码</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id = 'loginPassword'  placeholder="请输入密码">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-4 control-label inputLabel">环境选择</label>
+          <div class="col-sm-8 ">
+              <select id = 'EvrKeySelect' class = ' form-control'>
+                {% for item in ENV_KEY %}
+                <option >{{ item }}</option>
+                {% endfor %}
+             </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12" >
+            <button  id = 'loginBtn' type ='button' class="col-sm-12 submitBtn btn btn-default" onclick="loginFunction()">登录</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+     var TITLE = '慧眼监控发布控制系统'; // 全局控制名字
+     sessionStorage.setItem('ENV_KEY_TITLE', TITLE);
+     $('title').text(sessionStorage.getItem('ENV_KEY_TITLE'));
+     $('h1').text(sessionStorage.getItem('ENV_KEY_TITLE'));
+     sessionStorage.setItem('ADMIN_PERMISSION','false');
+
+      var env_keySet = [];
+      $('#EvrKeySelect option').each(function() {
+        env_keySet.push(this.value);
+      })
+      console.log(env_keySet);
+      var str = JSON.stringify(env_keySet);
+      sessionStorage.setItem('ENV_KEY_SET', str);
+        $('input').keyup(function(e){
+        var keyCode = e.which;
+        if( keyCode === 13){
+          loginFunction();
+        }
+      })
+      function loginFunction() {
+        var logName = $('#loginName').val();
+        var logPassword = $('#loginPassword').val();
+        var getType = $('#EvrKeySelect').val();
+        if(logName == '') {
+          alert('请输入用户名');
+        } else if(logPassword == '') {
+          alert('请输入密码');
+        } else {
+          isLegal(logName,logPassword);
+        }
+      }
+
+      function isLegal(logName,logPassword) {
+        if(logName == null ||logPassword == null ) return;
+        var req_data = {
+          'name' : logName,
+          'password': logPassword
+        }
+        $.ajax({
+          url: '/AJAX/Request_User_Login/',
+          data: {'req_json': JSON.stringify(req_data)},
+          dataType: 'json',
+          type: 'POST',
+          traditional: true,
+          success: function (responseJSON) {
+              console.log (responseJSON)
+              dataProcess(responseJSON);
+          }
+        });
+      }
+
+      function dataProcess(responseJSON) {
+        if(responseJSON == null) {
+          alert("数据库没有返回数据");
+        };
+        switch (responseJSON.status) {
+          case 'Success':
+            console.log(responseJSON);
+            console.log(responseJSON.permission);
+            if(responseJSON.permission!= null && responseJSON.permission.indexOf('管理用户权限')) {
+              sessionStorage.setItem('ADMIN_PERMISSION','true');
+            }
+            sessionStorage.setItem('logName', $('#loginName').val());
+            sessionStorage.setItem('ENV_KEY', $('#EvrKeySelect').val());
+            sessionStorage.setItem('permission',responseJSON.permission);
+            window.location.href="/home.html";
+            break;
+          case 'Failed':
+            alert(responseJSON.info);
+            break;
+          default:
+            alert('返回数据格式不正确');
+        }
+      }
+   </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<div id="header" style="overflow:hidden;">
+    <div class = 'row' style="background-image: url('/static/images/nav2.jpg') ;
+    background-size: 100% 100%;
+    margin-bottom:10px">
+    <div class="col-md-10">
+      <h1><a href="/home.html/">上期技术监控组版本控制系统<span>
+      </span></a></h1>
+    </div>
+    <div class="col-md-2"  style=" border-style: solid; border-width: 2px">
+      <div id="userMessage" >
+        <div>
+          <div style = 'float:left'>用户信息：</div><div  class = 'username_nav' style = 'float:left'></div>
+        </div>
+        <div style = 'clear:left'>
+          <div style = 'clear:left;float:left'>当前环境： </div><div class = 'envr_nav' style = 'float:left'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  console.log (getCookie('username'))
+  $(".username_nav").text( getCookie('username'))
+  $(".envr_nav").text(getCookie('EvrKeySelect'))
+</script>

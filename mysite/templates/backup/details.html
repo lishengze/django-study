@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+    <head profile="http://gmpg.org/xfn/11">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>XG'Blog  &raquo;文章 &raquo;{{essay.title}}</title>
+        <script type="text/javascript" src="root/colorpaper/js/jquery-1.2.6.min.js">
+        </script>
+        <script type="text/javascript">
+            AKPC_IDS = "";
+        </script>
+        <link rel="stylesheet" href="root/colorpaper/styles/teal.css" type="text/css" />
+        <link rel="stylesheet" href="root/colorpaper/style.css" type="text/css" />
+        <!--语法高亮组件-->
+        <link href="root/styles/shThemeEclipse.css" rel="stylesheet" type="text/css" />
+        <script src="root/scripts/shCore.js" type="text/javascript">
+        </script>
+        <script src="root/scripts/shBrushPython.js" type="text/javascript">
+        </script>
+        <script src="root/scripts/shBrushJava.js" type="text/javascript">
+        </script>
+        <script src="root/scripts/shBrushSql.js" type="text/javascript">
+        </script>
+        <script src="root/scripts/shBrushCpp.js" type="text/javascript">
+        </script>
+        <script src="root/scripts/shBrushJScript.js" type="text/javascript">
+        </script>
+        <script src="root/scripts/shBrushXml.js" type="text/javascript">
+        </script>
+        <script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script>
+        <!--表单验证组件-->
+        <script src="root/validator/jquery_last.js" type="text/javascript">
+        </script>
+        <link type="text/css" rel="stylesheet" href="root/validator/style/validator.css">
+        </link>
+        <script src="root/validator/formValidator.js" type="text/javascript" charset="UTF-8">
+        </script>
+        <script src="root/validator/formValidatorRegex.js" type="text/javascript" charset="UTF-8">
+        </script>
+        <script>
+            $(document).ready(function(){
+                $.formValidator.initConfig({
+                    formid: "comment_form",
+                    validatorgroup: "1",
+                    onerror: function(msg){
+                        alert(msg);
+                        return false;
+                    },
+                    onsuccess: function(){
+                        alert('ddd');
+                        return true;
+                    }
+                });
+                $.formValidator.initConfig({
+                    formid: "search_form",
+                    validatorgroup: "2",
+                    onerror: function(msg){
+                        alert(msg);
+                        return false;
+                    },
+                    onsuccess: function(){
+                        alert('ddd');
+                        return true;
+                    }
+                });
+                $("#keyword").formValidator({
+                    validatorgroup: "2",
+                    onshow: "请输入关键字",
+                    onfocus: "关键字不能为空",
+                    oncorrect: "输入正确"
+                }).inputValidator({
+                    min: 1,
+                    empty: {
+                        leftempty: false,
+                        rightempty: false,
+                        emptyerror: "关键字不能有空符号"
+                    },
+                    onerror: "关键字不能为空,请确认"
+                });
+                $("#uname").formValidator({
+                    validatorgroup: "1",
+                    onshow: "请输入名称",
+                    onfocus: "用户名不能为空",
+                    oncorrect: "输入正确"
+                }).inputValidator({
+                    min: 1,
+                    empty: {
+                        leftempty: false,
+                        rightempty: false,
+                        emptyerror: "用户名两边不能有空符号"
+                    },
+                    onerror: "用户名不能为空,请确认"
+                });
+                
+                $("#email").formValidator({
+                    validatorgroup: "1",
+                    onshow: "请输入你的email",
+                    onfocus: "请注意你输入的email格式，例如:info@126.com",
+                    oncorrect: "输入正确"
+                }).regexValidator({
+                    regexp: "email",
+                    datatype: "enum",
+                    onerror: "email格式不正确"
+                });
+                $("#comment").formValidator({
+                    validatorgroup: "1",
+                    onshow: "请输入留言内容",
+                    onfocus: "留言内容不能为空",
+                    oncorrect: "输入正确"
+                }).inputValidator({
+                    min: 1,
+                    onerror: "留言内容不能为空,请确认"
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <a name="top"></a>
+        <div id="footer-back">
+            <div id="footer-bg">
+                <div id="main">
+                    <div id="main-top">
+                        <div id="navigationed">
+                            <ul id="navigation" class="clearfix">
+                                <li>
+                                    <a href="/1/" title="My Web Blog">首页</a>
+                                </li>
+                                <li class="page_item page-item-50">
+                                    <a href="/1/15/" title="Contact">生活随笔</a>
+                                </li>
+                                <li class="page_item page-item-53">
+                                    <a href="/1/" title="Extras">其他</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li>
+                                    <a href="/account/login/" >{{user.username}}</a>                                
+                                </li>
+                                <li>
+                                    <a href="/account/logout/" >退出</a>
+                                </li>                                
+                                {% else %}
+                                <li>
+                                    <a href="/account/login/" >登录</a>                                
+                                </li>
+                                <li>
+                                    <a href="/account/register/" >注册</a>
+                                </li>
+                               {% endif %}
+                            </ul>
+                        </div>
+                        <div id="container">
+                            <div id="content-back" class="clearfix">
+                                <div id="content-bottom">
+                                    <div id="left-col">
+                                        <div class="clearfix">
+                                            <div id="colors">
+                                                <a href="#" onclick="switchCss('Blue')" class="color-blue">Blue</a>
+                                                <a href="#" onclick="switchCss('Orange')" class="color-orange">Orange</a>
+                                                <a href="#" onclick="switchCss('Green')" class="color-green">Green</a>
+                                                <a href="#" onclick="switchCss('Pink')" class="color-pink">Pink</a>
+                                                <a href="#" onclick="switchCss('Purple')" class="color-purple">Purple</a>
+                                            </div>
+                                            <div id="page-title">
+                                                <div class="page-title-content clearfix">
+                                                    <div class="page-title-text">
+                                                        <h3 class="page-title">{%ifequal  essay.title 'welcome'%}
+                                                            一个Java程序员的空间
+                                                            {%else%}
+                                                            {{essay.title}}
+                                                            {%endifequal%}</h3>
+                                                        <div class="post-meta-single">
+                                                            <span class="georgia block">Posted in <a href="/1/{{essay.eType_id}}/" title="查看该类所有文章" rel="category">{{essay.eType}}</a>. on {{date_format.0}}, {{date_format.1}} {{date_format.2}}th, {{date_format.3}} by xugang</span>
+                                                            <span class="tags"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="left-content">
+                                            <div class="post">
+                                                <div class="post-date">
+                                                    <span class="month block">{{essay.pub_date.ctime.split.1}} </span>
+                                                    <span class="day">{{essay.pub_date.day}}</span>
+                                                </div>
+                                                <p>
+                                                    {{essay.content|safe}}
+                                                </p>
+                                                <script type="text/javascript">
+                                                    AKPC_IDS += "81,";
+                                                </script>
+                                                <p class="akpc_pop">
+                                                    浏览: {{essay.view_count}}   次
+                                                </p>
+                                            </div>
+                                            {%ifnotequal  essay.title 'welcome'%}<h3 id="comments" class="post"><span class="teal">{{essay.essay_comment.all.count}}</span> 网友评论 </h3>
+                                            <ol class="commentlist">
+                                            {%if essay.essay_comment.all%}
+                                            {%for comment in essay.essay_comment.all%}
+                                            <li id="comment-4099" class="clearfix alt ">
+                                                <div class="comment-author">
+                                                    <img alt='' src='/root/images/head.png' class='avatar avatar-56 photo' height='56' width='56' /><span class="teal weight-bold verdana block large">{{comment.uname}}</span>
+                                                    <span class="small verdana light">{{comment.pub_date|date:'Y年m月d日 H时i分'}}</span>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <span class="medium">
+                                                        <p>
+                                                            {{comment.content|safe}}
+                                                        </p>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            {%endfor%}
+                                            {%else%}
+                                            现在还没有评论！
+                                            {%endif%}
+                                            </li>
+                                        </ol>
+                                        <br/>
+                                        <br/>
+                                        <h3 id="respond" class="post">发表评论</h3>
+                                        <form action="/leavemsg/{{essay.id}}/" method="post" id="comment_form" id="comment_form">
+                                            {% csrf_token %}
+                                            <p>
+                                                <input type="text" name="uname" id="uname" value="" size="22" tabindex="1" class="text" />
+                                                <label for="author" style="font-size:12px;">
+                                                    名字 (必须)
+                                                </label>
+                                                <div id="unameTip" style="width:250px;">
+                                                </div>
+                                            </p>
+                                            <p>
+                                                <input type="text" name="email" id="email" value="" size="22" tabindex="2" class="text" />
+                                                <label for="email" style="font-size:12px;">
+                                                    EMail (不会公开) (必须)
+                                                </label>
+                                                <div id="emailTip" style="width:250px">
+                                                </div>
+                                            </p>
+                                            <p>
+                                                <textarea st name="comment" id="comment" cols="100%" rows="10" tabindex="4" class="text textarea">
+                                                </textarea>
+                                                <div id="commentTip" style="width:250px">
+                                                </div>
+                                            </p>
+                                            <p>
+                                                <input name="submit" type="submit" id="submit" tabindex="5" value="留言" class="btn submit btn-teal" /><input type="hidden" name="comment_post_ID" value="81" />
+                                            </p>
+                                        </form>{%endifnotequal%}
+                                    </div>
+                                </div>
+                                <div id="right-col">
+                                    <div id="logo">
+                                        <h1>许刚的博客</h1>
+                                    </div>
+                                    <ul id="right-content">
+                                        <li id="categories-357617861" class="widget widget_categories">
+                                            <h5 class="widgettitle">文章分类</h5>
+                                            <ul>
+                                                {%for etype in essay_type%}
+                                                <li class="cat-item cat-item-4">
+                                                    <a href="/1/{{etype.id}}/" title="{{etype}}">{{etype}}({{etype.essay_set.count}})</a>
+                                                </li>
+                                                {%endfor%}
+                                            </ul>
+                                        </li>
+                                        <li id="recent-posts-2" class="widget widget_recent_entries">
+                                            <h5 class="widgettitle">最近文章</h5>
+                                            <ul>
+                                                {%for essay in recent%}
+                                                <li>
+                                                    <a href="/essay/{{essay.id}}/" title="{{essay.title}}">{{essay.title}}</a>
+                                                </li>
+                                                {%endfor%}
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h5>存档</h5>
+                                            <ul>
+                                                {%for a in archives%}
+                                                <li>
+                                                    <a href='/essay/{{a.essay.id}}/' title='{{a.essay.title}}'>{{a.pub_date|date:'Y年m月d日 H时i分'}}---{{a.essay.title}}</a>
+                                                </li>
+                                                {%endfor%}
+                                            </ul>
+                                        </li>
+                                        <h5>关键字</h5>
+                                        <ul>
+                                            <div class="box">
+                                                <form method="post" id="search_form" action="/search/">
+                                                    {% csrf_token %}
+                                                    <div>
+                                                        <input type="text" value="" name="keyword" id="keyword" class="text" size="40" />
+                                                        <div id="keywordTip" style="width:150px">
+                                                        </div>
+                                                        <input type="submit" id="searchsubmit" value="Search" class="btn submit btn-green" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </ul>
+                                    </ul>
+                                    <br/>
+                                    <a href="/latest/feed/"><img src="/root/colorpaper/images/rss.gif" hspace="22" border="0" /></a>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="footer" class="clearfix">
+                            <div>
+                                <ul class="footer-pages clearfix">
+                                    <li>
+                                        <a href="/1/" title="My Web Blog">首页</a>
+                                    </li>
+                                    <li class="page_item page-item-2">
+                                        <a href="/1/15/" title="About">Django</a>
+                                    </li>
+                                    <li class="page_item page-item-53 current_page_item">
+                                        <a href="/1/" title="Extras">其他</a>
+                                    </li>
+                                </ul>
+                                <br>
+                                <p>
+                                    <big>
+                                        <strong>&copy; Copyright XuGang. All rights reserved.</strong>
+                                    </big>
+                                    <br>
+                                </p>
+                            </div>
+                            <a href="#top" class="btn btn-footer right">返回顶部</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

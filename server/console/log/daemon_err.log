@@ -1,0 +1,12 @@
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/threading.py", line 811, in __bootstrap_inner
+    self.run()
+  File "/usr/lib64/python2.7/threading.py", line 764, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "task_daemon.py", line 465, in ScanTaskList
+    elif task_info.shouldExec(timestamp):
+  File "/home/test/console/scripts/taskinfo.py", line 177, in shouldExec
+    if timestamp >= self.exec_time and (not isTimeOut(timestamp)):
+NameError: global name 'isTimeOut' is not defined
+

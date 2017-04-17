@@ -1,0 +1,27 @@
+#panelbar {
+    max-width: 400px;
+    margin: 0 auto;
+}
+html,
+body {
+ height: 100%;
+ margin: 0;
+ padding: 0;
+}
+#container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+#page {
+  padding-bottom: 60px;/*高度等于footer的高度*/
+}
+#footer {
+  position: relative;
+  margin-top: -60px;/*等于footer的高度*/
+  height: 60px;
+  clear:both;
+  background: #0ff;
+}
+.onediv{width:90px; height:50px;float:left;margin:0 0 0 5px; border:1px #000 solid; background:#FF0000}
+.twodiv{width:90px; height:50px;float:left;margin:0 0 0 5px; border:1px #000 solid; background:#99CC00}

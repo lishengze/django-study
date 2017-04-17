@@ -1,0 +1,172 @@
+<html lang="en-us">
+	<head>
+		<title>选择用户</title>
+		<link rel="stylesheet" type="text/css" href="/static//admin/css/base.css">
+		<link rel="stylesheet" type="text/css" href="/static//admin/css/changelists.css">
+		<script type="text/javascript" src="/admin/jsi18n/"></script>
+		<script type="text/javascript" src="/static//admin/js/core.js"></script>
+		<script type="text/javascript" src="/static//admin/js/vendor/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/static//admin/js/jquery.init.js"></script>
+		<script type="text/javascript" src="/static//admin/js/admin/RelatedObjectLookups.js"></script>
+		<script type="text/javascript" src="/static//admin/js/actions.js"></script>
+		<script type="text/javascript" src="/static//admin/js/urlify.js"></script>
+		<script type="text/javascript" src="/static//admin/js/prepopulate.js"></script>
+		<script type="text/javascript" src="/static//admin/js/vendor/xregexp/xregexp.js"></script>
+		<meta name="robots" content="NONE,NOARCHIVE">
+		<script type="text/javascript">try {
+		window.AG_onLoad = function(func) { if (window.addEventListener) { window.addEventListener('DOMContentLoaded', func); } };
+		window.AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+		window.AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+		window.AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+		var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+		var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+		var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+		var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+		var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+		} catch (ex) { console.error('Error executing AG js: ' + ex); }
+		</script>
+	</head>
+	<body class=" app-auth model-user change-list" data-admin-utc-offset="28800">
+		<!-- Container -->
+		<div id="container">
+			<!-- Header -->
+			<div id="header">
+				<div id="branding">
+					<h1 id="site-name"><a href="/admin/">管理主页</a></h1>
+				</div>
+				<div id="user-tools">
+					欢迎用户,
+					<strong>lsz</strong>.
+					<a href="/">访问主页</a> /
+					<a href="/admin/password_change/">修改密码</a> /
+					<a href="/admin/logout/">退出</a>
+				</div>
+			</div>
+			<!-- END Header -->
+			<div class="breadcrumbs">
+				<a href="/admin/">主页</a>›
+				<a href="/admin/auth/">Authentication and Authorization</a> › Users
+			</div>
+			<!-- Content -->
+			<div id="content" class="flex">
+  		    	<h1>Select user to change</h1>
+				<div id="content-main">
+					<ul class="object-tools">
+						<li>
+							<a href="/admin/auth/user/add/" class="addlink">
+								Add user
+							</a>
+						</li>
+					</ul>
+					<div class="module filtered" id="changelist">
+						<div id="toolbar">
+							<form id="changelist-search" method="get">
+							<div>
+								<!-- DIV needed for valid HTML -->
+								<label for="searchbar"><img src="/static//admin/img/search.svg" alt="Search"></label>
+								<input type="text" size="40" name="q" value="" id="searchbar" autofocus="">
+								<input type="submit" value="Search">
+							</div>
+							</form>
+						</div>
+						<!-- <div id="changelist-filter">
+							<h2>Filter</h2>
+							<h3> By staff status </h3>
+							<ul>
+								<li class="selected"><a href="?">All</a></li>
+								<li><a href="?is_staff__exact=1">Yes</a></li>
+								<li><a href="?is_staff__exact=0">No</a></li>
+							</ul>
+							<h3> By superuser status </h3>
+							<ul>
+								<li class="selected"><a href="?">All</a></li>
+								<li><a href="?is_superuser__exact=1">Yes</a></li>
+								<li><a href="?is_superuser__exact=0">No</a></li>
+							</ul>
+							<h3> By active </h3>
+							<ul>
+								<li class="selected"><a href="?">All</a></li>
+								<li><a href="?is_active__exact=1">Yes</a></li>
+								<li><a href="?is_active__exact=0">No</a></li>
+							</ul>
+						</div> -->
+						<form id="changelist-form" method="post" novalidate=""><input type="hidden"
+							name="csrfmiddlewaretoken" value="db1sVflsyEU5XogpRX8nMaZNwfU9QY1SJ7BJ4UMA7PzXQ87WlRRisye465eAeCf9">
+							<div class="actions">
+								<label>
+									操作:
+									<select name="action" required="">
+										<option value="" selected="selected">---------</option>
+										<option value="delete_selected">删除选中的用户</option>
+									</select>
+								</label>
+								<input class="select-across" name="select_across" type="hidden" value="0">
+									<button type="submit" class="button" title="Run the selected action" name="index" value="0">Go</button>
+									<span class="action-counter" data-actions-icnt="1" style="display: inline;">0 of 1 selected</span>
+							</div>
+							<div class="results">
+								<table id="result_list">
+									<thead>
+										<tr>
+											<th scope="col" class="action-checkbox-column">
+												<div class="text">
+													<span><input type="checkbox" id="action-toggle"></span>
+												</div>
+												<div class="clear"></div>
+											</th>
+											<th scope="col" class="sortable column-username sorted ascending">
+												<div class="sortoptions">
+													<a class="sortremove" href="?o=" title="Remove from sorting"></a>
+													<a href="?o=-1" class="toggle ascending" title="Toggle sorting"></a>
+												</div>
+												<div class="text"><a href="?o=-1">Username</a></div>
+												<div class="clear"></div>
+											</th>
+											<th scope="col" class="sortable column-email">
+												<div class="text"><a href="?o=2.1">Email address</a></div>
+												<div class="clear"></div>
+											</th>
+											<th scope="col" class="sortable column-first_name">
+												<div class="text"><a href="?o=3.1">First name</a></div>
+												<div class="clear"></div>
+											</th>
+											<th scope="col" class="sortable column-last_name">
+												<div class="text"><a href="?o=4.1">Last name</a></div>
+												<div class="clear"></div>
+											</th>
+											<th scope="col" class="sortable column-is_staff">
+												<div class="text"><a href="?o=5.1">Staff status</a></div>
+												<div class="clear"></div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="row1">
+											<td class="action-checkbox">
+												<input class="action-select" name="_selected_action" type="checkbox" value="1">
+											</td>
+											<th class="field-username">
+												<a href="/admin/auth/user/1/change/">lsz</a>
+											</th>
+											<td class="field-email">lishengz.cool@163.com</td>
+											<td class="field-first_name">&nbsp;</td>
+											<td class="field-last_name">&nbsp;</td>
+											<td class="field-is_staff">
+												<img src="/static//admin/img/icon-yes.svg" alt="True">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<p class="paginator">1 user </p>
+						</form>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			<!-- END Content -->
+			<div id="footer"></div>
+		</div>
+		<!-- END Container -->
+	</body>
+</html>

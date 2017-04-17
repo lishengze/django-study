@@ -1,0 +1,84 @@
+<div  class="col-md-9" >
+  <div class="rollBackLeftContainer "  style = 'width: 70%;float:left' >
+    <div style="margin-top: 20px">
+      <label style= 'width:150px;float:left'><h4>对象选择：</h4></label>
+      <input  class="form-control" style= 'width:200px;' id="rollBackInputObject" >
+    </div>
+    <div style="margin-top: 20px">
+      <label style= 'width:150px;float:left'><h4>版本信息:</h4></label>
+      <input  class="form-control" style= 'width:400px' id="rollBackInputVersion" placeholder=" ver=VERSION | dt=DATE_TIME | seq=number">
+      <div style="width:700px;margin-top:20px;border:2px solid gray;"> <span style= 'font: bold 25px arial;'>版本信息输入提示：</span><br>
+        <br><span style= 'font-weight: bold'>ver =VERSION</span>&nbsp&nbsp&nbsp&nbsp-- 回退到指定版本，VERSION like: 1.1.0  1.0.0.1 ...
+        <br><span style= 'font-weight: bold'>dt= DATE_TIME</span>	&nbsp-- 回退到用时间日期指定版本，DATE_TIME like 20121011_153026；
+        <br><span style= 'font-weight: bold'>seq=number</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	-- 回退至倒数第number个版本，number必须是一个正数。
+      </div>
+    </div>
+    <button  onclick ='submitRollBack()' class="btn btn-primary btn-default">回退</button>
+
+  </div>
+  <div class="rollBackRightContainer" style = 'float: right;width: 30%;height:550px;border-left: 1px solid #BDBDBD;' >版本信息(最近5次)：
+    <div style= 'border-top: 1px solid #BDBDBD;' > XML:<br>
+      <ul id = 'rollBackXmlContext'>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div style= 'border-top: 1px solid #BDBDBD;' > Server:<br>
+      <div id = 'rollBackServerContext'>
+      </div>
+    </div>
+    <div style= 'border-top: 1px solid #BDBDBD;' > Client:<br>
+      <div id = 'rollBackClientContext'>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$('#rollBackInputObject').kendoDropDownList({
+    dataSource : ['xml','server','client']
+});
+$.getJSON('http://172.1.128.170:8000/AJAX/Request_All_Version/', function(getData) {
+  var data1 = getData;
+  console.log(data1);
+  for( p in data1) {
+    switch (p.style) {
+      case 'xml':
+        $('#rollBackXmlContext').append('<li>'+ data1.val + '<li>');
+        break;
+      case 'Server':
+        $('#rollBackServerContext').append('<li>'+ data1.val + '<li>');
+        break;
+      case 'Client':
+        $('#rollBackClientContext').append('<li>'+ data1.val + '<li>');
+        break;
+      default:
+    }
+  }
+})
+function submitRollBack(){
+  if(confirm('确实要回退吗?')){
+    reqRollBack()
+  } else{
+  }
+}
+function reqRollBack() {
+  var objType = $('#rollBackInputObject').val();
+  var versionInfo = $('#rollBackInputVersion').val();
+  var args = objType + "=" + versionInfo
+  var req_data = {
+    'type': 'version_control',
+    "--cmd" :"rollback",
+    "--agrs":args
+  }
+  $.ajax({
+    url: '/AJAX/Request_Task_Rpc/',
+    data: {'req_json': JSON.stringify(req_data)},
+    dataType: 'json',
+    type: 'POST',
+    traditional: true,
+    success: function (responseJSON) {
+      console.log (responseJSON)
+    }
+  });
+}
+</script>

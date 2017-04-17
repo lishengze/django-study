@@ -1,0 +1,22 @@
+@@ IpAddr OSType Hostname
+
+127.0.0.1 win64 ZJ-OA-CHEN-XH
+172.1.128.151 linux64 mon-blade01
+172.1.128.153 linux64 mon-blade03
+172.1.128.154 linux64 mon-blade04
+172.1.128.155 linux64 mon-blade05
+172.1.128.156 linux64 mon-blade06
+172.1.128.157 linux64 mon-blade07
+172.1.128.158 linux64 mon-blade08
+172.1.128.159 linux64 mon-blade09
+172.1.128.160 linux64 mon-blade10
+172.1.128.161 linux64 mon-blade11
+172.1.128.162 linux64 mon-blade12
+172.1.128.163 linux64 mon-blade13
+172.1.128.164 linux64 mon-blade14
+172.1.128.165 linux64 mon-blade15
+172.1.128.166 linux64 mon-blade16
+172.1.128.167 linux64 mon-blade17
+172.1.128.168 linux64 mon-blade18
+172.1.128.169 linux64 mon-blade19
+172.1.128.170 linux64 mon-console

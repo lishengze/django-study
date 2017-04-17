@@ -1,0 +1,91 @@
+@@ DataCenter AppName AppNO Args
+
+[AllManager]
+PD monmanager 1 @
+ZJ monmanager 2 @
+
+[AllProbe]
+PD monprobe (1~10) @
+ZJ monprobe 2 @
+BJ monprobe (1~110) @
+
+[AllPTestProbe]
+PD monprobe (12~17) @
+
+[AllAgent]
+PD monagent (1~3,11~19,30) @
+ZJ monagent (4~6,21~29) @
+BJ monagent (7~9) @
+
+[TopAgent]
+PD monagent (1~3,30) @
+ZJ monagent (4~6) @
+BJ monagent (7~9) @
+
+[MidAgent]
+PD monagent (11~19) @
+ZJ monagent (21~29) @
+
+[AllEvent]
+PD monevent 1 @
+ZJ monevent 2 @
+BJ monevent 3 @
+
+[AllClient]
+PD monfibclient 1 @ off
+ZJ monfibclient 2 @ off
+BJ monfibclient 3 @ off
+
+[AllSlog]
+PD monslog 1 @
+ZJ monslog 2 @
+BJ monslog 3 @
+
+[AllQuery]
+PD monquery 1 @ off
+ZJ monquery 2 @ off
+#ZJ monquery 2 @
+BJ monquery 3 @ off
+
+[AllFront]
+PD monfront 1 @
+ZJ monfront 3 @
+BJ monfront 5 @
+
+[AllServices]
++AllManager
++AllProbe
++AllPTestProbe
++AllAgent
++AllEvent
++AllClient
++AllQuery
++AllSlog
++AllFront
+
+[AllTest]
++AllServices
+-AllQuery
+
+[AllInternal]
++AllServices
+#-AllAgent
+#-AllProbe
+#+TopAgent
+
+[FlowApp]
++AllEvent
++AllClient
++AllQuery
++AllSlog
++AllFront
+
+[New]
++AllSlog
+
+[Front50Test]
+PD monagent 3 @
+PD monagent 17 @
+PD monevent 1 @
+PD monfront 1 @
+PD monslog 1 @

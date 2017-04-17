@@ -1,0 +1,198 @@
+<html lang="en-us"><head>
+<title>Add group | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+
+
+<script type="text/javascript" src="/admin/jsi18n/"></script><script type="text/javascript">try {
+window.AG_onLoad = function(func) { if (window.addEventListener) { window.addEventListener('DOMContentLoaded', func); } };
+window.AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+window.AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+window.AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+<script type="text/javascript" src="/static/admin/js/SelectBox.js"></script>
+<script type="text/javascript" src="/static/admin/js/SelectFilter2.js"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class=" app-auth model-group change-form" data-admin-utc-offset="28800">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="/admin/">Django administration</a></h1>
+
+        </div>
+        
+        
+        <div id="user-tools">
+            
+                Welcome,
+                <strong>lsz</strong>.
+            
+            
+                
+                    <a href="/">View site</a> /
+                
+                
+                    
+                    
+                
+                
+                <a href="/admin/password_change/">Change password</a> /
+                
+                <a href="/admin/logout/">Log out</a>
+            
+        </div>
+        
+        
+        
+    </div>
+    <!-- END Header -->
+    
+<div class="breadcrumbs">
+<a href="/admin/">Home</a>
+› <a href="/admin/auth/">Authentication and Authorization</a>
+› <a href="/admin/auth/group/">Groups</a>
+› Add group
+</div>
+
+    
+
+    
+        
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>Add group</h1>
+        <div id="content-main">
+
+
+
+<form enctype="multipart/form-data" action="" method="post" id="group_form" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="tc8jeZ6v8nrrLYjgurwCkplLDQ6QXLorZ8IAnExDHy6jEIaNYlfx0NA2dGqhlpCI">
+<div>
+
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-name">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_name">Name:</label>
+                        
+                            <input class="vTextField" id="id_name" maxlength="80" name="name" type="text" required="">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-permissions">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_permissions">Permissions:</label>
+                        
+                            
+<div class="related-widget-wrapper">
+    
+    
+        
+        
+        
+    
+<div class="selector"><div class="selector-available"><h2>Available permissions <span class="help help-tooltip help-icon" title="This is the list of available permissions. You may choose some by selecting them in the box below and then clicking the &quot;Choose&quot; arrow between the two boxes."></span></h2><p id="id_permissions_filter" class="selector-filter"><label for="id_permissions_input"><span class="help-tooltip search-label-icon" title="Type into this box to filter down the list of available permissions."></span></label> <input type="text" placeholder="Filter" id="id_permissions_input"></p><select multiple="multiple" class="filtered" data-field-name="permissions" data-is-stacked="0" id="id_permissions_from" name="permissions_old"><option value="1" title="admin | log entry | Can add log entry">admin | log entry | Can add log entry</option><option value="2" title="admin | log entry | Can change log entry">admin | log entry | Can change log entry</option><option value="3" title="admin | log entry | Can delete log entry">admin | log entry | Can delete log entry</option><option value="10" title="auth | group | Can add group">auth | group | Can add group</option><option value="11" title="auth | group | Can change group">auth | group | Can change group</option><option value="12" title="auth | group | Can delete group">auth | group | Can delete group</option><option value="4" title="auth | permission | Can add permission">auth | permission | Can add permission</option><option value="5" title="auth | permission | Can change permission">auth | permission | Can change permission</option><option value="6" title="auth | permission | Can delete permission">auth | permission | Can delete permission</option><option value="7" title="auth | user | Can add user">auth | user | Can add user</option><option value="8" title="auth | user | Can change user">auth | user | Can change user</option><option value="9" title="auth | user | Can delete user">auth | user | Can delete user</option><option value="13" title="contenttypes | content type | Can add content type">contenttypes | content type | Can add content type</option><option value="14" title="contenttypes | content type | Can change content type">contenttypes | content type | Can change content type</option><option value="15" title="contenttypes | content type | Can delete content type">contenttypes | content type | Can delete content type</option><option value="16" title="sessions | session | Can add session">sessions | session | Can add session</option><option value="17" title="sessions | session | Can change session">sessions | session | Can change session</option><option value="18" title="sessions | session | Can delete session">sessions | session | Can delete session</option></select><a title="Click to choose all permissions at once." href="#" id="id_permissions_add_all_link" class="selector-chooseall active">Choose all</a></div><ul class="selector-chooser"><li><a title="Choose" href="#" id="id_permissions_add_link" class="selector-add">Choose</a></li><li><a title="Remove" href="#" id="id_permissions_remove_link" class="selector-remove">Remove</a></li></ul><div class="selector-chosen"><h2>Chosen permissions <span class="help help-tooltip help-icon" title="This is the list of chosen permissions. You may remove some by selecting them in the box below and then clicking the &quot;Remove&quot; arrow between the two boxes."></span></h2><select id="id_permissions_to" multiple="multiple" size="0" name="permissions" class="filtered"></select><a title="Click to remove all chosen permissions at once." href="#" id="id_permissions_remove_all_link" class="selector-clearall">Remove all</a></div></div></div>
+
+                        
+                    
+                    
+                        <p class="help">Hold down "Control", or "Command" on a Mac, to select more than one.</p>
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save">
+
+
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+</div>
+
+
+
+    <script type="text/javascript" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" data-model-name="group">
+    </script>
+
+
+
+
+<script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
+</script>
+
+
+</div>
+</form></div>
+
+        
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+
+
+</body></html>

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "task_daemon.py", line 726, in <module>
+    daemon.start()
+  File "task_daemon.py", line 134, in start
+    self._run()
+  File "task_daemon.py", line 718, in _run
+    raise e
+IOError: [Errno 2] No such file or directory: '/home/test/console/update/pkg_backup/testd.zip'

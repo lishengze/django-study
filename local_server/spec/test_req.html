@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title> Test Request </title>
+    <script src="./static/js/jquery-1.11.3/jquery.min.js"></script>
+</head>
+<body>
+  <input type="button" id="Request_Task_Rpc" value="Request Task Rpc">
+  <p id="Request_Task_Rpc_Rsp"></p>
+  <input type="button" id="Request_Task_Ntf" value="Request_Task_Ntf">
+  <p id="Request_Task_Ntf_Rsp"></p>
+  <input type="button" id="Request_All_SrvStatus" value="Request All SrvStatus">
+  <p id="Request_All_SrvStatus_Rsp"></p>
+  <input type="button" id="Request_All_TaskList" value="Request All TaskList">
+  <p id="Request_All_TaskList_Rsp"></p>
+  <input type="button" id="Request_All_TaskResult" value="Request All TaskResult">
+  <p id="Request_All_TaskResult_Rsp"></p>
+  <input type="button" id="Request_All_Version" value="Request All Version">
+  <p id="Request_All_Version_Rsp"></p>
+  <a href="/index.html/"> SubHtml </a>
+	<script>
+      $('#Request_Task_Rpc').click(function(){
+        req_data = {
+          '--cmd': 'info',
+          '--args':'relay',
+          '--grp': '',
+          '--ctr': '',
+          '--srv': '',
+          '--srvno': '',
+          '--ictr': '',
+          '--isrv': '',
+          '--isrvno': '',
+        }
+          // $.getJSON('AJAX/Request_Task_Rpc/',function(rsp_result){
+          //     console.log (rsp_result)
+          //     // $('#Request_All_TaskList_Rsp').append(rsp_result.twz + '<br>');
+          // })
+          $.ajax({
+            url: '/AJAX/Request_Task_Rpc/',
+            data: {'req_json': JSON.stringify(req_data)},
+            dataType: 'json',
+            type: 'POST',
+            traditional: true,
+            success: function (responseJSON) {
+                console.log (responseJSON)
+            }
+          });
+      })
+      $('#Request_Task_Ntf').click(function(){
+          $.getJSON('/AJAX/Request_Task_Ntf/',function(rsp_result){
+              console.log (rsp_result)
+              // $('#Request_All_TaskList_Rsp').append(rsp_result.twz + '<br>');
+          })
+      })
+      $('#Request_All_SrvStatus').click(function(){
+          $.getJSON('/AJAX/Request_All_SrvStatus/',function(rsp_result){
+              console.log (rsp_result)
+              // $('#Request_All_TaskList_Rsp').append(rsp_result.twz + '<br>');
+          })
+      })
+      $('#Request_All_TaskList').click(function(){
+          $.getJSON('/AJAX/Request_All_TaskList/',function(rsp_result){
+              console.log (rsp_result)
+              // $('#Request_All_TaskList_Rsp').append(rsp_result.twz + '<br>');
+          })
+      })
+      $('#Request_All_TaskResult').click(function(){
+          $.getJSON('/AJAX/Request_All_TaskResult/',function(rsp_result){
+              console.log (rsp_result)
+              // $('#Request_All_TaskResult_Rsp').append(rsp_result.twz + '<br>');
+          })
+      })
+      $('#Request_All_Version').click(function(){
+          $.getJSON('http://172.1.128.170:8000/AJAX/Request_All_Version/',function(rsp_result){
+              console.log (rsp_result)
+              // $('#Request_All_Version_Rsp').append(rsp_result.twz + '<br>');
+          })
+      })
+	</script>
+
+</body>

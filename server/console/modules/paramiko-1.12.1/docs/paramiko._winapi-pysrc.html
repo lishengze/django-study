@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>paramiko._winapi</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="paramiko-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="paramiko-module.html">Package&nbsp;paramiko</a> ::
+        Module&nbsp;_winapi
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="paramiko._winapi-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="paramiko._winapi-module.html">Module paramiko._winapi</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">Windows API functions implemented as ctypes functions and classes as found</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">in jaraco.windows (2.10).</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">If you encounter issues with this module, please consider reporting the issues</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">in jaraco.windows and asking the author to port the fixes back here.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">ctypes</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">__builtin__</tt> </tt>
+<a name="format_system_message"></a><div id="format_system_message-def"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment">######################</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># jaraco.windows.error</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="format_system_message-toggle" onclick="return toggle('format_system_message');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi-module.html#format_system_message">format_system_message</a><tt class="py-op">(</tt><tt class="py-param">errno</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="format_system_message-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="format_system_message-expanded"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">        Call FormatMessage with a system error number to retrieve</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring">        the descriptive error message.</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-comment"># first some flags used by FormatMessageW</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">ALLOCATE_BUFFER</tt> <tt class="py-op">=</tt> <tt class="py-number">0x100</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-name">ARGUMENT_ARRAY</tt> <tt class="py-op">=</tt> <tt class="py-number">0x2000</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-name">FROM_HMODULE</tt> <tt class="py-op">=</tt> <tt class="py-number">0x800</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-name">FROM_STRING</tt> <tt class="py-op">=</tt> <tt class="py-number">0x400</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-name">FROM_SYSTEM</tt> <tt class="py-op">=</tt> <tt class="py-number">0x1000</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-name">IGNORE_INSERTS</tt> <tt class="py-op">=</tt> <tt class="py-number">0x200</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-comment"># Let FormatMessageW allocate the buffer (we'll free it below)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># Also, let it know we want a system error message.</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">flags</tt> <tt class="py-op">=</tt> <tt class="py-name">ALLOCATE_BUFFER</tt> <tt class="py-op">|</tt> <tt class="py-name">FROM_SYSTEM</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-name">source</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">message_id</tt> <tt class="py-op">=</tt> <tt class="py-name">errno</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">language_id</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">result_buffer</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">LPWSTR</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">buffer_size</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">arguments</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-name">bytes</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">kernel32</tt><tt class="py-op">.</tt><tt class="py-name">FormatMessageW</tt><tt class="py-op">(</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">                <tt class="py-name">flags</tt><tt class="py-op">,</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">                <tt class="py-name">source</tt><tt class="py-op">,</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">                <tt class="py-name">message_id</tt><tt class="py-op">,</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">                <tt class="py-name">language_id</tt><tt class="py-op">,</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">                <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">byref</tt><tt class="py-op">(</tt><tt class="py-name">result_buffer</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">                <tt class="py-name">buffer_size</tt><tt class="py-op">,</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">                <tt class="py-name">arguments</tt><tt class="py-op">,</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">                <tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-comment"># note the following will cause an infinite loop if GetLastError</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#  repeatedly returns an error that cannot be formatted, although</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment">#  this should not happen.</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt id="link-0" class="py-name" targets="Function paramiko._winapi.handle_nonzero_success()=paramiko._winapi-module.html#handle_nonzero_success"><a title="paramiko._winapi.handle_nonzero_success" class="py-name" href="#" onclick="return doclink('link-0', 'handle_nonzero_success', 'link-0');">handle_nonzero_success</a></tt><tt class="py-op">(</tt><tt class="py-name">bytes</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt id="link-1" class="py-name" targets="Method paramiko._winapi.WindowsError.message()=paramiko._winapi.WindowsError-class.html#message,Module paramiko.message=paramiko.message-module.html"><a title="paramiko._winapi.WindowsError.message
+paramiko.message" class="py-name" href="#" onclick="return doclink('link-1', 'message', 'link-1');">message</a></tt> <tt class="py-op">=</tt> <tt class="py-name">result_buffer</tt><tt class="py-op">.</tt><tt class="py-name">value</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">kernel32</tt><tt class="py-op">.</tt><tt class="py-name">LocalFree</tt><tt class="py-op">(</tt><tt class="py-name">result_buffer</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-2" class="py-name"><a title="paramiko._winapi.WindowsError.message
+paramiko.message" class="py-name" href="#" onclick="return doclink('link-2', 'message', 'link-1');">message</a></tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="WindowsError"></a><div id="WindowsError-def"><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="WindowsError-toggle" onclick="return toggle('WindowsError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="paramiko._winapi.WindowsError-class.html">WindowsError</a><tt class="py-op">(</tt><tt class="py-base-class">__builtin__</tt><tt class="py-op">.</tt><tt class="py-base-class">WindowsError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="WindowsError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="WindowsError-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-docstring">"more info about errors at http://msdn.microsoft.com/en-us/library/ms681381(VS.85).aspx"</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"> </tt>
+<a name="WindowsError.__init__"></a><div id="WindowsError.__init__-def"><a name="L59"></a><tt class="py-lineno"> 59</tt> <a class="py-toggle" href="#" id="WindowsError.__init__-toggle" onclick="return toggle('WindowsError.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.WindowsError-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">value</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="WindowsError.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="WindowsError.__init__-expanded"><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">value</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">                        <tt class="py-name">value</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">kernel32</tt><tt class="py-op">.</tt><tt class="py-name">GetLastError</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">                <tt class="py-name">strerror</tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name" targets="Function paramiko._winapi.format_system_message()=paramiko._winapi-module.html#format_system_message"><a title="paramiko._winapi.format_system_message" class="py-name" href="#" onclick="return doclink('link-3', 'format_system_message', 'link-3');">format_system_message</a></tt><tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-4" class="py-name" targets="Class paramiko._winapi.WindowsError=paramiko._winapi.WindowsError-class.html"><a title="paramiko._winapi.WindowsError" class="py-name" href="#" onclick="return doclink('link-4', 'WindowsError', 'link-4');">WindowsError</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method paramiko.Agent.__init__()=paramiko.Agent-class.html#__init__,Method paramiko.AgentKey.__init__()=paramiko.AgentKey-class.html#__init__,Method paramiko.BadAuthenticationType.__init__()=paramiko.BadAuthenticationType-class.html#__init__,Method paramiko.BadHostKeyException.__init__()=paramiko.BadHostKeyException-class.html#__init__,Method paramiko.BufferedFile.__init__()=paramiko.BufferedFile-class.html#__init__,Method paramiko.Channel.__init__()=paramiko.Channel-class.html#__init__,Method paramiko.ChannelException.__init__()=paramiko.ChannelException-class.html#__init__,Method paramiko.DSSKey.__init__()=paramiko.DSSKey-class.html#__init__,Method paramiko.HostKeys.__init__()=paramiko.HostKeys-class.html#__init__,Method paramiko.Message.__init__()=paramiko.Message-class.html#__init__,Method paramiko.PKey.__init__()=paramiko.PKey-class.html#__init__,Method paramiko.ProxyCommand.__init__()=paramiko.ProxyCommand-class.html#__init__,Method paramiko.ProxyCommandFailure.__init__()=paramiko.ProxyCommandFailure-class.html#__init__,Method paramiko.RSAKey.__init__()=paramiko.RSAKey-class.html#__init__,Method paramiko.SFTPAttributes.__init__()=paramiko.SFTPAttributes-class.html#__init__,Method paramiko.SFTPClient.__init__()=paramiko.SFTPClient-class.html#__init__,Method paramiko.SFTPFile.__init__()=paramiko.SFTPFile-class.html#__init__,Method paramiko.SFTPHandle.__init__()=paramiko.SFTPHandle-class.html#__init__,Method paramiko.SFTPServer.__init__()=paramiko.SFTPServer-class.html#__init__,Method paramiko.SFTPServerInterface.__init__()=paramiko.SFTPServerInterface-class.html#__init__,Method paramiko.SSHClient.__init__()=paramiko.SSHClient-class.html#__init__,Method paramiko.SSHConfig.__init__()=paramiko.SSHConfig-class.html#__init__,Method paramiko.SecurityOptions.__init__()=paramiko.SecurityOptions-class.html#__init__,Method paramiko.SubsystemHandler.__init__()=paramiko.SubsystemHandler-class.html#__init__,Method paramiko.Transport.__init__()=paramiko.Transport-class.html#__init__,Method paramiko._winapi.MemoryMap.__init__()=paramiko._winapi.MemoryMap-class.html#__init__,Method paramiko._winapi.SECURITY_ATTRIBUTES.__init__()=paramiko._winapi.SECURITY_ATTRIBUTES-class.html#__init__,Method paramiko._winapi.WindowsError.__init__()=paramiko._winapi.WindowsError-class.html#__init__,Method paramiko.agent.AgentClientProxy.__init__()=paramiko.agent.AgentClientProxy-class.html#__init__,Method paramiko.agent.AgentLocalProxy.__init__()=paramiko.agent.AgentLocalProxy-class.html#__init__,Method paramiko.agent.AgentProxyThread.__init__()=paramiko.agent.AgentProxyThread-class.html#__init__,Method paramiko.agent.AgentRemoteProxy.__init__()=paramiko.agent.AgentRemoteProxy-class.html#__init__,Method paramiko.agent.AgentRequestHandler.__init__()=paramiko.agent.AgentRequestHandler-class.html#__init__,Method paramiko.agent.AgentSSH.__init__()=paramiko.agent.AgentSSH-class.html#__init__,Method paramiko.agent.AgentServerProxy.__init__()=paramiko.agent.AgentServerProxy-class.html#__init__,Method paramiko.ber.BER.__init__()=paramiko.ber.BER-class.html#__init__,Method paramiko.buffered_pipe.BufferedPipe.__init__()=paramiko.buffered_pipe.BufferedPipe-class.html#__init__,Method paramiko.channel.ChannelStderrFile.__init__()=paramiko.channel.ChannelStderrFile-class.html#__init__,Method paramiko.compress.ZlibCompressor.__init__()=paramiko.compress.ZlibCompressor-class.html#__init__,Method paramiko.compress.ZlibDecompressor.__init__()=paramiko.compress.ZlibDecompressor-class.html#__init__,Method paramiko.config.LazyFqdn.__init__()=paramiko.config.LazyFqdn-class.html#__init__,Method paramiko.hostkeys.HostKeyEntry.__init__()=paramiko.hostkeys.HostKeyEntry-class.html#__init__,Method paramiko.hostkeys.InvalidHostKey.__init__()=paramiko.hostkeys.InvalidHostKey-class.html#__init__,Method paramiko.kex_gex.KexGex.__init__()=paramiko.kex_gex.KexGex-class.html#__init__,Method paramiko.kex_group1.KexGroup1.__init__()=paramiko.kex_group1.KexGroup1-class.html#__init__,Method paramiko.logging22.Formatter.__init__()=paramiko.logging22.Formatter-class.html#__init__,Method paramiko.logging22.StreamHandler.__init__()=paramiko.logging22.StreamHandler-class.html#__init__,Method paramiko.logging22.logger.__init__()=paramiko.logging22.logger-class.html#__init__,Method paramiko.pipe.OrPipe.__init__()=paramiko.pipe.OrPipe-class.html#__init__,Method paramiko.pipe.PosixPipe.__init__()=paramiko.pipe.PosixPipe-class.html#__init__,Method paramiko.pipe.WindowsPipe.__init__()=paramiko.pipe.WindowsPipe-class.html#__init__,Method paramiko.primes.ModulusPack.__init__()=paramiko.primes.ModulusPack-class.html#__init__,Method paramiko.ssh_exception.PartialAuthentication.__init__()=paramiko.ssh_exception.PartialAuthentication-class.html#__init__,Method paramiko.transport.ChannelMap.__init__()=paramiko.transport.ChannelMap-class.html#__init__,Method paramiko.util.Counter.__init__()=paramiko.util.Counter-class.html#__init__,Method paramiko.util.enumerate.__init__()=paramiko.util.enumerate-class.html#__init__,Method paramiko.win_pageant.PageantConnection.__init__()=paramiko.win_pageant.PageantConnection-class.html#__init__"><a title="paramiko.Agent.__init__
+paramiko.AgentKey.__init__
+paramiko.BadAuthenticationType.__init__
+paramiko.BadHostKeyException.__init__
+paramiko.BufferedFile.__init__
+paramiko.Channel.__init__
+paramiko.ChannelException.__init__
+paramiko.DSSKey.__init__
+paramiko.HostKeys.__init__
+paramiko.Message.__init__
+paramiko.PKey.__init__
+paramiko.ProxyCommand.__init__
+paramiko.ProxyCommandFailure.__init__
+paramiko.RSAKey.__init__
+paramiko.SFTPAttributes.__init__
+paramiko.SFTPClient.__init__
+paramiko.SFTPFile.__init__
+paramiko.SFTPHandle.__init__
+paramiko.SFTPServer.__init__
+paramiko.SFTPServerInterface.__init__
+paramiko.SSHClient.__init__
+paramiko.SSHConfig.__init__
+paramiko.SecurityOptions.__init__
+paramiko.SubsystemHandler.__init__
+paramiko.Transport.__init__
+paramiko._winapi.MemoryMap.__init__
+paramiko._winapi.SECURITY_ATTRIBUTES.__init__
+paramiko._winapi.WindowsError.__init__
+paramiko.agent.AgentClientProxy.__init__
+paramiko.agent.AgentLocalProxy.__init__
+paramiko.agent.AgentProxyThread.__init__
+paramiko.agent.AgentRemoteProxy.__init__
+paramiko.agent.AgentRequestHandler.__init__
+paramiko.agent.AgentSSH.__init__
+paramiko.agent.AgentServerProxy.__init__
+paramiko.ber.BER.__init__
+paramiko.buffered_pipe.BufferedPipe.__init__
+paramiko.channel.ChannelStderrFile.__init__
+paramiko.compress.ZlibCompressor.__init__
+paramiko.compress.ZlibDecompressor.__init__
+paramiko.config.LazyFqdn.__init__
+paramiko.hostkeys.HostKeyEntry.__init__
+paramiko.hostkeys.InvalidHostKey.__init__
+paramiko.kex_gex.KexGex.__init__
+paramiko.kex_group1.KexGroup1.__init__
+paramiko.logging22.Formatter.__init__
+paramiko.logging22.StreamHandler.__init__
+paramiko.logging22.logger.__init__
+paramiko.pipe.OrPipe.__init__
+paramiko.pipe.PosixPipe.__init__
+paramiko.pipe.WindowsPipe.__init__
+paramiko.primes.ModulusPack.__init__
+paramiko.ssh_exception.PartialAuthentication.__init__
+paramiko.transport.ChannelMap.__init__
+paramiko.util.Counter.__init__
+paramiko.util.enumerate.__init__
+paramiko.win_pageant.PageantConnection.__init__" class="py-name" href="#" onclick="return doclink('link-5', '__init__', 'link-5');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">value</tt><tt class="py-op">,</tt> <tt class="py-name">strerror</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-decorator">@</tt><tt class="py-decorator">property</tt> </tt>
+<a name="WindowsError.message"></a><div id="WindowsError.message-def"><a name="L66"></a><tt class="py-lineno"> 66</tt> <a class="py-toggle" href="#" id="WindowsError.message-toggle" onclick="return toggle('WindowsError.message');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.WindowsError-class.html#message">message</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="WindowsError.message-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="WindowsError.message-expanded"><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">strerror</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-decorator">@</tt><tt class="py-decorator">property</tt> </tt>
+<a name="WindowsError.code"></a><div id="WindowsError.code-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="WindowsError.code-toggle" onclick="return toggle('WindowsError.code');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.WindowsError-class.html#code">code</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="WindowsError.code-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="WindowsError.code-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">winerror</tt> </tt>
+</div><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="WindowsError.__str__"></a><div id="WindowsError.__str__-def"><a name="L73"></a><tt class="py-lineno"> 73</tt> <a class="py-toggle" href="#" id="WindowsError.__str__-toggle" onclick="return toggle('WindowsError.__str__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.WindowsError-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="WindowsError.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="WindowsError.__str__-expanded"><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="paramiko._winapi.WindowsError.message
+paramiko.message" class="py-name" href="#" onclick="return doclink('link-6', 'message', 'link-1');">message</a></tt> </tt>
+</div><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="WindowsError.__repr__"></a><div id="WindowsError.__repr__-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="WindowsError.__repr__-toggle" onclick="return toggle('WindowsError.__repr__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.WindowsError-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="WindowsError.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="WindowsError.__repr__-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-string">'{self.__class__.__name__}({self.winerror})'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt class="py-name">vars</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="handle_nonzero_success"></a><div id="handle_nonzero_success-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="handle_nonzero_success-toggle" onclick="return toggle('handle_nonzero_success');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi-module.html#handle_nonzero_success">handle_nonzero_success</a><tt class="py-op">(</tt><tt class="py-param">result</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="handle_nonzero_success-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="handle_nonzero_success-expanded"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">result</tt> <tt class="py-op">==</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt id="link-7" class="py-name"><a title="paramiko._winapi.WindowsError" class="py-name" href="#" onclick="return doclink('link-7', 'WindowsError', 'link-4');">WindowsError</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-comment">#####################</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># jaraco.windows.mmap</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt id="link-8" class="py-name" targets="Variable paramiko._winapi.CreateFileMapping=paramiko._winapi-module.html#CreateFileMapping"><a title="paramiko._winapi.CreateFileMapping" class="py-name" href="#" onclick="return doclink('link-8', 'CreateFileMapping', 'link-8');">CreateFileMapping</a></tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">kernel32</tt><tt class="py-op">.</tt><tt class="py-name">CreateFileMappingW</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt id="link-9" class="py-name"><a title="paramiko._winapi.CreateFileMapping" class="py-name" href="#" onclick="return doclink('link-9', 'CreateFileMapping', 'link-8');">CreateFileMapping</a></tt><tt class="py-op">.</tt><tt class="py-name">argtypes</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">HANDLE</tt><tt class="py-op">,</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_void_p</tt><tt class="py-op">,</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">DWORD</tt><tt class="py-op">,</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">DWORD</tt><tt class="py-op">,</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">DWORD</tt><tt class="py-op">,</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">LPWSTR</tt><tt class="py-op">,</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-op">]</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt id="link-10" class="py-name"><a title="paramiko._winapi.CreateFileMapping" class="py-name" href="#" onclick="return doclink('link-10', 'CreateFileMapping', 'link-8');">CreateFileMapping</a></tt><tt class="py-op">.</tt><tt class="py-name">restype</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">HANDLE</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt id="link-11" class="py-name" targets="Variable paramiko._winapi.MapViewOfFile=paramiko._winapi-module.html#MapViewOfFile"><a title="paramiko._winapi.MapViewOfFile" class="py-name" href="#" onclick="return doclink('link-11', 'MapViewOfFile', 'link-11');">MapViewOfFile</a></tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">kernel32</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="paramiko._winapi.MapViewOfFile" class="py-name" href="#" onclick="return doclink('link-12', 'MapViewOfFile', 'link-11');">MapViewOfFile</a></tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt id="link-13" class="py-name"><a title="paramiko._winapi.MapViewOfFile" class="py-name" href="#" onclick="return doclink('link-13', 'MapViewOfFile', 'link-11');">MapViewOfFile</a></tt><tt class="py-op">.</tt><tt class="py-name">restype</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">HANDLE</tt> </tt>
+<a name="MemoryMap"></a><div id="MemoryMap-def"><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt> <a class="py-toggle" href="#" id="MemoryMap-toggle" onclick="return toggle('MemoryMap');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="paramiko._winapi.MemoryMap-class.html">MemoryMap</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MemoryMap-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MemoryMap-expanded"><a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">        A memory map object which can have security attributes overrideden.</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="MemoryMap.__init__"></a><div id="MemoryMap.__init__-def"><a name="L105"></a><tt class="py-lineno">105</tt> <a class="py-toggle" href="#" id="MemoryMap.__init__-toggle" onclick="return toggle('MemoryMap.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.MemoryMap-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">length</tt><tt class="py-op">,</tt> <tt class="py-param">security_attributes</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MemoryMap.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="MemoryMap.__init__-expanded"><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Variable paramiko.kex_gex.KexGex.name=paramiko.kex_gex.KexGex-class.html#name,Variable paramiko.kex_group1.KexGroup1.name=paramiko.kex_group1.KexGroup1-class.html#name"><a title="paramiko.kex_gex.KexGex.name
+paramiko.kex_group1.KexGroup1.name" class="py-name" href="#" onclick="return doclink('link-14', 'name', 'link-14');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name"><a title="paramiko.kex_gex.KexGex.name
+paramiko.kex_group1.KexGroup1.name" class="py-name" href="#" onclick="return doclink('link-15', 'name', 'link-14');">name</a></tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">length</tt> <tt class="py-op">=</tt> <tt class="py-name">length</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">security_attributes</tt> <tt class="py-op">=</tt> <tt class="py-name">security_attributes</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pos</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"> </tt>
+<a name="MemoryMap.__enter__"></a><div id="MemoryMap.__enter__-def"><a name="L111"></a><tt class="py-lineno">111</tt> <a class="py-toggle" href="#" id="MemoryMap.__enter__-toggle" onclick="return toggle('MemoryMap.__enter__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.MemoryMap-class.html#__enter__">__enter__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MemoryMap.__enter__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="MemoryMap.__enter__-expanded"><a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                <tt class="py-name">p_SA</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">byref</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">security_attributes</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">security_attributes</tt> <tt class="py-keyword">else</tt> <tt class="py-name">None</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                <tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                <tt class="py-name">INVALID_HANDLE_VALUE</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                <tt class="py-name">PAGE_READWRITE</tt> <tt class="py-op">=</tt> <tt class="py-number">0x4</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                <tt class="py-name">FILE_MAP_WRITE</tt> <tt class="py-op">=</tt> <tt class="py-number">0x2</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                <tt class="py-name">filemap</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">kernel32</tt><tt class="py-op">.</tt><tt class="py-name">CreateFileMappingW</tt><tt class="py-op">(</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">                        <tt class="py-name">INVALID_HANDLE_VALUE</tt><tt class="py-op">,</tt> <tt class="py-name">p_SA</tt><tt class="py-op">,</tt> <tt class="py-name">PAGE_READWRITE</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">length</tt><tt class="py-op">,</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">                        <tt class="py-name">unicode</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="paramiko.kex_gex.KexGex.name
+paramiko.kex_group1.KexGroup1.name" class="py-name" href="#" onclick="return doclink('link-16', 'name', 'link-14');">name</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                <tt id="link-17" class="py-name"><a title="paramiko._winapi.handle_nonzero_success" class="py-name" href="#" onclick="return doclink('link-17', 'handle_nonzero_success', 'link-0');">handle_nonzero_success</a></tt><tt class="py-op">(</tt><tt class="py-name">filemap</tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">filemap</tt> <tt class="py-op">==</tt> <tt class="py-name">INVALID_HANDLE_VALUE</tt><tt class="py-op">:</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">                        <tt class="py-keyword">raise</tt> <tt class="py-name">Exception</tt><tt class="py-op">(</tt><tt class="py-string">"Failed to create file mapping"</tt><tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">filemap</tt> <tt class="py-op">=</tt> <tt class="py-name">filemap</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">view</tt> <tt class="py-op">=</tt> <tt id="link-18" class="py-name"><a title="paramiko._winapi.MapViewOfFile" class="py-name" href="#" onclick="return doclink('link-18', 'MapViewOfFile', 'link-11');">MapViewOfFile</a></tt><tt class="py-op">(</tt><tt class="py-name">filemap</tt><tt class="py-op">,</tt> <tt class="py-name">FILE_MAP_WRITE</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt> </tt>
+</div><a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"> </tt>
+<a name="MemoryMap.seek"></a><div id="MemoryMap.seek-def"><a name="L129"></a><tt class="py-lineno">129</tt> <a class="py-toggle" href="#" id="MemoryMap.seek-toggle" onclick="return toggle('MemoryMap.seek');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.MemoryMap-class.html#seek">seek</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">pos</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MemoryMap.seek-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="MemoryMap.seek-expanded"><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pos</tt> <tt class="py-op">=</tt> <tt class="py-name">pos</tt> </tt>
+</div><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="MemoryMap.write"></a><div id="MemoryMap.write-def"><a name="L132"></a><tt class="py-lineno">132</tt> <a class="py-toggle" href="#" id="MemoryMap.write-toggle" onclick="return toggle('MemoryMap.write');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.MemoryMap-class.html#write">write</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">msg</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MemoryMap.write-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="MemoryMap.write-expanded"><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">                <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">msvcrt</tt><tt class="py-op">.</tt><tt class="py-name">memcpy</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">view</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pos</tt><tt class="py-op">,</tt> <tt class="py-name">msg</tt><tt class="py-op">,</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">msg</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pos</tt> <tt class="py-op">+=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">msg</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"> </tt>
+<a name="MemoryMap.read"></a><div id="MemoryMap.read-def"><a name="L136"></a><tt class="py-lineno">136</tt> <a class="py-toggle" href="#" id="MemoryMap.read-toggle" onclick="return toggle('MemoryMap.read');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.MemoryMap-class.html#read">read</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">n</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MemoryMap.read-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="MemoryMap.read-expanded"><a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">                <tt class="py-docstring">"""</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">                Read n bytes from mapped view.</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">                """</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                <tt class="py-name">out</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">create_string_buffer</tt><tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">                <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">msvcrt</tt><tt class="py-op">.</tt><tt class="py-name">memcpy</tt><tt class="py-op">(</tt><tt class="py-name">out</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">view</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pos</tt><tt class="py-op">,</tt> <tt class="py-name">n</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pos</tt> <tt class="py-op">+=</tt> <tt class="py-name">n</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">out</tt><tt class="py-op">.</tt><tt class="py-name">raw</tt> </tt>
+</div><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="MemoryMap.__exit__"></a><div id="MemoryMap.__exit__-def"><a name="L145"></a><tt class="py-lineno">145</tt> <a class="py-toggle" href="#" id="MemoryMap.__exit__-toggle" onclick="return toggle('MemoryMap.__exit__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.MemoryMap-class.html#__exit__">__exit__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">exc_type</tt><tt class="py-op">,</tt> <tt class="py-param">exc_val</tt><tt class="py-op">,</tt> <tt class="py-param">tb</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MemoryMap.__exit__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="MemoryMap.__exit__-expanded"><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">                <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">kernel32</tt><tt class="py-op">.</tt><tt class="py-name">UnmapViewOfFile</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">view</tt><tt class="py-op">)</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">kernel32</tt><tt class="py-op">.</tt><tt class="py-name">CloseHandle</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">filemap</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="TokenInformationClass"></a><div id="TokenInformationClass-def"><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-comment">#########################</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># jaraco.windows.security</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt> <a class="py-toggle" href="#" id="TokenInformationClass-toggle" onclick="return toggle('TokenInformationClass');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="paramiko._winapi.TokenInformationClass-class.html">TokenInformationClass</a><tt class="py-op">:</tt> </tt>
+</div><div id="TokenInformationClass-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TokenInformationClass-expanded"><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt id="link-19" class="py-name" targets="Variable paramiko._winapi.TokenInformationClass.TokenUser=paramiko._winapi.TokenInformationClass-class.html#TokenUser"><a title="paramiko._winapi.TokenInformationClass.TokenUser" class="py-name" href="#" onclick="return doclink('link-19', 'TokenUser', 'link-19');">TokenUser</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+</div><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"> </tt>
+<a name="TOKEN_USER"></a><div id="TOKEN_USER-def"><a name="L155"></a><tt class="py-lineno">155</tt> <a class="py-toggle" href="#" id="TOKEN_USER-toggle" onclick="return toggle('TOKEN_USER');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="paramiko._winapi.TOKEN_USER-class.html">TOKEN_USER</a><tt class="py-op">(</tt><tt class="py-base-class">ctypes</tt><tt class="py-op">.</tt><tt class="py-base-class">Structure</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TOKEN_USER-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TOKEN_USER-expanded"><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt id="link-20" class="py-name" targets="Variable paramiko._winapi.TOKEN_USER.num=paramiko._winapi.TOKEN_USER-class.html#num"><a title="paramiko._winapi.TOKEN_USER.num" class="py-name" href="#" onclick="return doclink('link-20', 'num', 'link-20');">num</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt id="link-21" class="py-name" targets="Variable paramiko._winapi.SECURITY_ATTRIBUTES._fields_=paramiko._winapi.SECURITY_ATTRIBUTES-class.html#_fields_,Variable paramiko._winapi.SECURITY_DESCRIPTOR._fields_=paramiko._winapi.SECURITY_DESCRIPTOR-class.html#_fields_,Variable paramiko._winapi.TOKEN_USER._fields_=paramiko._winapi.TOKEN_USER-class.html#_fields_,Variable paramiko.win_pageant.COPYDATASTRUCT._fields_=paramiko.win_pageant.COPYDATASTRUCT-class.html#_fields_"><a title="paramiko._winapi.SECURITY_ATTRIBUTES._fields_
+paramiko._winapi.SECURITY_DESCRIPTOR._fields_
+paramiko._winapi.TOKEN_USER._fields_
+paramiko.win_pageant.COPYDATASTRUCT._fields_" class="py-name" href="#" onclick="return doclink('link-21', '_fields_', 'link-21');">_fields_</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'SID'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_void_p</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'ATTRIBUTES'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">DWORD</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-op">]</tt> </tt>
+</div><a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"> </tt>
+<a name="SECURITY_DESCRIPTOR"></a><div id="SECURITY_DESCRIPTOR-def"><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt> <a class="py-toggle" href="#" id="SECURITY_DESCRIPTOR-toggle" onclick="return toggle('SECURITY_DESCRIPTOR');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="paramiko._winapi.SECURITY_DESCRIPTOR-class.html">SECURITY_DESCRIPTOR</a><tt class="py-op">(</tt><tt class="py-base-class">ctypes</tt><tt class="py-op">.</tt><tt class="py-base-class">Structure</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SECURITY_DESCRIPTOR-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SECURITY_DESCRIPTOR-expanded"><a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-docstring">        typedef struct _SECURITY_DESCRIPTOR</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-docstring">                {</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">                UCHAR Revision;</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring">                UCHAR Sbz1;</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-docstring">                SECURITY_DESCRIPTOR_CONTROL Control;</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-docstring">                PSID Owner;</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">                PSID Group;</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-docstring">                PACL Sacl;</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-docstring">                PACL Dacl;</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">                }   SECURITY_DESCRIPTOR;</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">        <tt id="link-22" class="py-name" targets="Variable paramiko._winapi.SECURITY_DESCRIPTOR.SECURITY_DESCRIPTOR_CONTROL=paramiko._winapi.SECURITY_DESCRIPTOR-class.html#SECURITY_DESCRIPTOR_CONTROL"><a title="paramiko._winapi.SECURITY_DESCRIPTOR.SECURITY_DESCRIPTOR_CONTROL" class="py-name" href="#" onclick="return doclink('link-22', 'SECURITY_DESCRIPTOR_CONTROL', 'link-22');">SECURITY_DESCRIPTOR_CONTROL</a></tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">USHORT</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt id="link-23" class="py-name" targets="Variable paramiko._winapi.SECURITY_DESCRIPTOR.REVISION=paramiko._winapi.SECURITY_DESCRIPTOR-class.html#REVISION"><a title="paramiko._winapi.SECURITY_DESCRIPTOR.REVISION" class="py-name" href="#" onclick="return doclink('link-23', 'REVISION', 'link-23');">REVISION</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt id="link-24" class="py-name"><a title="paramiko._winapi.SECURITY_ATTRIBUTES._fields_
+paramiko._winapi.SECURITY_DESCRIPTOR._fields_
+paramiko._winapi.TOKEN_USER._fields_
+paramiko.win_pageant.COPYDATASTRUCT._fields_" class="py-name" href="#" onclick="return doclink('link-24', '_fields_', 'link-21');">_fields_</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'Revision'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_ubyte</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'Sbz1'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_ubyte</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'Control'</tt><tt class="py-op">,</tt> <tt id="link-25" class="py-name"><a title="paramiko._winapi.SECURITY_DESCRIPTOR.SECURITY_DESCRIPTOR_CONTROL" class="py-name" href="#" onclick="return doclink('link-25', 'SECURITY_DESCRIPTOR_CONTROL', 'link-22');">SECURITY_DESCRIPTOR_CONTROL</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'Owner'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_void_p</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'Group'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_void_p</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'Sacl'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_void_p</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'Dacl'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_void_p</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">        <tt class="py-op">]</tt> </tt>
+</div><a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"> </tt>
+<a name="SECURITY_ATTRIBUTES"></a><div id="SECURITY_ATTRIBUTES-def"><a name="L189"></a><tt class="py-lineno">189</tt> <a class="py-toggle" href="#" id="SECURITY_ATTRIBUTES-toggle" onclick="return toggle('SECURITY_ATTRIBUTES');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="paramiko._winapi.SECURITY_ATTRIBUTES-class.html">SECURITY_ATTRIBUTES</a><tt class="py-op">(</tt><tt class="py-base-class">ctypes</tt><tt class="py-op">.</tt><tt class="py-base-class">Structure</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SECURITY_ATTRIBUTES-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SECURITY_ATTRIBUTES-expanded"><a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-docstring">        typedef struct _SECURITY_ATTRIBUTES {</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-docstring">                DWORD  nLength;</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"><tt class="py-docstring">                LPVOID lpSecurityDescriptor;</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-docstring">                BOOL   bInheritHandle;</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-docstring">        } SECURITY_ATTRIBUTES;</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">        <tt id="link-26" class="py-name"><a title="paramiko._winapi.SECURITY_ATTRIBUTES._fields_
+paramiko._winapi.SECURITY_DESCRIPTOR._fields_
+paramiko._winapi.TOKEN_USER._fields_
+paramiko.win_pageant.COPYDATASTRUCT._fields_" class="py-name" href="#" onclick="return doclink('link-26', '_fields_', 'link-21');">_fields_</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'nLength'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">DWORD</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'lpSecurityDescriptor'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">c_void_p</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">                <tt class="py-op">(</tt><tt class="py-string">'bInheritHandle'</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">BOOL</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">        <tt class="py-op">]</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"> </tt>
+<a name="SECURITY_ATTRIBUTES.__init__"></a><div id="SECURITY_ATTRIBUTES.__init__-def"><a name="L203"></a><tt class="py-lineno">203</tt> <a class="py-toggle" href="#" id="SECURITY_ATTRIBUTES.__init__-toggle" onclick="return toggle('SECURITY_ATTRIBUTES.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.SECURITY_ATTRIBUTES-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SECURITY_ATTRIBUTES.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="SECURITY_ATTRIBUTES.__init__-expanded"><a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">                <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-27" class="py-name" targets="Class paramiko._winapi.SECURITY_ATTRIBUTES=paramiko._winapi.SECURITY_ATTRIBUTES-class.html"><a title="paramiko._winapi.SECURITY_ATTRIBUTES" class="py-name" href="#" onclick="return doclink('link-27', 'SECURITY_ATTRIBUTES', 'link-27');">SECURITY_ATTRIBUTES</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="paramiko.Agent.__init__
+paramiko.AgentKey.__init__
+paramiko.BadAuthenticationType.__init__
+paramiko.BadHostKeyException.__init__
+paramiko.BufferedFile.__init__
+paramiko.Channel.__init__
+paramiko.ChannelException.__init__
+paramiko.DSSKey.__init__
+paramiko.HostKeys.__init__
+paramiko.Message.__init__
+paramiko.PKey.__init__
+paramiko.ProxyCommand.__init__
+paramiko.ProxyCommandFailure.__init__
+paramiko.RSAKey.__init__
+paramiko.SFTPAttributes.__init__
+paramiko.SFTPClient.__init__
+paramiko.SFTPFile.__init__
+paramiko.SFTPHandle.__init__
+paramiko.SFTPServer.__init__
+paramiko.SFTPServerInterface.__init__
+paramiko.SSHClient.__init__
+paramiko.SSHConfig.__init__
+paramiko.SecurityOptions.__init__
+paramiko.SubsystemHandler.__init__
+paramiko.Transport.__init__
+paramiko._winapi.MemoryMap.__init__
+paramiko._winapi.SECURITY_ATTRIBUTES.__init__
+paramiko._winapi.WindowsError.__init__
+paramiko.agent.AgentClientProxy.__init__
+paramiko.agent.AgentLocalProxy.__init__
+paramiko.agent.AgentProxyThread.__init__
+paramiko.agent.AgentRemoteProxy.__init__
+paramiko.agent.AgentRequestHandler.__init__
+paramiko.agent.AgentSSH.__init__
+paramiko.agent.AgentServerProxy.__init__
+paramiko.ber.BER.__init__
+paramiko.buffered_pipe.BufferedPipe.__init__
+paramiko.channel.ChannelStderrFile.__init__
+paramiko.compress.ZlibCompressor.__init__
+paramiko.compress.ZlibDecompressor.__init__
+paramiko.config.LazyFqdn.__init__
+paramiko.hostkeys.HostKeyEntry.__init__
+paramiko.hostkeys.InvalidHostKey.__init__
+paramiko.kex_gex.KexGex.__init__
+paramiko.kex_group1.KexGroup1.__init__
+paramiko.logging22.Formatter.__init__
+paramiko.logging22.StreamHandler.__init__
+paramiko.logging22.logger.__init__
+paramiko.pipe.OrPipe.__init__
+paramiko.pipe.PosixPipe.__init__
+paramiko.pipe.WindowsPipe.__init__
+paramiko.primes.ModulusPack.__init__
+paramiko.ssh_exception.PartialAuthentication.__init__
+paramiko.transport.ChannelMap.__init__
+paramiko.util.Counter.__init__
+paramiko.util.enumerate.__init__
+paramiko.win_pageant.PageantConnection.__init__" class="py-name" href="#" onclick="return doclink('link-28', '__init__', 'link-5');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">nLength</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">sizeof</tt><tt class="py-op">(</tt><tt id="link-29" class="py-name"><a title="paramiko._winapi.SECURITY_ATTRIBUTES" class="py-name" href="#" onclick="return doclink('link-29', 'SECURITY_ATTRIBUTES', 'link-27');">SECURITY_ATTRIBUTES</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"> </tt>
+<a name="SECURITY_ATTRIBUTES._get_descriptor"></a><div id="SECURITY_ATTRIBUTES._get_descriptor-def"><a name="L207"></a><tt class="py-lineno">207</tt> <a class="py-toggle" href="#" id="SECURITY_ATTRIBUTES._get_descriptor-toggle" onclick="return toggle('SECURITY_ATTRIBUTES._get_descriptor');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.SECURITY_ATTRIBUTES-class.html#_get_descriptor">_get_descriptor</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SECURITY_ATTRIBUTES._get_descriptor-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="SECURITY_ATTRIBUTES._get_descriptor-expanded"><a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_descriptor</tt> </tt>
+</div><a name="SECURITY_ATTRIBUTES._set_descriptor"></a><div id="SECURITY_ATTRIBUTES._set_descriptor-def"><a name="L209"></a><tt class="py-lineno">209</tt> <a class="py-toggle" href="#" id="SECURITY_ATTRIBUTES._set_descriptor-toggle" onclick="return toggle('SECURITY_ATTRIBUTES._set_descriptor');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi.SECURITY_ATTRIBUTES-class.html#_set_descriptor">_set_descriptor</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">descriptor</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SECURITY_ATTRIBUTES._set_descriptor-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="SECURITY_ATTRIBUTES._set_descriptor-expanded"><a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_descriptor</tt> <tt class="py-op">=</tt> <tt id="link-30" class="py-name" targets="Variable paramiko._winapi.SECURITY_ATTRIBUTES.descriptor=paramiko._winapi.SECURITY_ATTRIBUTES-class.html#descriptor"><a title="paramiko._winapi.SECURITY_ATTRIBUTES.descriptor" class="py-name" href="#" onclick="return doclink('link-30', 'descriptor', 'link-30');">descriptor</a></tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpSecurityDescriptor</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">addressof</tt><tt class="py-op">(</tt><tt id="link-31" class="py-name"><a title="paramiko._winapi.SECURITY_ATTRIBUTES.descriptor" class="py-name" href="#" onclick="return doclink('link-31', 'descriptor', 'link-30');">descriptor</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt id="link-32" class="py-name"><a title="paramiko._winapi.SECURITY_ATTRIBUTES.descriptor" class="py-name" href="#" onclick="return doclink('link-32', 'descriptor', 'link-30');">descriptor</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt class="py-name">_get_descriptor</tt><tt class="py-op">,</tt> <tt class="py-name">_set_descriptor</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"> </tt>
+<a name="GetTokenInformation"></a><div id="GetTokenInformation-def"><a name="L214"></a><tt class="py-lineno">214</tt> <a class="py-toggle" href="#" id="GetTokenInformation-toggle" onclick="return toggle('GetTokenInformation');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi-module.html#GetTokenInformation">GetTokenInformation</a><tt class="py-op">(</tt><tt class="py-param">token</tt><tt class="py-op">,</tt> <tt class="py-param">information_class</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="GetTokenInformation-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="GetTokenInformation-expanded"><a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-docstring">        Given a token, get the token information for it.</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">        <tt class="py-name">data_size</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">DWORD</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">advapi32</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Function paramiko._winapi.GetTokenInformation()=paramiko._winapi-module.html#GetTokenInformation"><a title="paramiko._winapi.GetTokenInformation" class="py-name" href="#" onclick="return doclink('link-33', 'GetTokenInformation', 'link-33');">GetTokenInformation</a></tt><tt class="py-op">(</tt><tt class="py-name">token</tt><tt class="py-op">,</tt> <tt class="py-name">information_class</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="paramiko._winapi.TOKEN_USER.num" class="py-name" href="#" onclick="return doclink('link-34', 'num', 'link-20');">num</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">                <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">byref</tt><tt class="py-op">(</tt><tt class="py-name">data_size</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">create_string_buffer</tt><tt class="py-op">(</tt><tt class="py-name">data_size</tt><tt class="py-op">.</tt><tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">        <tt id="link-35" class="py-name"><a title="paramiko._winapi.handle_nonzero_success" class="py-name" href="#" onclick="return doclink('link-35', 'handle_nonzero_success', 'link-0');">handle_nonzero_success</a></tt><tt class="py-op">(</tt><tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">advapi32</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="paramiko._winapi.GetTokenInformation" class="py-name" href="#" onclick="return doclink('link-36', 'GetTokenInformation', 'link-33');">GetTokenInformation</a></tt><tt class="py-op">(</tt><tt class="py-name">token</tt><tt class="py-op">,</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">                <tt class="py-name">information_class</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="paramiko._winapi.TOKEN_USER.num" class="py-name" href="#" onclick="return doclink('link-37', 'num', 'link-20');">num</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">                <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">byref</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">sizeof</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">                <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">byref</tt><tt class="py-op">(</tt><tt class="py-name">data_size</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">cast</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">POINTER</tt><tt class="py-op">(</tt><tt id="link-38" class="py-name" targets="Class paramiko._winapi.TOKEN_USER=paramiko._winapi.TOKEN_USER-class.html"><a title="paramiko._winapi.TOKEN_USER" class="py-name" href="#" onclick="return doclink('link-38', 'TOKEN_USER', 'link-38');">TOKEN_USER</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">contents</tt> </tt>
+</div><a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"> </tt>
+<a name="TokenAccess"></a><div id="TokenAccess-def"><a name="L228"></a><tt class="py-lineno">228</tt> <a class="py-toggle" href="#" id="TokenAccess-toggle" onclick="return toggle('TokenAccess');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="paramiko._winapi.TokenAccess-class.html">TokenAccess</a><tt class="py-op">:</tt> </tt>
+</div><div id="TokenAccess-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TokenAccess-expanded"><a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">        <tt id="link-39" class="py-name" targets="Variable paramiko._winapi.TokenAccess.TOKEN_QUERY=paramiko._winapi.TokenAccess-class.html#TOKEN_QUERY"><a title="paramiko._winapi.TokenAccess.TOKEN_QUERY" class="py-name" href="#" onclick="return doclink('link-39', 'TOKEN_QUERY', 'link-39');">TOKEN_QUERY</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0x8</tt> </tt>
+</div><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line"> </tt>
+<a name="OpenProcessToken"></a><div id="OpenProcessToken-def"><a name="L231"></a><tt class="py-lineno">231</tt> <a class="py-toggle" href="#" id="OpenProcessToken-toggle" onclick="return toggle('OpenProcessToken');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi-module.html#OpenProcessToken">OpenProcessToken</a><tt class="py-op">(</tt><tt class="py-param">proc_handle</tt><tt class="py-op">,</tt> <tt class="py-param">access</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="OpenProcessToken-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="OpenProcessToken-expanded"><a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">        <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">HANDLE</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">        <tt class="py-name">proc_handle</tt> <tt class="py-op">=</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">wintypes</tt><tt class="py-op">.</tt><tt class="py-name">HANDLE</tt><tt class="py-op">(</tt><tt class="py-name">proc_handle</tt><tt class="py-op">)</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">        <tt id="link-40" class="py-name"><a title="paramiko._winapi.handle_nonzero_success" class="py-name" href="#" onclick="return doclink('link-40', 'handle_nonzero_success', 'link-0');">handle_nonzero_success</a></tt><tt class="py-op">(</tt><tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">advapi32</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Function paramiko._winapi.OpenProcessToken()=paramiko._winapi-module.html#OpenProcessToken"><a title="paramiko._winapi.OpenProcessToken" class="py-name" href="#" onclick="return doclink('link-41', 'OpenProcessToken', 'link-41');">OpenProcessToken</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">                <tt class="py-name">proc_handle</tt><tt class="py-op">,</tt> <tt class="py-name">access</tt><tt class="py-op">,</tt> <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">byref</tt><tt class="py-op">(</tt><tt class="py-name">result</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">result</tt> </tt>
+</div><a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line"> </tt>
+<a name="get_current_user"></a><div id="get_current_user-def"><a name="L238"></a><tt class="py-lineno">238</tt> <a class="py-toggle" href="#" id="get_current_user-toggle" onclick="return toggle('get_current_user');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi-module.html#get_current_user">get_current_user</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="get_current_user-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="get_current_user-expanded"><a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"><tt class="py-docstring">        Return a TOKEN_USER for the owner of this process.</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">        <tt class="py-name">process</tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="paramiko._winapi.OpenProcessToken" class="py-name" href="#" onclick="return doclink('link-42', 'OpenProcessToken', 'link-41');">OpenProcessToken</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">                <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">kernel32</tt><tt class="py-op">.</tt><tt class="py-name">GetCurrentProcess</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">                <tt id="link-43" class="py-name" targets="Class paramiko._winapi.TokenAccess=paramiko._winapi.TokenAccess-class.html"><a title="paramiko._winapi.TokenAccess" class="py-name" href="#" onclick="return doclink('link-43', 'TokenAccess', 'link-43');">TokenAccess</a></tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="paramiko._winapi.TokenAccess.TOKEN_QUERY" class="py-name" href="#" onclick="return doclink('link-44', 'TOKEN_QUERY', 'link-39');">TOKEN_QUERY</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">        <tt class="py-op">)</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-45" class="py-name"><a title="paramiko._winapi.GetTokenInformation" class="py-name" href="#" onclick="return doclink('link-45', 'GetTokenInformation', 'link-33');">GetTokenInformation</a></tt><tt class="py-op">(</tt><tt class="py-name">process</tt><tt class="py-op">,</tt> <tt id="link-46" class="py-name"><a title="paramiko._winapi.TOKEN_USER" class="py-name" href="#" onclick="return doclink('link-46', 'TOKEN_USER', 'link-38');">TOKEN_USER</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line"> </tt>
+<a name="get_security_attributes_for_user"></a><div id="get_security_attributes_for_user-def"><a name="L248"></a><tt class="py-lineno">248</tt> <a class="py-toggle" href="#" id="get_security_attributes_for_user-toggle" onclick="return toggle('get_security_attributes_for_user');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="paramiko._winapi-module.html#get_security_attributes_for_user">get_security_attributes_for_user</a><tt class="py-op">(</tt><tt class="py-param">user</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="get_security_attributes_for_user-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="get_security_attributes_for_user-expanded"><a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line"><tt class="py-docstring">        Return a SECURITY_ATTRIBUTES structure with the SID set to the</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line"><tt class="py-docstring">        specified user (uses current user if none is specified).</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">user</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">                <tt class="py-name">user</tt> <tt class="py-op">=</tt> <tt id="link-47" class="py-name" targets="Function paramiko._winapi.get_current_user()=paramiko._winapi-module.html#get_current_user"><a title="paramiko._winapi.get_current_user" class="py-name" href="#" onclick="return doclink('link-47', 'get_current_user', 'link-47');">get_current_user</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">user</tt><tt class="py-op">,</tt> <tt id="link-48" class="py-name"><a title="paramiko._winapi.TOKEN_USER" class="py-name" href="#" onclick="return doclink('link-48', 'TOKEN_USER', 'link-38');">TOKEN_USER</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">"user must be TOKEN_USER instance"</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">        <tt class="py-name">SD</tt> <tt class="py-op">=</tt> <tt id="link-49" class="py-name" targets="Class paramiko._winapi.SECURITY_DESCRIPTOR=paramiko._winapi.SECURITY_DESCRIPTOR-class.html"><a title="paramiko._winapi.SECURITY_DESCRIPTOR" class="py-name" href="#" onclick="return doclink('link-49', 'SECURITY_DESCRIPTOR', 'link-49');">SECURITY_DESCRIPTOR</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">        <tt class="py-name">SA</tt> <tt class="py-op">=</tt> <tt id="link-50" class="py-name"><a title="paramiko._winapi.SECURITY_ATTRIBUTES" class="py-name" href="#" onclick="return doclink('link-50', 'SECURITY_ATTRIBUTES', 'link-27');">SECURITY_ATTRIBUTES</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">        <tt class="py-comment"># by attaching the actual security descriptor, it will be garbage-</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-comment"># collected with the security attributes</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">SA</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="paramiko._winapi.SECURITY_ATTRIBUTES.descriptor" class="py-name" href="#" onclick="return doclink('link-51', 'descriptor', 'link-30');">descriptor</a></tt> <tt class="py-op">=</tt> <tt class="py-name">SD</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">        <tt class="py-name">SA</tt><tt class="py-op">.</tt><tt class="py-name">bInheritHandle</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">advapi32</tt><tt class="py-op">.</tt><tt class="py-name">InitializeSecurityDescriptor</tt><tt class="py-op">(</tt><tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">byref</tt><tt class="py-op">(</tt><tt class="py-name">SD</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">                <tt id="link-52" class="py-name"><a title="paramiko._winapi.SECURITY_DESCRIPTOR" class="py-name" href="#" onclick="return doclink('link-52', 'SECURITY_DESCRIPTOR', 'link-49');">SECURITY_DESCRIPTOR</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="paramiko._winapi.SECURITY_DESCRIPTOR.REVISION" class="py-name" href="#" onclick="return doclink('link-53', 'REVISION', 'link-23');">REVISION</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">        <tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">windll</tt><tt class="py-op">.</tt><tt class="py-name">advapi32</tt><tt class="py-op">.</tt><tt class="py-name">SetSecurityDescriptorOwner</tt><tt class="py-op">(</tt><tt class="py-name">ctypes</tt><tt class="py-op">.</tt><tt class="py-name">byref</tt><tt class="py-op">(</tt><tt class="py-name">SD</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">                <tt class="py-name">user</tt><tt class="py-op">.</tt><tt class="py-name">SID</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">SA</tt> </tt>
+</div><a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="paramiko-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Jan  8 16:45:07 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

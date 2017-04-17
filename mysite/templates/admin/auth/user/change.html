@@ -1,0 +1,123 @@
+<html lang="en-us">
+	<head>
+		<title>修改用户信息</title>
+		<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+		<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+		<script src="/static/js/jquery-1.8.3/jquery.min.js"></script>
+		<script src="/static/js/admin/user/change.js"></script>
+	</head>
+	<body class=" app-auth model-user change-form" data-admin-utc-offset="28800">
+		<!-- Container -->
+		<div id="container" style="height:100%;">
+			{% include '../../header.html' %}
+			<!-- END Header -->
+			<div class="breadcrumbs">
+				<a href="/admin/">主页</a>›
+				<a href="/admin/auth/">身份认证与授权管理</a> › 用户
+			</div>
+			<!-- Content -->
+			<div id="content" class="colM" style="*width:100%;padding:20px 40px">
+				<h1>修改用户</h1>
+				<span id='user_id' value={{user_id}}><span>
+				<div id="content-main">
+					<form enctype="multipart/form-data" action="" method="post" id="user_form" novalidate="">
+						<input type="hidden" name="csrfmiddlewaretoken" value="JmNLrJc83F0sioGTO0NkJZRt5BdBG8Xifin2AoDgCQFkb8xqiUwfpn6KFrx24Mbz">
+						<div>
+							<fieldset class="module aligned ">
+								<div class="form-row field-username">
+									<div>
+										<label class="required" for="id_username">用户名:</label>
+											<input id="id_username" maxlength="150" name="username" type="text" value="{{user.name}}" required="">
+										<p class="help">要求150个字符以内的数字、字母、符号也只支持 @/./+/-/_.</p>
+									</div>
+								</div>
+								<div class="form-row field-password">
+									<div>
+										<label for="id_password">密码:</label>
+										<div id="id_password">
+											<strong>算法</strong>: pbkdf2_sha256
+											<strong>迭代次数</strong>: 30000
+											<strong>salt</strong>: bwz57A******
+											<strong>hash</strong>: SIFRq0**************************************
+										</div>
+										<p class="help">
+											原始密码是没有保存的，所以无法看到当前用户的原始密码, 但可以通过这个<a href="../password/">表单</a>来修改密码
+										</p>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="module aligned ">
+								<h2>个人信息</h2>
+								<div class="form-row field-email">
+									<div>
+										<label for="id_email">邮箱地址:</label>
+										<input id="id_email" maxlength="254" name="email" type="email" value="{{user.email}}">
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="module aligned ">
+								<h2>权限与群组</h2>
+									<div class="form-row field-groups">
+										<div>
+											<label for="id_groups">群组:</label>
+											<div class="related-widget-wrapper">
+												<div class="selector">
+													<div class="selector-available">
+														<h2>可选群组
+															<span class="help help-tooltip help-icon" title="This is the list of available groups.
+															You may choose some by selecting them in the box below and then clicking the &quot;Choose&quot; arrow between the two boxes."></span>
+														</h2>
+														<select multiple="multiple" class="filtered" data-field-name="groups"
+															data-is-stacked="0" id="id_groups_from" name="groups_old">
+															{% for group in available_groups%}
+															<option title="{{group}}">{{group}}</option>
+															{% endfor %}
+														</select>
+														<a title="Click to choose all groups at once." href="#" id="id_groups_add_all_link" class="selector-chooseall active" style="cursor:hand">选择所有</a>
+													</div>
+													<ul class="selector-chooser">
+														<li>
+															<a title="Choose" id="id_groups_add_link" style="cursor:hand">增</a>
+														</li>
+														<li>
+															<a title="Remove" id="id_groups_remove_link" style="cursor:hand" >减</a>
+														</li>
+													</ul>
+													<div class="selector-chosen">
+														<h2>选择的群组
+															<span class="help help-tooltip help-icon" title="This is the list of chosen groups. You may remove some by selecting them in the box below and then clicking the &quot;Remove&quot; arrow between the two boxes.">
+																</span>
+														</h2>
+														<select id="id_groups_to" multiple="multiple" size="0" name="groups" class="filtered">
+															{% for group in user_groups%}
+															<option title="{{group}}">{{group}}</option>
+															{% endfor %}
+														</select>
+
+														<a title="Click to remove all chosen groups at once." href="#" id="id_groups_remove_all_link" class="selector-clearall active" style="cursor:hand">删除所有</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							</fieldset>
+							<div class="submit-row">
+								<input type="submit" value="删除" class="default" name="_save"
+								 style="cursor:hand;background-color:rgb(186, 33, 33);float:left">
+								<input type="button" value="保存" class="default" name="_save">
+								<input type="button" value="保存并继续添加" name="_addanother">
+							</div>
+							</script>
+						</div>
+					</form>
+				</div>
+        <br class="clear">
+    	</div>
+    	<!-- END Content -->
+		</div>
+		<!-- END Container -->
+		<!-- Footer -->
+		{% include '../../footer.html' %}
+		<!-- END Footer -->
+	</body>
+</html>

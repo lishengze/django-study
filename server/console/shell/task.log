@@ -1,0 +1,348 @@
+pidfile /home/test/console/temp/daemon-example.pid already exist. Daemon already running?
+start daemon
+option[CMD]=stop
+---
+DataCenter=PD;
+---
+
+---
+AllServices
+PD.snmpmanager.1	PD		snmpmanager		1		1	
+PD.monprobe.1	PD		monprobe		1		1	
+PD.monprobe.2	PD		monprobe		2		2	
+PD.monprobe.3	PD		monprobe		3		3	
+PD.monprobe.4	PD		monprobe		4		4	
+PD.monprobe.5	PD		monprobe		5		5	
+PD.monprobe.6	PD		monprobe		6		6	
+PD.monprobe.7	PD		monprobe		7		7	
+PD.monprobe.8	PD		monprobe		8		8	
+PD.monprobe.9	PD		monprobe		9		9	
+PD.monprobe.10	PD		monprobe		10		10	
+PD.monprobe.12	PD		monprobe		12		12	
+PD.monprobe.13	PD		monprobe		13		13	
+PD.monprobe.14	PD		monprobe		14		14	
+PD.monprobe.15	PD		monprobe		15		15	
+PD.monprobe.16	PD		monprobe		16		16	
+PD.monprobe.17	PD		monprobe		17		17	
+PD.monagent.1	PD		monagent		1		1	
+PD.monagent.2	PD		monagent		2		2	
+PD.monagent.3	PD		monagent		3		3	
+PD.monagent.11	PD		monagent		11		11	
+PD.monagent.12	PD		monagent		12		12	
+PD.monagent.13	PD		monagent		13		13	
+PD.monagent.14	PD		monagent		14		14	
+PD.monagent.15	PD		monagent		15		15	
+PD.monagent.16	PD		monagent		16		16	
+PD.monagent.17	PD		monagent		17		17	
+PD.monagent.18	PD		monagent		18		18	
+PD.monagent.19	PD		monagent		19		19	
+PD.monagent.30	PD		monagent		30		30	
+PD.monevent.1	PD		monevent		1		1	
+PD.monfibclient.1	PD		monfibclient		1		1		off	
+PD.synconfig.1	PD		synconfig		1		1	
+PD.monquery.1	PD		monquery		1		1		off	
+PD.monslog.1	PD		monslog		1		1	
+PD.monfront.1	PD		monfront		1		1	
+PD.monfront.1	PD		monfront		1		172.1.128.151	
+PD.monfront.2	PD		monfront		2		172.1.128.151	
+PD.synconfig.1	PD		synconfig		1		172.1.128.151	
+PD.monquery.1	PD		monquery		1		172.1.128.152	
+PD.monslog.1	PD		monslog		1		172.1.128.153	
+PD.monfibclient.1	PD		monfibclient		1		172.1.128.154	
+PD.monevent.1	PD		monevent		1		172.1.128.155	
+PD.monagent.1	PD		monagent		1		172.1.128.170	
+PD.monagent.2	PD		monagent		2		172.1.128.170	
+PD.monagent.3	PD		monagent		3		172.1.128.170	
+PD.monagent.11	PD		monagent		11		172.1.128.151	
+PD.monagent.12	PD		monagent		12		172.1.128.151	
+PD.monagent.13	PD		monagent		13		172.1.128.151	
+PD.monagent.14	PD		monagent		14		172.1.128.151	
+PD.monagent.15	PD		monagent		15		172.1.128.151	
+PD.monagent.16	PD		monagent		16		172.1.128.151	
+PD.monagent.17	PD		monagent		17		172.1.128.151	
+PD.monagent.18	PD		monagent		18		172.1.128.151	
+PD.monagent.19	PD		monagent		19		172.1.128.151	
+PD.monprobe.1	PD		monprobe		1		172.1.128.151	
+PD.monagent.30	PD		monagent		30		172.1.128.152	
+PD.monprobe.2	PD		monprobe		2		172.1.128.153	
+PD.monprobe.3	PD		monprobe		3		172.1.128.154	
+PD.monprobe.4	PD		monprobe		4		172.1.128.155	
+PD.monprobe.5	PD		monprobe		5		172.1.128.156	
+PD.monprobe.6	PD		monprobe		6		172.1.128.157	
+PD.monprobe.7	PD		monprobe		7		172.1.128.158	
+-----start-----
+['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t1\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t11\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t12\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t13\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t14\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t15\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t16\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t17\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t18\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t19\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t2\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t3\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t30\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t1\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t1\t\toff\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t1\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t1\t', 'PD.monprobe.10\tPD\t\tmonprobe\t\t10\t\t10\t', 'PD.monprobe.12\tPD\t\tmonprobe\t\t12\t\t12\t', 'PD.monprobe.13\tPD\t\tmonprobe\t\t13\t\t13\t', 'PD.monprobe.14\tPD\t\tmonprobe\t\t14\t\t14\t', 'PD.monprobe.15\tPD\t\tmonprobe\t\t15\t\t15\t', 'PD.monprobe.16\tPD\t\tmonprobe\t\t16\t\t16\t', 'PD.monprobe.17\tPD\t\tmonprobe\t\t17\t\t17\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t2\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t3\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t4\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t5\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t6\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t7\t', 'PD.monprobe.8\tPD\t\tmonprobe\t\t8\t\t8\t', 'PD.monprobe.9\tPD\t\tmonprobe\t\t9\t\t9\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t1\t\toff\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t1\t', 'PD.snmpmanager.1\tPD\t\tsnmpmanager\t\t1\t\t1\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t1\t']
+-----service-----
+['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t172.1.128.170\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t172.1.128.151\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t172.1.128.151\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t172.1.128.151\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t172.1.128.151\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t172.1.128.151\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t172.1.128.151\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t172.1.128.151\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t172.1.128.151\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t172.1.128.151\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t172.1.128.170\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t172.1.128.170\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t172.1.128.152\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t172.1.128.155\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t172.1.128.154\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t172.1.128.151\t', 'PD.monfront.2\tPD\t\tmonfront\t\t2\t\t172.1.128.151\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t172.1.128.151\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t172.1.128.153\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t172.1.128.154\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t172.1.128.155\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t172.1.128.156\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t172.1.128.157\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t172.1.128.158\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t172.1.128.152\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t172.1.128.153\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t172.1.128.151\t']
+iprelay_map:
+{'172.1.128.157': ['172.1.128.151'], '172.1.128.156': ['172.1.128.151'], '172.1.128.159': ['172.1.128.153'], '172.1.128.158': ['172.1.128.151'], '172.1.128.160': ['172.1.128.154'], '172.1.128.161': ['172.1.128.154'], '172.1.128.162': ['172.1.128.154'], '172.1.128.163': ['172.1.128.154']}
+ipsub_map:
+{'172.1.128.154': set(['172.1.128.160', '172.1.128.161', '172.1.128.162', '172.1.128.163']), '172.1.128.151': set(['172.1.128.157', '172.1.128.156', '172.1.128.158']), '172.1.128.153': set(['172.1.128.159'])}
+SSH to 172.1.128.155 start
+IP:[172.1.128.155]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.155', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-console Send file opt_map.10542.1 to 172.1.128.155
+SSH to 172.1.128.155 end
+SSH to 172.1.128.154 start
+IP:[172.1.128.154]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.154', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-console Send file opt_map.10542.2 to 172.1.128.154
+SSH to 172.1.128.154 end
+SSH to 172.1.128.170 start
+IP:[172.1.128.170]  FLAG_SSH = 1
+IP [172.1.128.170] is localhost
+Try to combine ipnext_map with keys ['172.1.128.170'] and ['']
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'172.1.128.155': [''], '172.1.128.154': [''], '172.1.128.170': [''], '172.1.128.151': ['172.1.128.157', '', '172.1.128.158', '172.1.128.156'], '172.1.128.153': [''], '172.1.128.152': ['']}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.170', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+SSH to 172.1.128.170 end
+SSH to 172.1.128.151 start
+IP:[172.1.128.151]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.151', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': [''], '172.1.128.157': [''], '172.1.128.156': [''], '172.1.128.158': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-console Send file opt_map.10542.4 to 172.1.128.151
+SSH to 172.1.128.151 end
+SSH to 172.1.128.153 start
+IP:[172.1.128.153]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.153', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-console Send file opt_map.10542.5 to 172.1.128.153
+SSH to 172.1.128.153 end
+SSH to 172.1.128.152 start
+IP:[172.1.128.152]  FLAG_SSH = 1
+SSH to 172.1.128.152 end
+++++++++++++++++++OUT++++++++++++++++++
+stop:172.1.128.154:PD.monprobe.3:App Not run
+stop:172.1.128.154:PD.monfibclient.1:App Not run
+--------RTN [mon-blade04]--------
+0
+--------OUT [mon-blade04]--------
+
+--------ERR [mon-blade04]--------
+
+stop:172.1.128.170:PD.monagent.1:App Not run
+stop:172.1.128.170:PD.monagent.2:App Not run
+stop:172.1.128.170:PD.monagent.3:App Not run
+execLocal at: 172.1.128.170;10578
+opt_map in EXECLOCAL at 172.1.128.170
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.170', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.170] [stop] [stopCmd] PD.monagent.1 [1]
+ip[172.1.128.170] [stop] [stopCmd] PD.monagent.2 [2]
+ip[172.1.128.170] [stop] [stopCmd] PD.monagent.3 [3]
+--------RTN [mon-console]--------
+0
+--------OUT [mon-console]--------
+
+--------ERR [mon-console]--------
+
+stop:172.1.128.151:PD.monfront.1:App Not run
+stop:172.1.128.151:PD.monprobe.1:App Not run
+stop:172.1.128.151:PD.monagent.11:App Not run
+stop:172.1.128.151:PD.monagent.12:App Not run
+stop:172.1.128.151:PD.monagent.13:App Not run
+stop:172.1.128.151:PD.monagent.14:App Not run
+stop:172.1.128.151:PD.monagent.15:App Not run
+stop:172.1.128.151:PD.monagent.16:App Not run
+stop:172.1.128.151:PD.monagent.17:App Not run
+stop:172.1.128.151:PD.monagent.18:App Not run
+stop:172.1.128.151:PD.monagent.19:App Not run
+stop:172.1.128.151:PD.synconfig.1:App Not run
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.157', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.11204.1 to 172.1.128.157
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.156', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.11204.2 to 172.1.128.156
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.158', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.11204.3 to 172.1.128.158
+--------RTN [mon-blade01]--------
+0
+--------OUT [mon-blade01]--------
+
+--------ERR [mon-blade01]--------
+Traceback (most recent call last):
+  File "main.py", line 11, in ?
+    from ecall import Ecall
+  File "/home/test/console/scripts/ecall.py", line 127
+    except Exception as e:
+                      ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "main.py", line 11, in ?
+    from ecall import Ecall
+  File "/home/test/console/scripts/ecall.py", line 127
+    except Exception as e:
+                      ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "main.py", line 11, in ?
+    from ecall import Ecall
+  File "/home/test/console/scripts/ecall.py", line 127
+    except Exception as e:
+                      ^
+SyntaxError: invalid syntax
+
+stop:172.1.128.153:PD.monprobe.2:App Not run
+stop:172.1.128.153:PD.monslog.1:Done
+--------RTN [mon-blade03]--------
+0
+--------OUT [mon-blade03]--------
+
+--------ERR [mon-blade03]--------
+
+
+++++++++++++++++++OUT++++++++++++++++++
+stop:172.1.128.154:PD.monprobe.3:App Not run
+('get', 'stop', '172.1.128.154', 'PD.monprobe.3')
+stop:172.1.128.154:PD.monfibclient.1:App Not run
+('get', 'stop', '172.1.128.154', 'PD.monfibclient.1')
+--------RTN [mon-blade04]--------
+0
+--------OUT [mon-blade04]--------
+
+--------ERR [mon-blade04]--------
+
+stop:172.1.128.170:PD.monagent.1:App Not run
+('get', 'stop', '172.1.128.170', 'PD.monagent.1')
+stop:172.1.128.170:PD.monagent.2:App Not run
+('get', 'stop', '172.1.128.170', 'PD.monagent.2')
+stop:172.1.128.170:PD.monagent.3:App Not run
+('get', 'stop', '172.1.128.170', 'PD.monagent.3')
+execLocal at: 172.1.128.170;10578
+opt_map in EXECLOCAL at 172.1.128.170
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.170', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.170] [stop] [stopCmd] PD.monagent.1 [1]
+ip[172.1.128.170] [stop] [stopCmd] PD.monagent.2 [2]
+ip[172.1.128.170] [stop] [stopCmd] PD.monagent.3 [3]
+--------RTN [mon-console]--------
+0
+--------OUT [mon-console]--------
+
+--------ERR [mon-console]--------
+
+stop:172.1.128.151:PD.monfront.1:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monfront.1')
+stop:172.1.128.151:PD.monprobe.1:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monprobe.1')
+stop:172.1.128.151:PD.monagent.11:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monagent.11')
+stop:172.1.128.151:PD.monagent.12:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monagent.12')
+stop:172.1.128.151:PD.monagent.13:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monagent.13')
+stop:172.1.128.151:PD.monagent.14:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monagent.14')
+stop:172.1.128.151:PD.monagent.15:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monagent.15')
+stop:172.1.128.151:PD.monagent.16:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monagent.16')
+stop:172.1.128.151:PD.monagent.17:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monagent.17')
+stop:172.1.128.151:PD.monagent.18:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monagent.18')
+stop:172.1.128.151:PD.monagent.19:App Not run
+('get', 'stop', '172.1.128.151', 'PD.monagent.19')
+stop:172.1.128.151:PD.synconfig.1:App Not run
+('get', 'stop', '172.1.128.151', 'PD.synconfig.1')
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.157', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.11204.1 to 172.1.128.157
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.156', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.11204.2 to 172.1.128.156
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.158', 'cmd1': 'stop', 'cmd2': 'stopCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.11204.3 to 172.1.128.158
+--------RTN [mon-blade01]--------
+0
+--------OUT [mon-blade01]--------
+
+--------ERR [mon-blade01]--------
+Traceback (most recent call last):
+File "main.py", line 11, in ?
+from ecall import Ecall
+File "/home/test/console/scripts/ecall.py", line 127
+except Exception as e:
+^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+File "main.py", line 11, in ?
+from ecall import Ecall
+File "/home/test/console/scripts/ecall.py", line 127
+except Exception as e:
+^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+File "main.py", line 11, in ?
+frpidfile /home/test/console/temp/daemon-example.pid already exist. Daemon already running?
+start daemon
+om ecall import Ecall
+File "/home/test/console/scripts/ecall.py", line 127
+except Exception as e:
+^
+SyntaxError: invalid syntax
+
+stop:172.1.128.153:PD.monprobe.2:App Not run
+('get', 'stop', '172.1.128.153', 'PD.monprobe.2')
+stop:172.1.128.153:PD.monslog.1:Done
+('get', 'stop', '172.1.128.153', 'PD.monslog.1')
+--------RTN [mon-blade03]--------
+0
+--------OUT [mon-blade03]--------
+
+--------ERR [mon-blade03]--------
+
+
+[001] stop on [ PD.monagent.1         ] SUCC
+[002] stop on [ PD.monagent.11        ] SUCC
+[003] stop on [ PD.monagent.12        ] SUCC
+[004] stop on [ PD.monagent.13        ] SUCC
+[005] stop on [ PD.monagent.14        ] SUCC
+[006] stop on [ PD.monagent.15        ] SUCC
+[007] stop on [ PD.monagent.16        ] SUCC
+[008] stop on [ PD.monagent.17        ] SUCC
+[009] stop on [ PD.monagent.18        ] SUCC
+[010] stop on [ PD.monagent.19        ] SUCC
+[011] stop on [ PD.monagent.2         ] SUCC
+[012] stop on [ PD.monagent.3         ] SUCC
+[013] stop on [ PD.monagent.30        ] FAILED
+[014] stop on [ PD.monevent.1         ] FAILED
+[015] stop on [ PD.monfibclient.1     ] SUCC
+[016] stop on [ PD.monfront.1         ] SUCC
+[017] stop on [ PD.monprobe.1         ] SUCC
+[018] stop on [ PD.monprobe.2         ] SUCC
+[019] stop on [ PD.monprobe.3         ] SUCC
+[020] stop on [ PD.monprobe.4         ] FAILED
+[021] stop on [ PD.monprobe.5         ] FAILED
+[022] stop on [ PD.monprobe.6         ] FAILED
+[023] stop on [ PD.monprobe.7         ] FAILED
+[024] stop on [ PD.monquery.1         ] FAILED
+[025] stop on [ PD.monslog.1          ] SUCC
+[026] stop on [ PD.synconfig.1        ] SUCC

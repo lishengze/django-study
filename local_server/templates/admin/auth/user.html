@@ -1,0 +1,165 @@
+<html lang="en-us">
+<head>
+	<title>选择用户进行修改| 上期技术后台管理</title>
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css">
+	<script src="/static/js/jquery-1.8.3/jquery.min.js"></script>
+	<script src="/static/js/admin/user.js"></script>
+</head>
+<body class=" app-auth model-user change-list" data-admin-utc-offset="28800">
+	<!-- Container -->
+	<div id="container">
+		<!-- Header -->
+		<div id="header">
+				<div id="branding">
+				<h1 id="site-name"><a href="/admin/">用户管理</a></h1>
+				</div>
+				<div id="user-tools">
+					欢迎,
+					<strong>{{user.name}}</strong>.
+					<a href="/">返回站点</a> /
+					<a href="/admin/password_change/">修改密码</a> /
+					<a href="/admin/logout/">退出登录</a>
+				</div>
+		</div>
+		<!-- END Header -->
+		<div class="breadcrumbs">
+			<a href="/admin/">主页</a>
+			›
+			身份认证与授权管理
+		</div>
+	    <!-- Content -->
+	    <div id="content" class="flex">
+	      <h1>选择用户</h1>
+	  		<div id="content-main">
+	        <ul class="object-tools">
+	          <li>
+	            <a href="/admin/auth/user/add/" class="addlink">
+	              添加用户
+	            </a>
+	          </li>
+	        </ul>
+	  			<div class="module filtered" id="changelist">
+						<div id="toolbar">
+							<form id="changelist-search" method="get">
+								<div><!-- DIV needed for valid HTML -->
+									<label for="searchbar"><img src="/static/admin/img/search.svg" alt="搜索"></label>
+										<input type="text" size="40" name="q" value="" id="searchbar" autofocus="">
+										<input type="submit" value="搜索">
+								</div>
+							</form>
+						</div>
+		        <div id="changelist-filter">
+		          <h2>Filter</h2>
+							<h3> By staff status </h3>
+							<ul>
+						    <li class="selected">
+						    	<a href="?">All</a></li>
+						    <li>
+						    	<a href="?is_staff__exact=1">Yes</a>
+								</li>
+						    <li>
+						    	<a href="?is_staff__exact=0">No</a>
+								</li>
+							</ul>
+							<h3> By superuser status </h3>
+							<ul>
+							    <li class="selected">
+							    <a href="?">All</a></li>
+							    <li>
+							    <a href="?is_superuser__exact=1">Yes</a></li>
+							    <li>
+							    <a href="?is_superuser__exact=0">No</a></li>
+							</ul>
+							<h3> By active </h3>
+							<ul>
+							    <li class="selected">
+							    <a href="?">All</a></li>
+							    <li>
+							    <a href="?is_active__exact=1">Yes</a></li>
+							    <li>
+							    <a href="?is_active__exact=0">No</a></li>
+							</ul>
+							<h3> By groups </h3>
+							<ul>
+							    <li class="selected">
+							    <a href="?">All</a></li>
+							    <li>
+							    <a href="?groups__id__exact=1">Test1</a></li>
+							    <li>
+							    <a href="?groups__isnull=True">-</a></li>
+							</ul>
+		        </div>
+		      	<form id="changelist-form" method="post" novalidate="">
+							<input type="hidden" name="csrfmiddlewaretoken" value="ttBDKc51syxvOzoEGM5lSszerhow1Tqniaj0U3IJwOFY86O6OSVtVUzeCnBB0tWV">
+							<div class="actions">
+							  <label>操作:
+									<select name="action" required="">
+										<option value="" selected="selected">---------</option>
+										<option value="delete_selected">删除所选的用户</option>
+									</select>
+								</label>
+								<input class="select-across" name="select_across" type="hidden" value="0">
+							    <button type="submit" class="button" title="Run the selected action" name="index" value="0">Go</button>
+							    <span class="action-counter" data-actions-icnt="1" style="display: inline;">0 of 1 selected</span>
+							</div>
+							<div class="results">
+								<table id="result_list">
+									<thead>
+										<tr>
+											<th scope="col" class="action-checkbox-column">
+										   <div class="text">
+												 <span><input type="checkbox" id="action-toggle"></span>
+											 </div>
+										   <div class="clear"></div>
+											</th>
+											<th scope="col" class="sortable column-username sorted ascending">
+									       <div class="sortoptions">
+									         <a class="sortremove" href="?o=" title="Remove from sorting"></a>
+									         <a href="?o=-1" class="toggle ascending" title="Toggle sorting"></a>
+									       </div>
+											   <div class="text"><a href="?o=-1">用户名</a></div>
+											   <div class="clear"></div>
+											</th>
+											<th scope="col" class="sortable column-email">
+											   <div class="text"><a href="?o=2.1">邮件地址</a></div>
+											   <div class="clear"></div>
+											</th>
+											<!-- <th scope="col" class="sortable column-first_name">
+											   <div class="text"><a href="?o=3.1">姓名</a></div>
+											   <div class="clear"></div>
+											</th> -->
+											<th scope="col" class="sortable column-is_staff">
+											   <div class="text"><a href="?o=5.1">用户状态</a></div>
+											   <div class="clear"></div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% for user in users %}
+										<tr class="row1">
+											<td class="action-checkbox">
+												<input class="action-select" name="_selected_action" type="checkbox" value="1">
+											</td>
+											<th class="field-username">
+												<a class='hrefJump' style="color:steelblue">{{user.name}}</a>
+											</th>
+											<td class="field-email">{{user.email}}</td>
+											<!-- <td class="field-is_staff"><img src="/static/admin/img/icon-yes.svg" alt="True"></td> -->
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+							</div>
+							<p class="paginator"> {{user_numb}} 位用户 </p>
+		      	</form>
+	    		</div>
+	  		</div>
+	      <br class="clear">
+	    </div>
+	    <!-- END Content -->
+	    <div id="footer"></div>
+	</div>
+	<!-- END Container -->
+	</body>
+</html>

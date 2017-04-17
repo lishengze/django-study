@@ -1,0 +1,110 @@
+<div  class="col-md-9" >
+  <div class="searchLeftContainer " style = 'float: left;width: 70%' >
+    <div style = 'border-bottom: 1px solid #BDBDBD;'>
+     <div id = 'object'>
+       <form class="form-horizontal" role="form">
+         <div class="form-group">
+           <label style= 'width:150px;float:left'><h4>对象选择：</h4></label>
+           <input  class="form-control" style= 'width:100px;float:left' id="inputObject" >
+         </div>
+         <div class="form-group">
+           <label class="col-md-2 " style= 'margin-left: 20px; border-left:  1px solid #BDBDBD'><h4>版本号：</h4></label>
+           <div class="col-md-2">
+             <input class="form-control" id="inputVersion" placeholder="0.0.0">
+           </div>
+         </div>
+         <div class="form-group">
+           <div class="=col-md-2">
+             <button type="button" class="btn btn-primary btn-default" id ='searchSubmit' onclick ='reqSearchResult()'>查询</button>
+           </div>
+         </div>
+       </form>
+     <div id = 'releaseResult'></div>
+     </div>
+   </div>
+    <div>result:</div>
+  </div>
+  <div class="searchRightContainer" style = 'float: right;width: 30%;height:550px;border-left: 1px solid #BDBDBD;' >版本信息(最近5次)：
+    <div style= 'border-top: 1px solid #BDBDBD;' > XML:<br>
+      <ul id = 'searchXmlContext'>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div style= 'border-top: 1px solid #BDBDBD;' > Server:<br>
+      <div id = 'searchServerContext'>
+      </div>
+    </div>
+    <div style= 'border-top: 1px solid #BDBDBD;' > Client:<br>
+      <div id = 'searchClientContext'>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('#inputObject').kendoDropDownList({
+      dataSource : ['xml','server','client']
+  })
+  $('#inputObject').change(function(){
+    var inputvalue = $(this).val()
+    if(inputvalue == 'server' || inputvalue == 'client'){
+      $('#inputVersion').attr('placeholder','0.0.0.0')
+    } else  {
+      $('#inputVersion').attr('placeholder','0.0.0')
+    }
+    // $('#inputVersion').attr({'placeholder'})
+  })
+  function reqSearchResult() {
+    var objType = $('#inputObject').val();
+    var versionName = $('#inputVersion').val();
+    var args = objType + '=' + versionName
+    console.log(args)
+    var req_data = {
+      'type': 'version_control',
+      "--cmd" : "show",
+      "--args": args
+    }
+    $.ajax({
+      url: '/AJAX/Request_Task_Rpc/',
+      data: {'req_json': JSON.stringify(req_data)},
+      dataType: 'json',
+      type: 'POST',
+      traditional: true,
+      success: function (responseJSON) {
+      console.log (responseJSON)
+      }
+    });
+
+  }
+  $.getJSON('/AJAX/Request_All_Version/', function(getData) {
+    var data1 = getData
+    console.log(data1)
+    for( p in data1) {
+      switch (p.style) {
+        case 'xml':
+          $('#searchXmlContext').append('<li>'+ data1.val + '<li>');
+          break;
+        case 'Server':
+          $('#searchServerContext').append('<li>'+ data1.val + '<li>');
+          break;
+        case 'Client':
+          $('#searchClientContext').append('<li>'+ data1.val + '<li>');
+          break;
+        default:
+      }
+    }
+    // if(p.type === 'xml'){
+    //   $('#xmlContext').append('<li>'+ data1.val + '<li>')
+    // } else if(p.type === 'Server') {
+    //   $('#serverContext').append('<li>'+ data1.val + '<li>')
+    // } else if (p.type == 'Client') {
+    //   $('#clientContext').append('<li>'+ data1.val + '<li>')
+    // } else {
+    //
+    // }
+  // var dataSource = new kendo.data.DataSource({
+  //   data: data1
+  // })
+
+})
+</script>

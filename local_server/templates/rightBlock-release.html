@@ -1,0 +1,83 @@
+<div  class="col-md-9" >
+  <div class="releaseLeftContainer " style = 'float: left;width: 70%' >
+    <div style = 'border-top: 1px solid #BDBDBD;'>
+    <div class="form-group" style = 'margin-top: 30px'>
+     <label for="exampleInputFile">最新文件压缩包：</label>
+     <input type="file" id="file">
+     <button id= 'upload' class="btn btn-primary btn-default">上传</button>
+    </div>
+    <div style = 'margin-top: 50px'> 请输入版本号（默认空代表覆盖当前最新版本）：
+    </div>
+    <input  class="form-control" style= 'margin-top: 20px;width:500px;'  placeholder="OBJ{,OBJ}*:VERSION{;OBJ{,OBJ}*:VERSION}">
+    <button style= 'margin-top: 20px' class="btn btn-primary btn-default" onclick="releaseVersion()">发布版本</button>
+   </div>
+  </div>
+  <div class="releaseRightContainer" style = 'float: right;width: 30%;height:550px;border-left: 1px solid #BDBDBD;' >
+    <div ><div style= 'font: bold 25px arial;'>版本信息(最近5次)：</div>
+      <div style= 'border-top: 1px solid #BDBDBD;' > XML:<br>
+        <ul id = 'releaseXmlContext'>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div style= 'border-top: 1px solid #BDBDBD;' > Server:<br>
+        <div id = 'releaseServerContext'>
+        </div>
+      </div>
+      <div style= 'border-top: 1px solid #BDBDBD;' > Client:<br>
+        <div id = 'releaseClientContext'>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 3px solid #BDBDBD;"><span style= 'font: bold 25px arial;'>使用说明：</span><br>1、请按照规定格式将最新的文件打包上传。<br>
+        2、待文件上传成功，请输出本次发布的版本号信息。如果不指定版本信息，将默认覆盖对象的最新版本。
+        在输入版本信息时请遵照指定的格式，规则如下：<br>
+        OBJ{,OBJ}*:VERSION{;OBJ{,OBJ}*:VERSION}*<br>
+        -- OBJ can be: [server | client | xml]<br>
+        -- VERSION like: 1.1.0  1.0.0.1 ...<br>
+        即对象和版本号之间用’:’相隔，对象之间用’,’相隔，对象后面可以不指定版本号。此外，版本号可以通过时间或序号形式来指定。
+    </div>
+  </div>
+</div>
+<script>
+  $('#upload').click(function(){
+    var Url = '/AJAX/Upload_File/';
+
+    var name = $("#file").val();
+    console.log ('name: ' + name)
+    var formData = new FormData();
+    formData.append("file",$("#file")[0].files[0]);
+    formData.append("name",name);
+
+    var file = document.getElementById('file').files[0];
+    if (file) {
+      console.log (file.size)
+    }
+    $.ajax({
+      url : Url,
+      type : 'POST',
+      cache: false,
+      data : formData,
+      processData : false,   // 告诉jQuery不要去处理发送的数据
+      contentType : false,   // 告诉jQuery不要去设置Content-Type请求头
+      dataType: 'json',
+      beforeSend:function(){
+      console.log("正在进行，请稍候");
+      },
+      success : function(responseStr) {
+        console.log (responseStr)
+      },
+      error : function(responseStr) {
+        console.log("error");
+      }
+    });
+  })
+
+
+  function releaseVersion() {
+    if(confirm('确认要发布吗？')) {
+      alert('yes!')
+    } else {
+    }
+  }
+</script>

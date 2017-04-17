@@ -1,0 +1,53 @@
+<html lang="en-us">
+  <head>
+  <title>授权管理与身份认证</title>
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css">
+  <script src="/static/js/jquery-1.8.3/jquery.min.js"></script>
+  </head>
+  <body class=" dashboard app-auth" data-admin-utc-offset="28800">
+    <!-- Container -->
+    <div id="container" style="height:100%">
+      <!-- Header -->
+      {% include './header.html' %}
+      <!-- END Header -->
+      <div class="breadcrumbs">
+        <a href="/admin/">主页</a>
+        ›
+        身份认证与授权管理
+      </div>
+      <!-- Content -->
+      <div id="content" class="colMS">
+        <h1>身份认证与授权管理</h1>
+        <div id="content-main">
+          <div class="app-auth module">
+            <table>
+              <caption>
+                  <a href="/admin/auth/" class="section"
+                  title="Models in the Authentication and Authorization application">身份认证与授权管理</a>
+              </caption>
+              <tbody>
+                <tr class="model-group">
+                  <th scope="row"><a href="/admin/auth/group/">群组</a></th>
+                  <td><a href="/admin/auth/group/add/" class="addlink">添加</a></td>
+                  <td><a href="/admin/auth/group/" class="changelink">修改</a></td>
+                </tr>
+                <tr class="model-user">
+                  <th scope="row"><a href="/admin/auth/user/">用户</a></th>
+                  <td><a href="/admin/auth/user/add/" class="addlink">添加</a></td>
+                  <td><a href="/admin/auth/user/" class="changelink">修改</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br class="clear">
+      </div>
+      <!-- END Content -->
+    </div>
+    <!-- END Container -->
+    <!-- Footer -->
+    {% include './footer.html' %}
+    <!-- END Footer -->
+  </body>
+</html>

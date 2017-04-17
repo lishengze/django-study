@@ -1,0 +1,170 @@
+{% extends "main_template/base.html" %}
+{% block title %} 上期技术监控专用版本控制系统 {% endblock %}
+
+{% block innerStyle%}
+{% endblock %}
+
+{% block innerScript %}
+<script>
+   $(document).ready(function() {
+       $("#panelbar").kendoPanelBar({
+       });
+       $("a").removeClass('k-state-selected');
+       $('#release').addClass('k-state-selected');
+
+       showOrHide();
+
+       getAllUnUpdateVersionInfo();
+
+       $('#upload').click(function(){
+         var formData = new FormData();
+         formData.append("file",$("#file_upload")[0].files[0]);
+
+         var ENV_KEY = sessionStorage.getItem('ENV_KEY');
+         var exec_time = $('#exec_time').val();
+         if (isNaN(exec_time)) {
+           console.log (exec_time)
+           exec_time = 1;
+         } else {
+           console.log ('是数字');
+         }
+         var url = '/AJAX/Update_Srv/' + ENV_KEY + '/' + exec_time;
+         console.log ('exec_time: ' + exec_time)
+         var file = document.getElementById('file_upload').files[0];
+         if (file) {
+           console.log ('fileSize: ' + file.size)
+         }
+         reqUpload(url,formData);
+       })
+
+       $('#Delete_Update_File').click(function(){
+         var req_data = {
+           'ENV_KEY': sessionStorage.getItem('ENV_KEY'),
+           'fileName': $('#unUpdateVersionInfo').val()
+         };
+         $.ajax({
+           url: '/AJAX/Delete_Update_File/',
+           data: {'req_json': JSON.stringify(req_data)},
+           dataType: 'json',
+           type: 'POST',
+           traditional: true,
+           success: function (responseJSON) {
+               console.log (responseJSON);
+               getAllUnUpdateVersionInfo();
+
+           }
+         });
+       })
+
+       $('#Release_Update').click(function(){
+         var req_data = {
+           'ENV_KEY': sessionStorage.getItem('ENV_KEY'),
+           'fileName': $('#unUpdateVersionInfo').val()
+         };
+         $.ajax({
+           url: '/AJAX/Release_Update/',
+           data: {'req_json': JSON.stringify(req_data)},
+           dataType: 'json',
+           type: 'POST',
+           traditional: true,
+           success: function (responseJSON) {
+               console.log (responseJSON);
+               getAllUnUpdateVersionInfo();
+
+           }
+         });
+       })
+
+       function reqUpload(urlValue,formData) {
+         $.ajax({
+           url : urlValue,
+           type : 'POST',
+           cache: false,
+           data : formData,
+           processData : false,   // 告诉jQuery不要去处理发送的数据
+           contentType : false,   // 告诉jQuery不要去设置Content-Type请求头
+           dataType: 'json',
+           beforeSend:function(){
+             // console.log("正在进行，请稍候");
+           },
+           success : function(responseStr) {
+             console.log (responseStr);
+             getAllUnUpdateVersionInfo();
+           },
+           error : function(responseStr) {
+             console.log("error");
+           }
+         });
+       }
+
+       function getAllUnUpdateVersionInfo() {
+         var req_data = {
+           'ENV_KEY': sessionStorage.getItem('ENV_KEY')
+         };
+         $.ajax({
+           url: '/AJAX/Get_All_UnUpdate_VersionInfo/',
+           data: {'req_json': JSON.stringify(req_data)},
+           dataType: 'json',
+           type: 'POST',
+           traditional: true,
+           success: function (responseJSON) {
+               console.log (responseJSON);
+               $('#unUpdateVersionInfo').kendoDropDownList({
+                   dataSource : responseJSON.rsp_data
+               });
+           }
+         });
+       }
+
+       function showOrHide() {
+         $('#instruction').click(function(){
+           $(this).siblings().is(':hidden') ? $(this).siblings().show():$(this).siblings().hide();
+         })
+       }
+
+       function releaseVersion() {
+         if(confirm('确认要发布吗？')) {
+           modalAlert('yes!')
+         } else {
+         }
+       }
+   });
+ </script>
+{% endblock %}
+
+{% block rightBlockContent %}
+<div  class="col-md-9" >
+  <div class="releaseLeftContainer " style = 'float: left;width: 70%' >
+    <div style="border:4px dashed gray;" class="col-md-12"  >
+      <div id ='instruction' style="font: bold 25px arial;">使用说明(点击显示/隐藏):</div>
+      <p id = 'instructionContent'><br>
+        1、请按照规定格式将最新的文件打包上传。<br>
+        2、待文件上传成功，请输出本次发布的版本号信息。如果不指定版本信息，将默认覆盖对象的最新版本。
+        在输入版本信息时请遵照指定的格式，规则如下：<br>
+        OBJ{,OBJ}*:VERSION{;OBJ{,OBJ}*:VERSION}*<br>
+        -- OBJ can be: [server | client | xml]<br>
+        -- VERSION like: 1.1.0  1.0.0.1 ...<br>
+        即对象和版本号之间用’:’相隔，对象之间用’,’相隔，对象后面可以不指定版本号。此外，版本号可以通过时间或序号形式来指定
+      </p>
+    </div>
+    <div>
+      <div class="row col-md-12" style = 'margin-top: 30px'>
+       <label for="exampleInputFile" style="float: left;margin-top: 30px">最新文件压缩包：</label>
+       <input type="file" style="float: left;margin-top: 30px" id="file_upload">
+
+      </div>
+      <div class="row col-md-12"  style = 'clear:both;margin-top: 30px'>
+        <input class="form-control" style= 'width:200px; float:left;' id="exec_time" placeholder="输入执行时间">
+        <button id= 'upload' class="btn btn-primary btn-default" style="float:left;margin-left:50px">上传到Django</button>
+      </div>
+      <div class="row col-md-12" style="margin-top: 20px">
+        <label style= 'width:120px;float:left'><h4>待发布版本:</h4></label>
+        <input  class="form-control" style= 'width:100px; float:left;padding-right:20px' id="unUpdateVersionInfo" >
+        <button id= 'Delete_Update_File' class="btn btn-primary btn-default" style="float:left'">删除待上传版本</button>
+        <button id= 'Release_Update' class="btn btn-primary btn-default" style="float:left'">发布上传版本</button>
+      </div>
+    </div>
+  </div>
+  {% include 'main_template/object-version.html' %}
+</div>
+{% endblock %}

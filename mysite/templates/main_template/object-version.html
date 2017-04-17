@@ -1,0 +1,101 @@
+<style>
+  table{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    width:300px;
+    border-collapse:collapse;
+    text-align:center;
+    margin-bottom: 5px;
+  }
+  th,td {
+    padding: 0.2em 1em;
+  }
+</style>
+
+<div class="rightContainer"  style = 'float: right;width: 25%;height:550px;border-left: 1px solid #BDBDBD;'>
+  <div>
+    <div style = 'border-bottom: 1px solid #BDBDBD;'>版本信息(最近5次)：</div>
+    <div style= '' > XML:<br>
+      <table border="1"  class = 'xmlContext' >
+      </table>
+    </div>
+    <div style= ''> Server:<br>
+      <table border="1"  class = 'serverContext' >
+      </table>
+    </div>
+    <div style= '' > Client:<br>
+      <table class = 'clientContext'>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  var allVersionData = null;
+  var xmlCount = 0;
+  var serverCount = 0;
+  var clientCount = 0;
+  var req_data = {
+    'ENV_KEY':sessionStorage.getItem('ENV_KEY')
+  }
+  $.ajax({
+    url: '/AJAX/Request_All_Version/',
+    data: {'req_json': JSON.stringify(req_data)},
+    dataType: 'json',
+    type: 'POST',
+    async: false, // 将ajax 改成同步的
+    traditional: true,
+    success: function (getData) {
+        console.log (getData);
+        if (getData.status === 0) {
+          alert('获取版本信息失败');
+        }
+
+        var data1 = getData.rsp_data;
+        allVersionData = data1;
+        var xmlContext = ''
+        var serverContext = ''
+        var clientContext = ''
+        var title = '<tr style = "background-color:#A7C942"><td>version</td><td>datetime</td></tr>'
+        for(var i = 0; i < data1.length; i++) {
+          if(data1[i].object == 'xml' && xmlCount< 5) {
+              if(xmlCount == 0){
+               xmlContext = title;
+              }
+              xmlContext += statusJudge(data1[i])
+              xmlCount++;
+
+            } else if(data1[i].object == 'server' && serverCount< 5){
+              if(serverCount == 0){
+                serverContext = title;
+              }
+              serverContext += statusJudge(data1[i]);
+              serverCount ++;
+            } else if(data1[i].object == 'client' && clientCount< 5){
+              if(clientCount == 0) {
+                clientContext = title;
+              }
+              clientContext += statusJudge(data1[i])
+              clientCount ++;
+            }
+          }
+          $('.xmlContext').append(xmlContext );
+          $('.serverContext').append(serverContext );
+          $('.clientContext').append(clientContext )
+    }
+  });
+
+  function statusJudge(data) {
+    var text = ''
+    if(data.status == 'C') {
+      text +='<tr style ="background-color:#0066ff;margin:110px;"><td>'+ data.version + '</td>';
+      text +='<td>'+ data.datetime + '</td></tr>';
+    } else if(data.status == 'D'){
+      text +='<tr style ="background-color:gray;margin:110px;"><td>'+ data.version + '</td>';
+      text +='<td>'+ data.datetime + '</td></tr>';
+    } else if(data.status == 'H'){
+      text +='<tr style ="background-color:#6699FF;margin:110px;"><td>'+ data.version + '</td>';
+      text +='<td>'+ data.datetime + '</td></tr>';
+    }
+    return text;
+  }
+</script>

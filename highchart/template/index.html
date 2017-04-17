@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title> Django Server Test </title>
+    
+    <!-- highcharts 插件脚本 -->
+    <script src="src/jquery.min.js/"></script>
+    <script src="src/highcharts.js/"></script>
+    <script src="src/data.js/"></script>
+    <script src="src/drilldown.js/"></script>
+
+    <!-- 绘图脚本 <--> 
+    <script src="/chart.js/"></script>   
+    
+</head>
+<body>
+    <div id = 'Test Communication'>
+        <h1> Hello World! </h1>
+        <div id="CplusAndNodejs"></div>
+    </div>
+
+	<input type="button" id="dict" value="Ajax 加载字典">
+	<p id="dict_result"></p>
+
+	<script>
+      // 字典 dict
+      $('#dict').click(function(){
+          $.getJSON('/ajax_dict/',function(ret){
+              //返回值 ret 在这里是一个字典
+              console.log (ret)
+              $('#dict_result').append(ret.twz + '<br>');
+              // 也可以用 ret['twz']
+          })
+      })		
+	</script>
+</body>

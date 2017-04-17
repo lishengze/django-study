@@ -1,0 +1,2009 @@
+Dump pidfile [/home/test/console/temp/daemon_main.pid] [2563]
+Daemon pid [2563] start
+srv_status_map
+{}
+ScanTaskList at 1481524249 Length of TaskList is [0]
+ScanTaskList at 1481524249 Length of TaskList is [0]
+ScanTaskList at 1481524250 Length of TaskList is [0]
+ScanTaskList at 1481524250 Length of TaskList is [0]
+ScanTaskList at 1481524251 Length of TaskList is [0]
+ScanTaskList at 1481524251 Length of TaskList is [0]
+ScanTaskList at 1481524252 Length of TaskList is [0]
+ScanTaskList at 1481524252 Length of TaskList is [0]
+ScanTaskList at 1481524253 Length of TaskList is [0]
+('Accept connection from ', ('172.1.128.170', 49754))
+buf:[[HEAD][NTF]148152425301824
+[TASK]148152425301824::1::1481524253::0::1824::show::--cmd show --ctr PD
+]
+get {[NTF]148152425301824}{[TASK]148152425301824::1::1481524253::0::1824::show::--cmd show --ctr PD
+} from getHeadInfo
+get {148152425301824::1::1481524253::0::1824::show::--cmd show --ctr PD}{} from getTaskInfo
+-------------------------------Task list---------------------------------
+[1] 148152425301824 [1] --cmd show --ctr PD
+
+-------------------------------------------------------------------------
+Total [1] tasks, R/S/E = [1/0/0]
+
+before add 0
+<taskinfo.TaskInfo instance at 0xbe17a0>
+after  add 1
+ScanTaskList at 1481524253 Length of TaskList is [1]
+process[2563] doTask start at 1481524253.7
+cmdline[python main.py --tid 148152425301824 --cmd show --ctr PD]
+('Accept connection from ', ('172.1.128.170', 49755))
+buf:[[HEAD][NTF]148152425302571
+[TASK]148152425301824::2::1481524253::0::2571::show::--cmd show --tid 148152425301824 --ctr PD
+]
+get {[NTF]148152425302571}{[TASK]148152425301824::2::1481524253::0::2571::show::--cmd show --tid 148152425301824 --ctr PD
+} from getHeadInfo
+get {148152425301824::2::1481524253::0::2571::show::--cmd show --tid 148152425301824 --ctr PD}{} from getTaskInfo
+-------------------------------Task list---------------------------------
+[1] 148152425301824 [2] --cmd show --tid 148152425301824 --ctr PD
+
+-------------------------------------------------------------------------
+Total [1] tasks, R/S/E = [0/1/0]
+
+ScanTaskList at 1481524254 Length of TaskList is [0]
+ScanTaskList at 1481524254 Length of TaskList is [0]
+ScanTaskList at 1481524255 Length of TaskList is [0]
+ScanTaskList at 1481524255 Length of TaskList is [0]
+ScanTaskList at 1481524256 Length of TaskList is [0]
+ScanTaskList at 1481524256 Length of TaskList is [0]
+ScanTaskList at 1481524257 Length of TaskList is [0]
+ScanTaskList at 1481524257 Length of TaskList is [0]
+ScanTaskList at 1481524258 Length of TaskList is [0]
+ScanTaskList at 1481524258 Length of TaskList is [0]
+ScanTaskList at 1481524259 Length of TaskList is [0]
+ScanTaskList at 1481524259 Length of TaskList is [0]
+ScanTaskList at 1481524260 Length of TaskList is [0]
+ScanTaskList at 1481524260 Length of TaskList is [0]
+ScanTaskList at 1481524261 Length of TaskList is [0]
+ScanTaskList at 1481524261 Length of TaskList is [0]
+ScanTaskList at 1481524262 Length of TaskList is [0]
+ScanTaskList at 1481524262 Length of TaskList is [0]
+ScanTaskList at 1481524263 Length of TaskList is [0]
+ScanTaskList at 1481524263 Length of TaskList is [0]
+ScanTaskList at 1481524264 Length of TaskList is [0]
+ScanTaskList at 1481524264 Length of TaskList is [0]
+ScanTaskList at 1481524265 Length of TaskList is [0]
+ScanTaskList at 1481524265 Length of TaskList is [0]
+ScanTaskList at 1481524266 Length of TaskList is [0]
+ScanTaskList at 1481524266 Length of TaskList is [0]
+ScanTaskList at 1481524267 Length of TaskList is [0]
+ScanTaskList at 1481524267 Length of TaskList is [0]
+ScanTaskList at 1481524268 Length of TaskList is [0]
+ScanTaskList at 1481524268 Length of TaskList is [0]
+ScanTaskList at 1481524269 Length of TaskList is [0]
+ScanTaskList at 1481524269 Length of TaskList is [0]
+ScanTaskList at 1481524270 Length of TaskList is [0]
+ScanTaskList at 1481524270 Length of TaskList is [0]
+ScanTaskList at 1481524271 Length of TaskList is [0]
+ScanTaskList at 1481524271 Length of TaskList is [0]
+ScanTaskList at 1481524272 Length of TaskList is [0]
+ScanTaskList at 1481524272 Length of TaskList is [0]
+ScanTaskList at 1481524273 Length of TaskList is [0]
+ScanTaskList at 1481524273 Length of TaskList is [0]
+('Accept connection from ', ('172.1.128.170', 49762))
+buf:[[HEAD][NTF]148152427302571
+[TASK]148152425301824::3::1481524273::0::2571::show::--cmd show --tid 148152425301824 --ctr PD
+[RESULT]<<<
+show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found
+[RESULT]>>>
+]
+get {[NTF]148152427302571}{[TASK]148152425301824::3::1481524273::0::2571::show::--cmd show --tid 148152425301824 --ctr PD
+[RESULT]<<<
+show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found
+[RESULT]>>>
+} from getHeadInfo
+get {148152425301824::3::1481524273::0::2571::show::--cmd show --tid 148152425301824 --ctr PD}{[RESULT]<<<
+show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found
+[RESULT]>>>
+} from getTaskInfo
+-------------------------------Task list---------------------------------
+[1] 148152425301824 [3] --cmd show --tid 148152425301824 --ctr PD
+
+-------------------------------------------------------------------------
+Total [1] tasks, R/S/E = [0/0/1]
+
+SET:PD.monagent.1 3 1481524273
+LEN(srv_status_map):[1]
+SET:PD.monagent.2 3 1481524273
+LEN(srv_status_map):[2]
+SET:PD.monagent.3 3 1481524273
+LEN(srv_status_map):[3]
+SET:PD.monprobe.2 3 1481524273
+LEN(srv_status_map):[4]
+SET:PD.monslog.1 2 1481524273
+LEN(srv_status_map):[5]
+SET:PD.monprobe.1 3 1481524273
+LEN(srv_status_map):[6]
+SET:PD.monagent.11 3 1481524273
+LEN(srv_status_map):[7]
+SET:PD.monagent.12 3 1481524273
+LEN(srv_status_map):[8]
+SET:PD.monagent.13 3 1481524273
+LEN(srv_status_map):[9]
+SET:PD.monagent.14 3 1481524273
+LEN(srv_status_map):[10]
+SET:PD.monagent.15 3 1481524273
+LEN(srv_status_map):[11]
+SET:PD.monagent.16 3 1481524273
+LEN(srv_status_map):[12]
+SET:PD.monagent.17 3 1481524273
+LEN(srv_status_map):[13]
+SET:PD.monagent.18 3 1481524273
+LEN(srv_status_map):[14]
+SET:PD.monagent.19 3 1481524273
+LEN(srv_status_map):[15]
+SET:PD.synconfig.1 1 1481524273
+LEN(srv_status_map):[16]
+-------------------------------Srv list---------------------------------
+[1] PD.monagent.1 3 0    1481524273
+
+[2] PD.monagent.11 3 0    1481524273
+
+[3] PD.monagent.12 3 0    1481524273
+
+[4] PD.monagent.13 3 0    1481524273
+
+[5] PD.monagent.14 3 0    1481524273
+
+[6] PD.monagent.15 3 0    1481524273
+
+[7] PD.monagent.16 3 0    1481524273
+
+[8] PD.monagent.17 3 0    1481524273
+
+[9] PD.monagent.18 3 0    1481524273
+
+[10] PD.monagent.19 3 0    1481524273
+
+[11] PD.monagent.2 3 0    1481524273
+
+[12] PD.monagent.3 3 0    1481524273
+
+[13] PD.monprobe.1 3 0    1481524273
+
+[14] PD.monprobe.2 3 0    1481524273
+
+[15] PD.monslog.1 2 16831 172.1.128.153 Dec05 ./monslog 1 1481524273
+
+[16] PD.synconfig.1 1 0    1481524273
+
+-------------------------------------------------------------------------
+Total [16] SRVs, UN/UD/R/S = [0/1/1/14]
+
+get {show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found}{
+} from getTaskResult
+start daemon
+Daemon pid [2563] run
+option[CMD]=show
+---
+DataCenter=PD;
+---
+
+---
+AllServices
+PD.snmpmanager.1	PD		snmpmanager		1		1	
+PD.monprobe.1	PD		monprobe		1		1	
+PD.monprobe.2	PD		monprobe		2		2	
+PD.monprobe.3	PD		monprobe		3		3	
+PD.monprobe.4	PD		monprobe		4		4	
+PD.monprobe.5	PD		monprobe		5		5	
+PD.monprobe.6	PD		monprobe		6		6	
+PD.monprobe.7	PD		monprobe		7		7	
+PD.monprobe.8	PD		monprobe		8		8	
+PD.monprobe.9	PD		monprobe		9		9	
+PD.monprobe.10	PD		monprobe		10		10	
+PD.monprobe.12	PD		monprobe		12		12	
+PD.monprobe.13	PD		monprobe		13		13	
+PD.monprobe.14	PD		monprobe		14		14	
+PD.monprobe.15	PD		monprobe		15		15	
+PD.monprobe.16	PD		monprobe		16		16	
+PD.monprobe.17	PD		monprobe		17		17	
+PD.monagent.1	PD		monagent		1		1	
+PD.monagent.2	PD		monagent		2		2	
+PD.monagent.3	PD		monagent		3		3	
+PD.monagent.11	PD		monagent		11		11	
+PD.monagent.12	PD		monagent		12		12	
+PD.monagent.13	PD		monagent		13		13	
+PD.monagent.14	PD		monagent		14		14	
+PD.monagent.15	PD		monagent		15		15	
+PD.monagent.16	PD		monagent		16		16	
+PD.monagent.17	PD		monagent		17		17	
+PD.monagent.18	PD		monagent		18		18	
+PD.monagent.19	PD		monagent		19		19	
+PD.monagent.30	PD		monagent		30		30	
+PD.monevent.1	PD		monevent		1		1	
+PD.monfibclient.1	PD		monfibclient		1		1		off	
+PD.synconfig.1	PD		synconfig		1		1	
+PD.monquery.1	PD		monquery		1		1		off	
+PD.monslog.1	PD		monslog		1		1	
+PD.monfront.1	PD		monfront		1		1	
+PD.monfront.1	PD		monfront		1		172.1.128.151	
+PD.monfront.2	PD		monfront		2		172.1.128.151	
+PD.synconfig.1	PD		synconfig		1		172.1.128.151	
+PD.monquery.1	PD		monquery		1		172.1.128.152	
+PD.monslog.1	PD		monslog		1		172.1.128.153	
+PD.monfibclient.1	PD		monfibclient		1		172.1.128.154	
+PD.monevent.1	PD		monevent		1		172.1.128.155	
+PD.monagent.1	PD		monagent		1		172.1.128.170	
+PD.monagent.2	PD		monagent		2		172.1.128.170	
+PD.monagent.3	PD		monagent		3		172.1.128.170	
+PD.monagent.11	PD		monagent		11		172.1.128.151	
+PD.monagent.12	PD		monagent		12		172.1.128.151	
+PD.monagent.13	PD		monagent		13		172.1.128.151	
+PD.monagent.14	PD		monagent		14		172.1.128.151	
+PD.monagent.15	PD		monagent		15		172.1.128.151	
+PD.monagent.16	PD		monagent		16		172.1.128.151	
+PD.monagent.17	PD		monagent		17		172.1.128.151	
+PD.monagent.18	PD		monagent		18		172.1.128.151	
+PD.monagent.19	PD		monagent		19		172.1.128.151	
+PD.monprobe.1	PD		monprobe		1		172.1.128.151	
+PD.monagent.30	PD		monagent		30		172.1.128.152	
+PD.monprobe.2	PD		monprobe		2		172.1.128.153	
+PD.monprobe.3	PD		monprobe		3		172.1.128.154	
+PD.monprobe.4	PD		monprobe		4		172.1.128.155	
+PD.monprobe.5	PD		monprobe		5		172.1.128.156	
+PD.monprobe.6	PD		monprobe		6		172.1.128.157	
+PD.monprobe.7	PD		monprobe		7		172.1.128.158	
+-----start-----
+['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t1\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t11\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t12\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t13\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t14\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t15\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t16\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t17\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t18\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t19\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t2\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t3\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t30\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t1\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t1\t\toff\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t1\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t1\t', 'PD.monprobe.10\tPD\t\tmonprobe\t\t10\t\t10\t', 'PD.monprobe.12\tPD\t\tmonprobe\t\t12\t\t12\t', 'PD.monprobe.13\tPD\t\tmonprobe\t\t13\t\t13\t', 'PD.monprobe.14\tPD\t\tmonprobe\t\t14\t\t14\t', 'PD.monprobe.15\tPD\t\tmonprobe\t\t15\t\t15\t', 'PD.monprobe.16\tPD\t\tmonprobe\t\t16\t\t16\t', 'PD.monprobe.17\tPD\t\tmonprobe\t\t17\t\t17\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t2\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t3\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t4\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t5\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t6\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t7\t', 'PD.monprobe.8\tPD\t\tmonprobe\t\t8\t\t8\t', 'PD.monprobe.9\tPD\t\tmonprobe\t\t9\t\t9\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t1\t\toff\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t1\t', 'PD.snmpmanager.1\tPD\t\tsnmpmanager\t\t1\t\t1\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t1\t']
+-----service-----
+['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t172.1.128.170\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t172.1.128.151\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t172.1.128.151\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t172.1.128.151\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t172.1.128.151\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t172.1.128.151\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t172.1.128.151\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t172.1.128.151\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t172.1.128.151\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t172.1.128.151\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t172.1.128.170\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t172.1.128.170\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t172.1.128.152\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t172.1.128.155\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t172.1.128.154\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t172.1.128.151\t', 'PD.monfront.2\tPD\t\tmonfront\t\t2\t\t172.1.128.151\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t172.1.128.151\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t172.1.128.153\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t172.1.128.154\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t172.1.128.155\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t172.1.128.156\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t172.1.128.157\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t172.1.128.158\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t172.1.128.152\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t172.1.128.153\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t172.1.128.151\t']
+iprelay_map:
+{'172.1.128.157': ['172.1.128.151'], '172.1.128.156': ['172.1.128.151'], '172.1.128.158': ['172.1.128.151'], '172.1.128.160': ['172.1.128.154'], '172.1.128.161': ['172.1.128.154'], '172.1.128.162': ['172.1.128.154'], '172.1.128.163': ['172.1.128.154']}
+ipsub_map:
+{'172.1.128.154': set(['172.1.128.160', '172.1.128.161', '172.1.128.162', '172.1.128.163']), '172.1.128.151': set(['172.1.128.157', '172.1.128.156', '172.1.128.158'])}
+work request #37979776 added.
+work request #37981576 added.
+work request #37983440 added.
+ SSH to 172.1.128.155 start
+work request #37985312 added.
+SSH to 172.1.128.154 startwork request #37987464 added.
+work request #37989264 added.
+
+SSH to 172.1.128.170 start
+ SSH to 172.1.128.151 start
+SSH to 172.1.128.153 start
+ SSH to 172.1.128.152 startProcessing:0.00%
+Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%IP:[172.1.128.155]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.155', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IP:[172.1.128.153]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD'IP:[172.1.128.152]  FLAG_SSH = 1, '3', '3'
+)SSH to 172.1.128.152 end]
+}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153'@@@@@@@ mon-console Send file opt_map.2571.1 to 172.1.128.155
+IP:[172.1.128.151]  FLAG_SSH = 1
+: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+{Update opts with:'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.153', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.151', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': [''], '172.1.128.157': [''], '172.1.128.156': [''], '172.1.128.158': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IP:[172.1.128.154]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD'1, 'files_map': {}, , '1', '1')]'ipnext_map', : 'monprobe'{'': [('PD', '1', '1')], : 'synconfig'[: ''[('PD', '1', '1'])]}}, 'monagent': 
+[@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.154', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-console Send file opt_map.2571.4 to 172.1.128.151
+@@@@@@@ mon-console Send file opt_map.2571.5 to 172.1.128.153
+@@@@@@@ mon-console Send file opt_map.2571.2 to 172.1.128.154
+Processing:0.00%IP:[172.1.128.170]  FLAG_SSH = 1
+IP [172.1.128.170] is localhost
+Try to combine ipnext_map with keys ['172.1.128.170'] and ['']
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'172.1.128.155': [''], '172.1.128.154': [''], '172.1.128.170': [''], '172.1.128.151': ['172.1.128.157', '', '172.1.128.158', '172.1.128.156'], '172.1.128.153': [''], '172.1.128.152': ['']}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.170', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Thread-6
+Processing:0.00%Processing:0.00%SSH to 172.1.128.155 end
+Thread-3
+Processing:0.00%SSH to 172.1.128.170 end
+Thread-2
+SSH to 172.1.128.154 end
+Thread-4
+SSH to 172.1.128.153 end
+Thread-5
+Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%SSH to 172.1.128.151 end
+Thread-1
+Processing:100.00%
+++++++++++++++++++OUT++++++++++++++++++
+mon-blade05 python version[2.4.3] is too old!
+show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+execLocal at: 172.1.128.170;2617
+opt_map in EXECLOCAL at 172.1.128.170
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.170', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.170] [show] [showCmd] PD.monagent.1 [1]
+ip[172.1.128.170] [show] [showCmd] PD.monagent.2 [2]
+ip[172.1.128.170] [show] [showCmd] PD.monagent.3 [3]
+--------RTN [mon-console]--------
+0
+--------OUT [mon-console]--------
+
+--------ERR [mon-console]--------
+
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1 
+execLocal at: 172.1.128.153;3060
+opt_map in EXECLOCAL at 172.1.128.153
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.153', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.153] [show] [showCmd] PD.monprobe.2 [2]
+ip[172.1.128.153] [show] [showCmd] PD.monslog.1 [1]
+--------RTN [mon-blade03]--------
+0
+--------OUT [mon-blade03]--------
+
+--------ERR [mon-blade03]--------
+
+work request #46915200486720 added.
+work request #46915200508992 added.
+work request #46915200510648 added.
+SSH to 172.1.128.157 start
+SSH to 172.1.128.156 start
+ SSH to 172.1.128.158 start
+Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%IP:[172.1.128.157]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.157', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27394.1 to 172.1.128.157
+IP:[172.1.128.158]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.158', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27394.3 to 172.1.128.158
+Processing:0.00%IP:[172.1.128.156]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.156', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27394.2 to 172.1.128.156
+Processing:0.00%Processing:0.00%SSH to 172.1.128.157 end
+Thread-2
+SSH to 172.1.128.158 end
+Thread-1
+SSH to 172.1.128.156 end
+Thread-3
+Processing:100.00%show::172.1.128.151::PD.monfront.1::App Not run
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found
+
+execLocal at: 172.1.128.151;27394
+opt_map in EXECLOCAL at 172.1.128.151
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.151', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': [''], '172.1.128.157': [''], '172.1.128.156': [''], '172.1.128.158': ['']}}
+ip[172.1.128.151] [show] [showCmd] PD.monfront.1 [1]
+ip[172.1.128.151] [show] [showCmd] PD.monprobe.1 [1]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.11 [11]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.12 [12]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.13 [13]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.14 [14]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.15 [15]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.16 [16]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.17 [17]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.18 [18]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.19 [19]
+ip[172.1.128.151] [show] [showCmd] PD.synconfig.1 [1]
+--------RTN [mon-blade01]--------
+0
+--------OUT [mon-blade01]--------
+mon-blade07 python version[2.4.3] is too old!
+mon-blade08 python version[2.4.3] is too old!
+mon-blade06 python version[2.4.3] is too old!
+
+--------ERR [mon-blade01]--------
+
+
+++++++++++++++++++OUT++++++++++++++++++
+mon-blade05 python version[2.4.3] is too old!
+show::172.1.128.170::PD.monagent.1::App Not run
+('get', 'show', '172.1.128.170', 'PD.monagent.1')
+show::172.1.128.170::PD.monagent.2::App Not run
+('get', 'show', '172.1.128.170', 'PD.monagent.2')
+show::172.1.128.170::PD.monagent.3::App Not run
+('get', 'show', '172.1.128.170', 'PD.monagent.3')
+execLocal at: 172.1.128.170;2617
+opt_map in EXECLOCAL at 172.1.128.170
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.170', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.170] [show] [showCmd] PD.monagent.1 [1]
+ip[172.1.128.170] [show] [showCmd] PD.monagent.2 [2]
+ip[172.1.128.170] [show] [showCmd] PD.monagent.3 [3]
+--------RTN [mon-console]--------
+0
+--------OUT [mon-console]--------
+
+--------ERR [mon-console]--------
+
+show::172.1.128.153::PD.monprobe.2::App Not run
+('get', 'show', '172.1.128.153', 'PD.monprobe.2')
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+('get', 'show', '172.1.128.153', 'PD.monslog.1')
+execLocal at: 172.1.128.153;3060
+opt_map in EXECLOCAL at 172.1.128.153
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.153', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.153] [show] [showCmd] PD.monprobe.2 [2]
+ip[172.1.128.153] [show] [showCmd] PD.monslog.1 [1]
+--------RTN [mon-blade03]--------
+0
+--------OUT [mon-blade03]--------
+
+--------ERR [mon-blade03]--------
+
+work request #46915200486720 added.
+work request #46915200508992 added.
+work request #46915200510648 added.
+SSH to 172.1.128.157 start
+SSH to 172.1.128.156 start
+SSH to 172.1.128.158 start
+
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%IP:[172.1.128.157]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.157', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27394.1 to 172.1.128.157
+IP:[172.1.128.158]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.158', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27394.3 to 172.1.128.158
+
+Processing:0.00%IP:[172.1.128.156]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.156', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27394.2 to 172.1.128.156
+
+Processing:0.00%
+Processing:0.00%SSH to 172.1.128.157 end
+Thread-2
+SSH to 172.1.128.158 end
+Thread-1
+SSH to 172.1.128.156 end
+Thread-3
+
+Processing:100.00%show::172.1.128.151::PD.monfront.1::App Not run
+show::172.1.128.151::PD.monprobe.1::App Not run
+('get', 'show', '172.1.128.151', 'PD.monprobe.1')
+show::172.1.128.151::PD.monagent.11::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.11')
+show::172.1.128.151::PD.monagent.12::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.12')
+show::172.1.128.151::PD.monagent.13::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.13')
+show::172.1.128.151::PD.monagent.14::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.14')
+show::172.1.128.151::PD.monagent.15::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.15')
+show::172.1.128.151::PD.monagent.16::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.16')
+show::172.1.128.151::PD.monagent.17::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.17')
+show::172.1.128.151::PD.monagent.18::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.18')
+show::172.1.128.151::PD.monagent.19::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.19')
+show::172.1.128.151::PD.synconfig.1::Path Not found
+('get', 'show', '172.1.128.151', 'PD.synconfig.1')
+
+execLocal at: 172.1.128.151;27394
+opt_map in EXECLOCAL at 172.1.128.151
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.151', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': [''], '172.1.128.157': [''], '172.1.128.156': [''], '172.1.128.158': ['']}}
+ip[172.1.128.151] [show] [showCmd] PD.monfront.1 [1]
+ip[172.1.128.151] [show] [showCmd] PD.monprobe.1 [1]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.11 [11]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.12 [12]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.13 [13]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.14 [14]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.15 [15]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.16 [16]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.17 [17]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.18 [start daemon
+Daemon pid [2563] run
+18]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.19 [19]
+ip[172.1.128.151] [show] [showCmd] PD.synconfig.1 [1]
+--------RTN [mon-blade01]--------
+0
+--------OUT [mon-blade01]--------
+mon-blade07 python version[2.4.3] is too old!
+mon-blade08 python version[2.4.3] is too old!
+mon-blade06 python version[2.4.3] is too old!
+
+--------ERR [mon-blade01]--------
+
+
+[001] show for [ PD.monagent.1         ] SUCC
+[002] show for [ PD.monagent.11        ] SUCC
+[003] show for [ PD.monagent.12        ] SUCC
+[004] show for [ PD.monagent.13        ] SUCC
+[005] show for [ PD.monagent.14        ] SUCC
+[006] show for [ PD.monagent.15        ] SUCC
+[007] show for [ PD.monagent.16        ] SUCC
+[008] show for [ PD.monagent.17        ] SUCC
+[009] show for [ PD.monagent.18        ] SUCC
+[010] show for [ PD.monagent.19        ] SUCC
+[011] show for [ PD.monagent.2         ] SUCC
+[012] show for [ PD.monagent.3         ] SUCC
+[013] show for [ PD.monagent.30        ] FAILED
+[014] show for [ PD.monevent.1         ] FAILED
+[015] show for [ PD.monfibclient.1     ] FAILED
+[016] show for [ PD.monfront.1         ] FAILED
+[017] show for [ PD.monprobe.1         ] SUCC
+[018] show for [ PD.monprobe.2         ] SUCC
+[019] show for [ PD.monprobe.3         ] FAILED
+[020] show for [ PD.monprobe.4         ] FAILED
+[021] show for [ PD.monprobe.5         ] FAILED
+[022] show for [ PD.monprobe.6         ] FAILED
+[023] show for [ PD.monprobe.7         ] FAILED
+[024] show for [ PD.monquery.1         ] FAILED
+[025] show for [ PD.monslog.1          ] SUCC
+[026] show for [ PD.synconfig.1        ] SUCC
+
+LINE:['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t1\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t11\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t12\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t13\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t14\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t15\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t16\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t17\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t18\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t19\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t2\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t3\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t30\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t1\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t1\t\toff\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t1\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t1\t', 'PD.monprobe.10\tPD\t\tmonprobe\t\t10\t\t10\t', 'PD.monprobe.12\tPD\t\tmonprobe\t\t12\t\t12\t', 'PD.monprobe.13\tPD\t\tmonprobe\t\t13\t\t13\t', 'PD.monprobe.14\tPD\t\tmonprobe\t\t14\t\t14\t', 'PD.monprobe.15\tPD\t\tmonprobe\t\t15\t\t15\t', 'PD.monprobe.16\tPD\t\tmonprobe\t\t16\t\t16\t', 'PD.monprobe.17\tPD\t\tmonprobe\t\t17\t\t17\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t2\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t3\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t4\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t5\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t6\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t7\t', 'PD.monprobe.8\tPD\t\tmonprobe\t\t8\t\t8\t', 'PD.monprobe.9\tPD\t\tmonprobe\t\t9\t\t9\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t1\t\toff\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t1\t', 'PD.snmpmanager.1\tPD\t\tsnmpmanager\t\t1\t\t1\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t1\t']
+LINE:['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t172.1.128.170\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t172.1.128.151\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t172.1.128.151\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t172.1.128.151\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t172.1.128.151\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t172.1.128.151\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t172.1.128.151\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t172.1.128.151\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t172.1.128.151\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t172.1.128.151\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t172.1.128.170\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t172.1.128.170\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t172.1.128.152\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t172.1.128.155\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t172.1.128.154\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t172.1.128.151\t', 'PD.monfront.2\tPD\t\tmonfront\t\t2\t\t172.1.128.151\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t172.1.128.151\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t172.1.128.153\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t172.1.128.154\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t172.1.128.155\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t172.1.128.156\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t172.1.128.157\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t172.1.128.158\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t172.1.128.152\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t172.1.128.153\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t172.1.128.151\t']
+LINE:[@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+LINE:[001] show for [ PD.monagent.1         ] SUCC
+SRV[PD.monagent.1] STATUS[SUCC]
+LINE:[002] show for [ PD.monagent.11        ] SUCC
+SRV[PD.monagent.11] STATUS[SUCC]
+LINE:[003] show for [ PD.monagent.12        ] SUCC
+SRV[PD.monagent.12] STATUS[SUCC]
+LINE:[004] show for [ PD.monagent.13        ] SUCC
+SRV[PD.monagent.13] STATUS[SUCC]
+LINE:[005] show for [ PD.monagent.14        ] SUCC
+SRV[PD.monagent.14] STATUS[SUCC]
+LINE:[006] show for [ PD.monagent.15        ] SUCC
+SRV[PD.monagent.15] STATUS[SUCC]
+LINE:[007] show for [ PD.monagent.16        ] SUCC
+SRV[PD.monagent.16] STATUS[SUCC]
+LINE:[008] show for [ PD.monagent.17        ] SUCC
+SRV[PD.monagent.17] STATUS[SUCC]
+LINE:[009] show for [ PD.monagent.18        ] SUCC
+SRV[PD.monagent.18] STATUS[SUCC]
+LINE:[010] show for [ PD.monagent.19        ] SUCC
+SRV[PD.monagent.19] STATUS[SUCC]
+LINE:[011] show for [ PD.monagent.2         ] SUCC
+SRV[PD.monagent.2] STATUS[SUCC]
+LINE:[012] show for [ PD.monagent.3         ] SUCC
+SRV[PD.monagent.3] STATUS[SUCC]
+LINE:[013] show for [ PD.monagent.30        ] FAILED
+SRV[PD.monagent.30] STATUS[FAILED]
+SET:PD.monagent.30 0 1481524274
+LEN(srv_status_map):[17]
+LINE:[014] show for [ PD.monevent.1         ] FAILED
+SRV[PD.monevent.1] STATUS[FAILED]
+SET:PD.monevent.1 0 1481524274
+LEN(srv_status_map):[18]
+LINE:[015] show for [ PD.monfibclient.1     ] FAILED
+SRV[PD.monfibclient.1] STATUS[FAILED]
+SET:PD.monfibclient.1 0 1481524274
+LEN(srv_status_map):[19]
+LINE:[016] show for [ PD.monfront.1         ] FAILED
+SRV[PD.monfront.1] STATUS[FAILED]
+SET:PD.monfront.1 0 1481524274
+LEN(srv_status_map):[20]
+LINE:[017] show for [ PD.monprobe.1         ] SUCC
+SRV[PD.monprobe.1] STATUS[SUCC]
+LINE:[018] show for [ PD.monprobe.2         ] SUCC
+SRV[PD.monprobe.2] STATUS[SUCC]
+LINE:[019] show for [ PD.monprobe.3         ] FAILED
+SRV[PD.monprobe.3] STATUS[FAILED]
+SET:PD.monprobe.3 0 1481524274
+LEN(srv_status_map):[21]
+LINE:[020] show for [ PD.monprobe.4         ] FAILED
+SRV[PD.monprobe.4] STATUS[FAILED]
+SET:PD.monprobe.4 0 1481524274
+LEN(srv_status_map):[22]
+LINE:[021] show for [ PD.monprobe.5         ] FAILED
+SRV[PD.monprobe.5] STATUS[FAILED]
+SET:PD.monprobe.5 0 1481524274
+LEN(srv_status_map):[23]
+LINE:[022] show for [ PD.monprobe.6         ] FAILED
+SRV[PD.monprobe.6] STATUS[FAILED]
+SET:PD.monprobe.6 0 1481524274
+LEN(srv_status_map):[24]
+LINE:[023] show for [ PD.monprobe.7         ] FAILED
+SRV[PD.monprobe.7] STATUS[FAILED]
+SET:PD.monprobe.7 0 1481524274
+LEN(srv_status_map):[25]
+LINE:[024] show for [ PD.monquery.1         ] FAILED
+SRV[PD.monquery.1] STATUS[FAILED]
+SET:PD.monquery.1 0 1481524274
+LEN(srv_status_map):[26]
+LINE:[025] show for [ PD.monslog.1          ] SUCC
+SRV[PD.monslog.1] STATUS[SUCC]
+LINE:[026] show for [ PD.synconfig.1        ] SUCC
+SRV[PD.synconfig.1] STATUS[SUCC]
+-------------------------------Srv list---------------------------------
+[1] PD.monagent.1 3 0    1481524273
+
+[2] PD.monagent.11 3 0    1481524273
+
+[3] PD.monagent.12 3 0    1481524273
+
+[4] PD.monagent.13 3 0    1481524273
+
+[5] PD.monagent.14 3 0    1481524273
+
+[6] PD.monagent.15 3 0    1481524273
+
+[7] PD.monagent.16 3 0    1481524273
+
+[8] PD.monagent.17 3 0    1481524273
+
+[9] PD.monagent.18 3 0    1481524273
+
+[10] PD.monagent.19 3 0    1481524273
+
+[11] PD.monagent.2 3 0    1481524273
+
+[12] PD.monagent.3 3 0    1481524273
+
+[13] PD.monagent.30 0 0    1481524274
+
+[14] PD.monevent.1 0 0    1481524274
+
+[15] PD.monfibclient.1 0 0    1481524274
+
+[16] PD.monfront.1 0 0    1481524274
+
+[17] PD.monprobe.1 3 0    1481524273
+
+[18] PD.monprobe.2 3 0    1481524273
+
+[19] PD.monprobe.3 0 0    1481524274
+
+[20] PD.monprobe.4 0 0    1481524274
+
+[21] PD.monprobe.5 0 0    1481524274
+
+[22] PD.monprobe.6 0 0    1481524274
+
+[23] PD.monprobe.7 0 0    1481524274
+
+[24] PD.monquery.1 0 0    1481524274
+
+[25] PD.monslog.1 2 16831 172.1.128.153 Dec05 ./monslog 1 1481524273
+
+[26] PD.synconfig.1 1 0    1481524273
+
+-------------------------------------------------------------------------
+Total [26] SRVs, UN/UD/R/S = [10/1/1/14]
+
+process[2563] doTask  end  at 1481524274.01
+doTask cost time [21] secs
+ScanTaskList at 1481524274 Length of TaskList is [0]
+ScanTaskList at 1481524274 Length of TaskList is [0]
+ScanTaskList at 1481524275 Length of TaskList is [0]
+ScanTaskList at 1481524275 Length of TaskList is [0]
+ScanTaskList at 1481524276 Length of TaskList is [0]
+ScanTaskList at 1481524276 Length of TaskList is [0]
+ScanTaskList at 1481524277 Length of TaskList is [0]
+ScanTaskList at 1481524277 Length of TaskList is [0]
+ScanTaskList at 1481524278 Length of TaskList is [0]
+ScanTaskList at 1481524278 Length of TaskList is [0]
+ScanTaskList at 1481524279 Length of TaskList is [0]
+ScanTaskList at 1481524279 Length of TaskList is [0]
+ScanTaskList at 1481524280 Length of TaskList is [0]
+ScanTaskList at 1481524280 Length of TaskList is [0]
+ScanTaskList at 1481524281 Length of TaskList is [0]
+ScanTaskList at 1481524281 Length of TaskList is [0]
+ScanTaskList at 1481524282 Length of TaskList is [0]
+ScanTaskList at 1481524282 Length of TaskList is [0]
+ScanTaskList at 1481524283 Length of TaskList is [0]
+ScanTaskList at 1481524283 Length of TaskList is [0]
+ScanTaskList at 1481524284 Length of TaskList is [0]
+ScanTaskList at 1481524284 Length of TaskList is [0]
+ScanTaskList at 1481524285 Length of TaskList is [0]
+ScanTaskList at 1481524285 Length of TaskList is [0]
+ScanTaskList at 1481524286 Length of TaskList is [0]
+ScanTaskList at 1481524286 Length of TaskList is [0]
+ScanTaskList at 1481524287 Length of TaskList is [0]
+ScanTaskList at 1481524287 Length of TaskList is [0]
+ScanTaskList at 1481524288 Length of TaskList is [0]
+ScanTaskList at 1481524288 Length of TaskList is [0]
+ScanTaskList at 1481524289 Length of TaskList is [0]
+ScanTaskList at 1481524289 Length of TaskList is [0]
+ScanTaskList at 1481524290 Length of TaskList is [0]
+ScanTaskList at 1481524290 Length of TaskList is [0]
+ScanTaskList at 1481524291 Length of TaskList is [0]
+ScanTaskList at 1481524291 Length of TaskList is [0]
+ScanTaskList at 1481524292 Length of TaskList is [0]
+ScanTaskList at 1481524292 Length of TaskList is [0]
+ScanTaskList at 1481524293 Length of TaskList is [0]
+ScanTaskList at 1481524293 Length of TaskList is [0]
+ScanTaskList at 1481524294 Length of TaskList is [0]
+ScanTaskList at 1481524294 Length of TaskList is [0]
+ScanTaskList at 1481524295 Length of TaskList is [0]
+ScanTaskList at 1481524295 Length of TaskList is [0]
+ScanTaskList at 1481524296 Length of TaskList is [0]
+ScanTaskList at 1481524296 Length of TaskList is [0]
+ScanTaskList at 1481524297 Length of TaskList is [0]
+ScanTaskList at 1481524297 Length of TaskList is [0]
+ScanTaskList at 1481524298 Length of TaskList is [0]
+ScanTaskList at 1481524298 Length of TaskList is [0]
+ScanTaskList at 1481524299 Length of TaskList is [0]
+ScanTaskList at 1481524299 Length of TaskList is [0]
+ScanTaskList at 1481524300 Length of TaskList is [0]
+ScanTaskList at 1481524300 Length of TaskList is [0]
+ScanTaskList at 1481524301 Length of TaskList is [0]
+ScanTaskList at 1481524301 Length of TaskList is [0]
+ScanTaskList at 1481524302 Length of TaskList is [0]
+ScanTaskList at 1481524302 Length of TaskList is [0]
+ScanTaskList at 1481524303 Length of TaskList is [0]
+ScanTaskList at 1481524303 Length of TaskList is [0]
+ScanTaskList at 1481524304 Length of TaskList is [0]
+ScanTaskList at 1481524304 Length of TaskList is [0]
+ScanTaskList at 1481524305 Length of TaskList is [0]
+ScanTaskList at 1481524305 Length of TaskList is [0]
+ScanTaskList at 1481524306 Length of TaskList is [0]
+ScanTaskList at 1481524306 Length of TaskList is [0]
+ScanTaskList at 1481524307 Length of TaskList is [0]
+ScanTaskList at 1481524307 Length of TaskList is [0]
+ScanTaskList at 1481524308 Length of TaskList is [0]
+ScanTaskList at 1481524308 Length of TaskList is [0]
+ScanTaskList at 1481524309 Length of TaskList is [0]
+ScanTaskList at 1481524309 Length of TaskList is [0]
+ScanTaskList at 1481524310 Length of TaskList is [0]
+ScanTaskList at 1481524310 Length of TaskList is [0]
+ScanTaskList at 1481524311 Length of TaskList is [0]
+ScanTaskList at 1481524311 Length of TaskList is [0]
+ScanTaskList at 1481524312 Length of TaskList is [0]
+ScanTaskList at 1481524312 Length of TaskList is [0]
+ScanTaskList at 1481524313 Length of TaskList is [0]
+ScanTaskList at 1481524313 Length of TaskList is [0]
+ScanTaskList at 1481524314 Length of TaskList is [0]
+ScanTaskList at 1481524314 Length of TaskList is [0]
+ScanTaskList at 1481524315 Length of TaskList is [0]
+ScanTaskList at 1481524315 Length of TaskList is [0]
+ScanTaskList at 1481524316 Length of TaskList is [0]
+ScanTaskList at 1481524316 Length of TaskList is [0]
+ScanTaskList at 1481524317 Length of TaskList is [0]
+ScanTaskList at 1481524317 Length of TaskList is [0]
+ScanTaskList at 1481524318 Length of TaskList is [0]
+ScanTaskList at 1481524318 Length of TaskList is [0]
+ScanTaskList at 1481524319 Length of TaskList is [0]
+ScanTaskList at 1481524319 Length of TaskList is [0]
+ScanTaskList at 1481524320 Length of TaskList is [0]
+ScanTaskList at 1481524320 Length of TaskList is [0]
+ScanTaskList at 1481524321 Length of TaskList is [0]
+ScanTaskList at 1481524321 Length of TaskList is [0]
+ScanTaskList at 1481524322 Length of TaskList is [0]
+ScanTaskList at 1481524322 Length of TaskList is [0]
+ScanTaskList at 1481524323 Length of TaskList is [0]
+ScanTaskList at 1481524323 Length of TaskList is [0]
+ScanTaskList at 1481524324 Length of TaskList is [0]
+ScanTaskList at 1481524324 Length of TaskList is [0]
+ScanTaskList at 1481524325 Length of TaskList is [0]
+ScanTaskList at 1481524325 Length of TaskList is [0]
+ScanTaskList at 1481524326 Length of TaskList is [0]
+ScanTaskList at 1481524326 Length of TaskList is [0]
+ScanTaskList at 1481524327 Length of TaskList is [0]
+ScanTaskList at 1481524327 Length of TaskList is [0]
+ScanTaskList at 1481524328 Length of TaskList is [0]
+ScanTaskList at 1481524328 Length of TaskList is [0]
+ScanTaskList at 1481524329 Length of TaskList is [0]
+ScanTaskList at 1481524329 Length of TaskList is [0]
+ScanTaskList at 1481524330 Length of TaskList is [0]
+ScanTaskList at 1481524330 Length of TaskList is [0]
+ScanTaskList at 1481524331 Length of TaskList is [0]
+ScanTaskList at 1481524331 Length of TaskList is [0]
+ScanTaskList at 1481524332 Length of TaskList is [0]
+ScanTaskList at 1481524332 Length of TaskList is [0]
+ScanTaskList at 1481524333 Length of TaskList is [0]
+ScanTaskList at 1481524333 Length of TaskList is [0]
+ScanTaskList at 1481524334 Length of TaskList is [0]
+ScanTaskList at 1481524334 Length of TaskList is [0]
+ScanTaskList at 1481524335 Length of TaskList is [0]
+ScanTaskList at 1481524335 Length of TaskList is [0]
+ScanTaskList at 1481524336 Length of TaskList is [0]
+ScanTaskList at 1481524336 Length of TaskList is [0]
+ScanTaskList at 1481524337 Length of TaskList is [0]
+ScanTaskList at 1481524337 Length of TaskList is [0]
+ScanTaskList at 1481524338 Length of TaskList is [0]
+ScanTaskList at 1481524338 Length of TaskList is [0]
+ScanTaskList at 1481524339 Length of TaskList is [0]
+ScanTaskList at 1481524339 Length of TaskList is [0]
+ScanTaskList at 1481524340 Length of TaskList is [0]
+ScanTaskList at 1481524340 Length of TaskList is [0]
+ScanTaskList at 1481524341 Length of TaskList is [0]
+ScanTaskList at 1481524341 Length of TaskList is [0]
+ScanTaskList at 1481524342 Length of TaskList is [0]
+ScanTaskList at 1481524342 Length of TaskList is [0]
+ScanTaskList at 1481524343 Length of TaskList is [0]
+ScanTaskList at 1481524343 Length of TaskList is [0]
+ScanTaskList at 1481524344 Length of TaskList is [0]
+ScanTaskList at 1481524344 Length of TaskList is [0]
+ScanTaskList at 1481524345 Length of TaskList is [0]
+ScanTaskList at 1481524345 Length of TaskList is [0]
+ScanTaskList at 1481524346 Length of TaskList is [0]
+ScanTaskList at 1481524346 Length of TaskList is [0]
+ScanTaskList at 1481524347 Length of TaskList is [0]
+ScanTaskList at 1481524347 Length of TaskList is [0]
+ScanTaskList at 1481524348 Length of TaskList is [0]
+ScanTaskList at 1481524348 Length of TaskList is [0]
+ScanTaskList at 1481524349 Length of TaskList is [0]
+ScanTaskList at 1481524349 Length of TaskList is [0]
+ScanTaskList at 1481524350 Length of TaskList is [0]
+ScanTaskList at 1481524350 Length of TaskList is [0]
+ScanTaskList at 1481524351 Length of TaskList is [0]
+ScanTaskList at 1481524351 Length of TaskList is [0]
+ScanTaskList at 1481524352 Length of TaskList is [0]
+ScanTaskList at 1481524352 Length of TaskList is [0]
+ScanTaskList at 1481524353 Length of TaskList is [0]
+ScanTaskList at 1481524353 Length of TaskList is [0]
+ScanTaskList at 1481524354 Length of TaskList is [0]
+ScanTaskList at 1481524354 Length of TaskList is [0]
+ScanTaskList at 1481524355 Length of TaskList is [0]
+ScanTaskList at 1481524355 Length of TaskList is [0]
+ScanTaskList at 1481524356 Length of TaskList is [0]
+ScanTaskList at 1481524356 Length of TaskList is [0]
+ScanTaskList at 1481524357 Length of TaskList is [0]
+ScanTaskList at 1481524357 Length of TaskList is [0]
+ScanTaskList at 1481524358 Length of TaskList is [0]
+ScanTaskList at 1481524358 Length of TaskList is [0]
+ScanTaskList at 1481524359 Length of TaskList is [0]
+ScanTaskList at 1481524359 Length of TaskList is [0]
+ScanTaskList at 1481524360 Length of TaskList is [0]
+ScanTaskList at 1481524360 Length of TaskList is [0]
+ScanTaskList at 1481524361 Length of TaskList is [0]
+ScanTaskList at 1481524361 Length of TaskList is [0]
+ScanTaskList at 1481524362 Length of TaskList is [0]
+ScanTaskList at 1481524362 Length of TaskList is [0]
+ScanTaskList at 1481524363 Length of TaskList is [0]
+ScanTaskList at 1481524363 Length of TaskList is [0]
+ScanTaskList at 1481524364 Length of TaskList is [0]
+ScanTaskList at 1481524364 Length of TaskList is [0]
+ScanTaskList at 1481524365 Length of TaskList is [0]
+ScanTaskList at 1481524365 Length of TaskList is [0]
+ScanTaskList at 1481524366 Length of TaskList is [0]
+ScanTaskList at 1481524366 Length of TaskList is [0]
+ScanTaskList at 1481524367 Length of TaskList is [0]
+ScanTaskList at 1481524367 Length of TaskList is [0]
+ScanTaskList at 1481524368 Length of TaskList is [0]
+ScanTaskList at 1481524368 Length of TaskList is [0]
+ScanTaskList at 1481524369 Length of TaskList is [0]
+ScanTaskList at 1481524369 Length of TaskList is [0]
+ScanTaskList at 1481524370 Length of TaskList is [0]
+ScanTaskList at 1481524370 Length of TaskList is [0]
+ScanTaskList at 1481524371 Length of TaskList is [0]
+ScanTaskList at 1481524371 Length of TaskList is [0]
+ScanTaskList at 1481524372 Length of TaskList is [0]
+ScanTaskList at 1481524372 Length of TaskList is [0]
+ScanTaskList at 1481524373 Length of TaskList is [0]
+ScanTaskList at 1481524373 Length of TaskList is [0]
+ScanTaskList at 1481524374 Length of TaskList is [0]
+ScanTaskList at 1481524374 Length of TaskList is [0]
+ScanTaskList at 1481524375 Length of TaskList is [0]
+ScanTaskList at 1481524375 Length of TaskList is [0]
+ScanTaskList at 1481524376 Length of TaskList is [0]
+ScanTaskList at 1481524376 Length of TaskList is [0]
+ScanTaskList at 1481524377 Length of TaskList is [0]
+ScanTaskList at 1481524377 Length of TaskList is [0]
+ScanTaskList at 1481524378 Length of TaskList is [0]
+ScanTaskList at 1481524378 Length of TaskList is [0]
+ScanTaskList at 1481524379 Length of TaskList is [0]
+ScanTaskList at 1481524379 Length of TaskList is [0]
+ScanTaskList at 1481524380 Length of TaskList is [0]
+ScanTaskList at 1481524380 Length of TaskList is [0]
+ScanTaskList at 1481524381 Length of TaskList is [0]
+ScanTaskList at 1481524381 Length of TaskList is [0]
+ScanTaskList at 1481524382 Length of TaskList is [0]
+ScanTaskList at 1481524382 Length of TaskList is [0]
+ScanTaskList at 1481524383 Length of TaskList is [0]
+ScanTaskList at 1481524383 Length of TaskList is [0]
+ScanTaskList at 1481524384 Length of TaskList is [0]
+ScanTaskList at 1481524384 Length of TaskList is [0]
+ScanTaskList at 1481524385 Length of TaskList is [0]
+ScanTaskList at 1481524385 Length of TaskList is [0]
+ScanTaskList at 1481524386 Length of TaskList is [0]
+ScanTaskList at 1481524386 Length of TaskList is [0]
+ScanTaskList at 1481524387 Length of TaskList is [0]
+ScanTaskList at 1481524387 Length of TaskList is [0]
+ScanTaskList at 1481524388 Length of TaskList is [0]
+ScanTaskList at 1481524388 Length of TaskList is [0]
+ScanTaskList at 1481524389 Length of TaskList is [0]
+ScanTaskList at 1481524389 Length of TaskList is [0]
+ScanTaskList at 1481524390 Length of TaskList is [0]
+ScanTaskList at 1481524390 Length of TaskList is [0]
+ScanTaskList at 1481524391 Length of TaskList is [0]
+ScanTaskList at 1481524391 Length of TaskList is [0]
+ScanTaskList at 1481524392 Length of TaskList is [0]
+ScanTaskList at 1481524392 Length of TaskList is [0]
+ScanTaskList at 1481524393 Length of TaskList is [0]
+ScanTaskList at 1481524393 Length of TaskList is [0]
+ScanTaskList at 1481524394 Length of TaskList is [0]
+ScanTaskList at 1481524394 Length of TaskList is [0]
+ScanTaskList at 1481524395 Length of TaskList is [0]
+ScanTaskList at 1481524395 Length of TaskList is [0]
+ScanTaskList at 1481524396 Length of TaskList is [0]
+ScanTaskList at 1481524396 Length of TaskList is [0]
+ScanTaskList at 1481524397 Length of TaskList is [0]
+ScanTaskList at 1481524397 Length of TaskList is [0]
+ScanTaskList at 1481524398 Length of TaskList is [0]
+ScanTaskList at 1481524398 Length of TaskList is [0]
+ScanTaskList at 1481524399 Length of TaskList is [0]
+ScanTaskList at 1481524399 Length of TaskList is [0]
+ScanTaskList at 1481524400 Length of TaskList is [0]
+ScanTaskList at 1481524400 Length of TaskList is [0]
+ScanTaskList at 1481524401 Length of TaskList is [0]
+ScanTaskList at 1481524401 Length of TaskList is [0]
+ScanTaskList at 1481524402 Length of TaskList is [0]
+ScanTaskList at 1481524402 Length of TaskList is [0]
+ScanTaskList at 1481524403 Length of TaskList is [0]
+ScanTaskList at 1481524403 Length of TaskList is [0]
+ScanTaskList at 1481524404 Length of TaskList is [0]
+ScanTaskList at 1481524404 Length of TaskList is [0]
+ScanTaskList at 1481524405 Length of TaskList is [0]
+ScanTaskList at 1481524405 Length of TaskList is [0]
+ScanTaskList at 1481524406 Length of TaskList is [0]
+ScanTaskList at 1481524406 Length of TaskList is [0]
+ScanTaskList at 1481524407 Length of TaskList is [0]
+ScanTaskList at 1481524407 Length of TaskList is [0]
+ScanTaskList at 1481524408 Length of TaskList is [0]
+ScanTaskList at 1481524408 Length of TaskList is [0]
+ScanTaskList at 1481524409 Length of TaskList is [0]
+ScanTaskList at 1481524409 Length of TaskList is [0]
+ScanTaskList at 1481524410 Length of TaskList is [0]
+ScanTaskList at 1481524410 Length of TaskList is [0]
+ScanTaskList at 1481524411 Length of TaskList is [0]
+ScanTaskList at 1481524411 Length of TaskList is [0]
+ScanTaskList at 1481524412 Length of TaskList is [0]
+ScanTaskList at 1481524412 Length of TaskList is [0]
+ScanTaskList at 1481524413 Length of TaskList is [0]
+ScanTaskList at 1481524413 Length of TaskList is [0]
+ScanTaskList at 1481524414 Length of TaskList is [0]
+ScanTaskList at 1481524414 Length of TaskList is [0]
+ScanTaskList at 1481524415 Length of TaskList is [0]
+ScanTaskList at 1481524415 Length of TaskList is [0]
+ScanTaskList at 1481524416 Length of TaskList is [0]
+ScanTaskList at 1481524416 Length of TaskList is [0]
+ScanTaskList at 1481524417 Length of TaskList is [0]
+ScanTaskList at 1481524417 Length of TaskList is [0]
+ScanTaskList at 1481524418 Length of TaskList is [0]
+ScanTaskList at 1481524418 Length of TaskList is [0]
+ScanTaskList at 1481524419 Length of TaskList is [0]
+ScanTaskList at 1481524419 Length of TaskList is [0]
+ScanTaskList at 1481524420 Length of TaskList is [0]
+ScanTaskList at 1481524420 Length of TaskList is [0]
+ScanTaskList at 1481524421 Length of TaskList is [0]
+ScanTaskList at 1481524421 Length of TaskList is [0]
+ScanTaskList at 1481524422 Length of TaskList is [0]
+ScanTaskList at 1481524422 Length of TaskList is [0]
+ScanTaskList at 1481524423 Length of TaskList is [0]
+ScanTaskList at 1481524423 Length of TaskList is [0]
+ScanTaskList at 1481524424 Length of TaskList is [0]
+ScanTaskList at 1481524424 Length of TaskList is [0]
+ScanTaskList at 1481524425 Length of TaskList is [0]
+ScanTaskList at 1481524425 Length of TaskList is [0]
+ScanTaskList at 1481524426 Length of TaskList is [0]
+ScanTaskList at 1481524426 Length of TaskList is [0]
+ScanTaskList at 1481524427 Length of TaskList is [0]
+ScanTaskList at 1481524427 Length of TaskList is [0]
+ScanTaskList at 1481524428 Length of TaskList is [0]
+ScanTaskList at 1481524428 Length of TaskList is [0]
+ScanTaskList at 1481524429 Length of TaskList is [0]
+ScanTaskList at 1481524429 Length of TaskList is [0]
+ScanTaskList at 1481524430 Length of TaskList is [0]
+ScanTaskList at 1481524430 Length of TaskList is [0]
+ScanTaskList at 1481524431 Length of TaskList is [0]
+ScanTaskList at 1481524431 Length of TaskList is [0]
+ScanTaskList at 1481524432 Length of TaskList is [0]
+ScanTaskList at 1481524432 Length of TaskList is [0]
+ScanTaskList at 1481524433 Length of TaskList is [0]
+ScanTaskList at 1481524433 Length of TaskList is [0]
+ScanTaskList at 1481524434 Length of TaskList is [0]
+ScanTaskList at 1481524434 Length of TaskList is [0]
+ScanTaskList at 1481524435 Length of TaskList is [0]
+ScanTaskList at 1481524435 Length of TaskList is [0]
+ScanTaskList at 1481524436 Length of TaskList is [0]
+ScanTaskList at 1481524436 Length of TaskList is [0]
+ScanTaskList at 1481524437 Length of TaskList is [0]
+('Accept connection from ', ('172.1.128.170', 49763))
+buf:[[HEAD][NTF]148152443701824
+[TASK]148152443701824::1::1481524437::0::1824::show::--cmd show --ctr PD
+]
+get {[NTF]148152443701824}{[TASK]148152443701824::1::1481524437::0::1824::show::--cmd show --ctr PD
+} from getHeadInfo
+get {148152443701824::1::1481524437::0::1824::show::--cmd show --ctr PD}{} from getTaskInfo
+-------------------------------Task list---------------------------------
+[1] 148152425301824 [3] --cmd show --tid 148152425301824 --ctr PD
+
+[2] 148152443701824 [1] --cmd show --ctr PD
+
+-------------------------------------------------------------------------
+Total [2] tasks, R/S/E = [1/0/1]
+
+before add 0
+<taskinfo.TaskInfo instance at 0xbe5518>
+after  add 1
+ScanTaskList at 1481524437 Length of TaskList is [1]
+process[2563] doTask start at 1481524437.88
+cmdline[python main.py --tid 148152443701824 --cmd show --ctr PD]
+('Accept connection from ', ('172.1.128.170', 49764))
+buf:[[HEAD][NTF]148152443702996
+[TASK]148152443701824::2::1481524437::0::2996::show::--cmd show --tid 148152443701824 --ctr PD
+]
+get {[NTF]148152443702996}{[TASK]148152443701824::2::1481524437::0::2996::show::--cmd show --tid 148152443701824 --ctr PD
+} from getHeadInfo
+get {148152443701824::2::1481524437::0::2996::show::--cmd show --tid 148152443701824 --ctr PD}{} from getTaskInfo
+-------------------------------Task list---------------------------------
+[1] 148152425301824 [3] --cmd show --tid 148152425301824 --ctr PD
+
+[2] 148152443701824 [2] --cmd show --tid 148152443701824 --ctr PD
+
+-------------------------------------------------------------------------
+Total [2] tasks, R/S/E = [0/1/1]
+
+ScanTaskList at 1481524438 Length of TaskList is [0]
+ScanTaskList at 1481524438 Length of TaskList is [0]
+ScanTaskList at 1481524439 Length of TaskList is [0]
+ScanTaskList at 1481524439 Length of TaskList is [0]
+ScanTaskList at 1481524440 Length of TaskList is [0]
+ScanTaskList at 1481524440 Length of TaskList is [0]
+ScanTaskList at 1481524441 Length of TaskList is [0]
+ScanTaskList at 1481524441 Length of TaskList is [0]
+ScanTaskList at 1481524442 Length of TaskList is [0]
+ScanTaskList at 1481524442 Length of TaskList is [0]
+ScanTaskList at 1481524443 Length of TaskList is [0]
+ScanTaskList at 1481524443 Length of TaskList is [0]
+ScanTaskList at 1481524444 Length of TaskList is [0]
+ScanTaskList at 1481524444 Length of TaskList is [0]
+ScanTaskList at 1481524445 Length of TaskList is [0]
+ScanTaskList at 1481524445 Length of TaskList is [0]
+ScanTaskList at 1481524446 Length of TaskList is [0]
+ScanTaskList at 1481524446 Length of TaskList is [0]
+ScanTaskList at 1481524447 Length of TaskList is [0]
+ScanTaskList at 1481524447 Length of TaskList is [0]
+ScanTaskList at 1481524448 Length of TaskList is [0]
+ScanTaskList at 1481524448 Length of TaskList is [0]
+ScanTaskList at 1481524449 Length of TaskList is [0]
+ScanTaskList at 1481524449 Length of TaskList is [0]
+ScanTaskList at 1481524450 Length of TaskList is [0]
+ScanTaskList at 1481524450 Length of TaskList is [0]
+ScanTaskList at 1481524451 Length of TaskList is [0]
+ScanTaskList at 1481524451 Length of TaskList is [0]
+ScanTaskList at 1481524452 Length of TaskList is [0]
+ScanTaskList at 1481524452 Length of TaskList is [0]
+ScanTaskList at 1481524453 Length of TaskList is [0]
+ScanTaskList at 1481524453 Length of TaskList is [0]
+ScanTaskList at 1481524454 Length of TaskList is [0]
+ScanTaskList at 1481524454 Length of TaskList is [0]
+ScanTaskList at 1481524455 Length of TaskList is [0]
+ScanTaskList at 1481524455 Length of TaskList is [0]
+ScanTaskList at 1481524456 Length of TaskList is [0]
+ScanTaskList at 1481524456 Length of TaskList is [0]
+ScanTaskList at 1481524457 Length of TaskList is [0]
+ScanTaskList at 1481524457 Length of TaskList is [0]
+('Accept connection from ', ('172.1.128.170', 49771))
+buf:[[HEAD][NTF]148152445802996
+[TASK]148152443701824::3::1481524458::0::2996::show::--cmd show --tid 148152443701824 --ctr PD
+[RESULT]<<<
+show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found
+[RESULT]>>>
+]
+get {[NTF]148152445802996}{[TASK]148152443701824::3::1481524458::0::2996::show::--cmd show --tid 148152443701824 --ctr PD
+[RESULT]<<<
+show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found
+[RESULT]>>>
+} from getHeadInfo
+get {148152443701824::3::1481524458::0::2996::show::--cmd show --tid 148152443701824 --ctr PD}{[RESULT]<<<
+show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found
+[RESULT]>>>
+} from getTaskInfo
+-------------------------------Task list---------------------------------
+[1] 148152425301824 [3] --cmd show --tid 148152425301824 --ctr PD
+
+[2] 148152443701824 [3] --cmd show --tid 148152443701824 --ctr PD
+
+-------------------------------------------------------------------------
+Total [2] tasks, R/S/E = [0/0/2]
+
+SET:PD.monagent.1 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.2 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.3 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monprobe.2 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monslog.1 2 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monprobe.1 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.11 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.12 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.13 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.14 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.15 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.16 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.17 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.18 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.monagent.19 3 1481524458
+LEN(srv_status_map):[26]
+SET:PD.synconfig.1 1 1481524458
+LEN(srv_status_map):[26]
+-------------------------------Srv list---------------------------------
+[1] PD.monagent.1 3 0    1481524458
+
+[2] PD.monagent.11 3 0    1481524458
+
+[3] PD.monagent.12 3 0    1481524458
+
+[4] PD.monagent.13 3 0    1481524458
+
+[5] PD.monagent.14 3 0    1481524458
+
+[6] PD.monagent.15 3 0    1481524458
+
+[7] PD.monagent.16 3 0    1481524458
+
+[8] PD.monagent.17 3 0    1481524458
+
+[9] PD.monagent.18 3 0    1481524458
+
+[10] PD.monagent.19 3 0    1481524458
+
+[11] PD.monagent.2 3 0    1481524458
+
+[12] PD.monagent.3 3 0    1481524458
+
+[13] PD.monagent.30 0 0    1481524274
+
+[14] PD.monevent.1 0 0    1481524274
+
+[15] PD.monfibclient.1 0 0    1481524274
+
+[16] PD.monfront.1 0 0    1481524274
+
+[17] PD.monprobe.1 3 0    1481524458
+
+[18] PD.monprobe.2 3 0    1481524458
+
+[19] PD.monprobe.3 0 0    1481524274
+
+[20] PD.monprobe.4 0 0    1481524274
+
+[21] PD.monprobe.5 0 0    1481524274
+
+[22] PD.monprobe.6 0 0    1481524274
+
+[23] PD.monprobe.7 0 0    1481524274
+
+[24] PD.monquery.1 0 0    1481524274
+
+[25] PD.monslog.1 2 16831 172.1.128.153 Dec05 ./monslog 1 1481524458
+
+[26] PD.synconfig.1 1 0    1481524458
+
+-------------------------------------------------------------------------
+Total [26] SRVs, UN/UD/R/S = [10/1/1/14]
+
+get {show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found}{
+} from getTaskResult
+start daemon
+Daemon pid [2563] run
+option[CMD]=show
+---
+DataCenter=PD;
+---
+
+---
+AllServices
+PD.snmpmanager.1	PD		snmpmanager		1		1	
+PD.monprobe.1	PD		monprobe		1		1	
+PD.monprobe.2	PD		monprobe		2		2	
+PD.monprobe.3	PD		monprobe		3		3	
+PD.monprobe.4	PD		monprobe		4		4	
+PD.monprobe.5	PD		monprobe		5		5	
+PD.monprobe.6	PD		monprobe		6		6	
+PD.monprobe.7	PD		monprobe		7		7	
+PD.monprobe.8	PD		monprobe		8		8	
+PD.monprobe.9	PD		monprobe		9		9	
+PD.monprobe.10	PD		monprobe		10		10	
+PD.monprobe.12	PD		monprobe		12		12	
+PD.monprobe.13	PD		monprobe		13		13	
+PD.monprobe.14	PD		monprobe		14		14	
+PD.monprobe.15	PD		monprobe		15		15	
+PD.monprobe.16	PD		monprobe		16		16	
+PD.monprobe.17	PD		monprobe		17		17	
+PD.monagent.1	PD		monagent		1		1	
+PD.monagent.2	PD		monagent		2		2	
+PD.monagent.3	PD		monagent		3		3	
+PD.monagent.11	PD		monagent		11		11	
+PD.monagent.12	PD		monagent		12		12	
+PD.monagent.13	PD		monagent		13		13	
+PD.monagent.14	PD		monagent		14		14	
+PD.monagent.15	PD		monagent		15		15	
+PD.monagent.16	PD		monagent		16		16	
+PD.monagent.17	PD		monagent		17		17	
+PD.monagent.18	PD		monagent		18		18	
+PD.monagent.19	PD		monagent		19		19	
+PD.monagent.30	PD		monagent		30		30	
+PD.monevent.1	PD		monevent		1		1	
+PD.monfibclient.1	PD		monfibclient		1		1		off	
+PD.synconfig.1	PD		synconfig		1		1	
+PD.monquery.1	PD		monquery		1		1		off	
+PD.monslog.1	PD		monslog		1		1	
+PD.monfront.1	PD		monfront		1		1	
+PD.monfront.1	PD		monfront		1		172.1.128.151	
+PD.monfront.2	PD		monfront		2		172.1.128.151	
+PD.synconfig.1	PD		synconfig		1		172.1.128.151	
+PD.monquery.1	PD		monquery		1		172.1.128.152	
+PD.monslog.1	PD		monslog		1		172.1.128.153	
+PD.monfibclient.1	PD		monfibclient		1		172.1.128.154	
+PD.monevent.1	PD		monevent		1		172.1.128.155	
+PD.monagent.1	PD		monagent		1		172.1.128.170	
+PD.monagent.2	PD		monagent		2		172.1.128.170	
+PD.monagent.3	PD		monagent		3		172.1.128.170	
+PD.monagent.11	PD		monagent		11		172.1.128.151	
+PD.monagent.12	PD		monagent		12		172.1.128.151	
+PD.monagent.13	PD		monagent		13		172.1.128.151	
+PD.monagent.14	PD		monagent		14		172.1.128.151	
+PD.monagent.15	PD		monagent		15		172.1.128.151	
+PD.monagent.16	PD		monagent		16		172.1.128.151	
+PD.monagent.17	PD		monagent		17		172.1.128.151	
+PD.monagent.18	PD		monagent		18		172.1.128.151	
+PD.monagent.19	PD		monagent		19		172.1.128.151	
+PD.monprobe.1	PD		monprobe		1		172.1.128.151	
+PD.monagent.30	PD		monagent		30		172.1.128.152	
+PD.monprobe.2	PD		monprobe		2		172.1.128.153	
+PD.monprobe.3	PD		monprobe		3		172.1.128.154	
+PD.monprobe.4	PD		monprobe		4		172.1.128.155	
+PD.monprobe.5	PD		monprobe		5		172.1.128.156	
+PD.monprobe.6	PD		monprobe		6		172.1.128.157	
+PD.monprobe.7	PD		monprobe		7		172.1.128.158	
+-----start-----
+['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t1\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t11\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t12\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t13\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t14\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t15\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t16\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t17\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t18\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t19\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t2\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t3\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t30\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t1\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t1\t\toff\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t1\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t1\t', 'PD.monprobe.10\tPD\t\tmonprobe\t\t10\t\t10\t', 'PD.monprobe.12\tPD\t\tmonprobe\t\t12\t\t12\t', 'PD.monprobe.13\tPD\t\tmonprobe\t\t13\t\t13\t', 'PD.monprobe.14\tPD\t\tmonprobe\t\t14\t\t14\t', 'PD.monprobe.15\tPD\t\tmonprobe\t\t15\t\t15\t', 'PD.monprobe.16\tPD\t\tmonprobe\t\t16\t\t16\t', 'PD.monprobe.17\tPD\t\tmonprobe\t\t17\t\t17\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t2\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t3\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t4\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t5\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t6\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t7\t', 'PD.monprobe.8\tPD\t\tmonprobe\t\t8\t\t8\t', 'PD.monprobe.9\tPD\t\tmonprobe\t\t9\t\t9\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t1\t\toff\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t1\t', 'PD.snmpmanager.1\tPD\t\tsnmpmanager\t\t1\t\t1\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t1\t']
+-----service-----
+['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t172.1.128.170\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t172.1.128.151\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t172.1.128.151\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t172.1.128.151\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t172.1.128.151\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t172.1.128.151\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t172.1.128.151\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t172.1.128.151\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t172.1.128.151\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t172.1.128.151\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t172.1.128.170\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t172.1.128.170\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t172.1.128.152\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t172.1.128.155\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t172.1.128.154\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t172.1.128.151\t', 'PD.monfront.2\tPD\t\tmonfront\t\t2\t\t172.1.128.151\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t172.1.128.151\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t172.1.128.153\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t172.1.128.154\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t172.1.128.155\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t172.1.128.156\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t172.1.128.157\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t172.1.128.158\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t172.1.128.152\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t172.1.128.153\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t172.1.128.151\t']
+iprelay_map:
+{'172.1.128.157': ['172.1.128.151'], '172.1.128.156': ['172.1.128.151'], '172.1.128.158': ['172.1.128.151'], '172.1.128.160': ['172.1.128.154'], '172.1.128.161': ['172.1.128.154'], '172.1.128.162': ['172.1.128.154'], '172.1.128.163': ['172.1.128.154']}
+ipsub_map:
+{'172.1.128.154': set(['172.1.128.160', '172.1.128.161', '172.1.128.162', '172.1.128.163']), '172.1.128.151': set(['172.1.128.157', '172.1.128.156', '172.1.128.158'])}
+work request #28157424 added.
+work request #28159296 added.
+ SSH to 172.1.128.155 startwork request #28161232 added.
+work request #28163032 added.
+
+work request #28165112 added.
+work request #28167272 added.
+ SSH to 172.1.128.154 start
+ SSH to 172.1.128.170 start
+ SSH to 172.1.128.151 startSSH to 172.1.128.153 start
+
+Processing:0.00%SSH to 172.1.128.152 start
+Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%IP:[172.1.128.155]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.155', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-console Send file opt_map.2996.1 to 172.1.128.155
+IP:[172.1.128.154]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.154', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-console Send file opt_map.2996.2 to 172.1.128.154
+IP:[172.1.128.153]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.153', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IP:[172.1.128.152]  FLAG_SSH = 1
+SSH to 172.1.128.152 end
+@@@@@@@ mon-console Send file opt_map.2996.5 to 172.1.128.153
+IP:[172.1.128.151]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.151', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': [''], '172.1.128.157': [''], '172.1.128.156': [''], '172.1.128.158': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-console Send file opt_map.2996.4 to 172.1.128.151
+Processing:0.00%IP:[172.1.128.170]  FLAG_SSH = 1
+IP [172.1.128.170] is localhost
+Try to combine ipnext_map with keys ['172.1.128.170'] and ['']
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'172.1.128.155': [''], '172.1.128.154': [''], '172.1.128.170': [''], '172.1.128.151': ['172.1.128.157', '', '172.1.128.158', '172.1.128.156'], '172.1.128.153': [''], '172.1.128.152': ['']}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'synconfig': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.170', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Thread-5
+Processing:0.00%SSH to 172.1.128.155 end
+Thread-1
+Processing:0.00%SSH to 172.1.128.154 end
+Thread-2
+Processing:0.00%SSH to 172.1.128.170 end
+Thread-4
+SSH to 172.1.128.153 end
+Thread-3
+Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%SSH to 172.1.128.151 end
+Thread-6
+Processing:100.00%
+++++++++++++++++++OUT++++++++++++++++++
+mon-blade05 python version[2.4.3] is too old!
+show::172.1.128.170::PD.monagent.1::App Not run
+show::172.1.128.170::PD.monagent.2::App Not run
+show::172.1.128.170::PD.monagent.3::App Not run
+execLocal at: 172.1.128.170;3083
+opt_map in EXECLOCAL at 172.1.128.170
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.170', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.170] [show] [showCmd] PD.monagent.1 [1]
+ip[172.1.128.170] [show] [showCmd] PD.monagent.2 [2]
+ip[172.1.128.170] [show] [showCmd] PD.monagent.3 [3]
+--------RTN [mon-console]--------
+0
+--------OUT [mon-console]--------
+
+--------ERR [mon-console]--------
+
+show::172.1.128.153::PD.monprobe.2::App Not run
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1 
+execLocal at: 172.1.128.153;3171
+opt_map in EXECLOCAL at 172.1.128.153
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.153', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.153] [show] [showCmd] PD.monprobe.2 [2]
+ip[172.1.128.153] [show] [showCmd] PD.monslog.1 [1]
+--------RTN [mon-blade03]--------
+0
+--------OUT [mon-blade03]--------
+
+--------ERR [mon-blade03]--------
+
+work request #47529132022888 added.
+work request #47529132045088 added.
+work request #47529132046744 added.
+SSH to 172.1.128.157 start
+SSH to 172.1.128.156 start
+SSH to 172.1.128.158 start
+Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%Processing:0.00%IP:[172.1.128.156]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.156', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IP:[172.1.128.157]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {@@@@@@@ mon-blade01 Send file opt_map.27703.2 to 172.1.128.156
+'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.157', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27703.1 to 172.1.128.157
+Processing:0.00%IP:[172.1.128.158]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.158', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27703.3 to 172.1.128.158
+Processing:0.00%SSH to 172.1.128.156 end
+Thread-1
+SSH to 172.1.128.157 end
+Thread-3
+Processing:0.00%SSH to 172.1.128.158 end
+Thread-2
+Processing:100.00%show::172.1.128.151::PD.monfront.1::App Not run
+show::172.1.128.151::PD.monprobe.1::App Not run
+show::172.1.128.151::PD.monagent.11::App Not run
+show::172.1.128.151::PD.monagent.12::App Not run
+show::172.1.128.151::PD.monagent.13::App Not run
+show::172.1.128.151::PD.monagent.14::App Not run
+show::172.1.128.151::PD.monagent.15::App Not run
+show::172.1.128.151::PD.monagent.16::App Not run
+show::172.1.128.151::PD.monagent.17::App Not run
+show::172.1.128.151::PD.monagent.18::App Not run
+show::172.1.128.151::PD.monagent.19::App Not run
+show::172.1.128.151::PD.synconfig.1::Path Not found
+
+execLocal at: 172.1.128.151;27703
+opt_map in EXECLOCAL at 172.1.128.151
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.151', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': [''], '172.1.128.157': [''], '172.1.128.156': [''], '172.1.128.158': ['']}}
+ip[172.1.128.151] [show] [showCmd] PD.monfront.1 [1]
+ip[172.1.128.151] [show] [showCmd] PD.monprobe.1 [1]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.11 [11]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.12 [12]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.13 [13]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.14 [14]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.15 [15]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.16 [16]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.17 [17]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.18 [18]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.19 [19]
+ip[172.1.128.151] [show] [showCmd] PD.synconfig.1 [1]
+--------RTN [mon-blade01]--------
+0
+--------OUT [mon-blade01]--------
+mon-blade06 python version[2.4.3] is too old!
+mon-blade07 python version[2.4.3] is too old!
+mon-blade08 python version[2.4.3] is too old!
+
+--------ERR [mon-blade01]--------
+
+
+++++++++++++++++++OUT++++++++++++++++++
+mon-blade05 python version[2.4.3] is too old!
+show::172.1.128.170::PD.monagent.1::App Not run
+('get', 'show', '172.1.128.170', 'PD.monagent.1')
+show::172.1.128.170::PD.monagent.2::App Not run
+('get', 'show', '172.1.128.170', 'PD.monagent.2')
+show::172.1.128.170::PD.monagent.3::App Not run
+('get', 'show', '172.1.128.170', 'PD.monagent.3')
+execLocal at: 172.1.128.170;3083
+opt_map in EXECLOCAL at 172.1.128.170
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.170', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.170] [show] [showCmd] PD.monagent.1 [1]
+ip[172.1.128.170] [show] [showCmd] PD.monagent.2 [2]
+ip[172.1.128.170] [show] [showCmd] PD.monagent.3 [3]
+--------RTN [mon-console]--------
+0
+--------OUT [mon-console]--------
+
+--------ERR [mon-console]--------
+
+show::172.1.128.153::PD.monprobe.2::App Not run
+('get', 'show', '172.1.128.153', 'PD.monprobe.2')
+show::172.1.128.153::PD.monslog.1::16831  Dec05 ./monslog 1
+('get', 'show', '172.1.128.153', 'PD.monslog.1')
+execLocal at: 172.1.128.153;3171
+opt_map in EXECLOCAL at 172.1.128.153
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.153', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+ip[172.1.128.153] [show] [showCmd] PD.monprobe.2 [2]
+ip[172.1.128.153] [show] [showCmd] PD.monslog.1 [1]
+--------RTN [mon-blade03]--------
+0
+--------OUT [mon-blade03]--------
+
+--------ERR [mon-blade03]--------
+
+work request #47529132022888 added.
+work request #47529132045088 added.
+work request #47529132046744 added.
+SSH to 172.1.128.157 start
+SSH to 172.1.128.156 start
+SSH to 172.1.128.158 start
+
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%
+Processing:0.00%IP:[172.1.128.156]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.156', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IP:[172.1.128.157]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {@@@@@@@ mon-blade01 Send file opt_map.27703.2 to 172.1.128.156
+'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.157', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27703.1 to 172.1.128.157
+
+Processing:0.00%IP:[172.1.128.158]  FLAG_SSH = 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Update opts with:
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.158', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': ['']}}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@ mon-blade01 Send file opt_map.27703.3 to 172.1.128.158
+
+Processing:0.00%SSH to 172.1.128.156 end
+Thread-1
+SSH to 172.1.128.157 end
+Thread-3
+
+Processing:0.00%SSH to 172.1.128.158 end
+Thread-2
+
+Processing:100.00%show::172.1.128.151::PD.monfront.1::App Not run
+show::172.1.128.151::PD.monprobe.1::App Not run
+('get', 'show', '172.1.128.151', 'PD.monprobe.1')
+show::172.1.128.151::PD.monagent.11::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.11')
+show::172.1.128.151::PD.monagent.12::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.12')
+show::172.1.128.151::PD.monagent.13::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.13')
+show::172.1.128.151::PD.monagent.14::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.14')
+show::172.1.128.151::PD.monagent.15::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.15')
+show::172.1.128.151::PD.monagent.16::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.16')
+show::172.1.128.151::PD.monagent.17::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.17')
+show::172.1.128.151::PD.monagent.18::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.18')
+show::172.1.128.151::PD.monagent.19::App Not run
+('get', 'show', '172.1.128.151', 'PD.monagent.19')
+show::172.1.128.151::PD.synconfig.1::Path Not found
+('get', 'show', '172.1.128.151', 'PD.synconfig.1')
+
+execLocal at: 172.1.128.151;27703
+opt_map in EXECLOCAL at 172.1.128.151
+{'cmd_list': [], 'objs_map': {'172.1.128.155': {'monevent': [('PD', '1', '1')], 'monprobe': [('PD', '4', '4')]}, '172.1.128.154': {'monfibclient': [('PD', '1', '1 off')], 'monprobe': [('PD', '3', '3')]}, '172.1.128.157': {'monprobe': [('PD', '6', '6')]}, '172.1.128.170': {'monagent': [('PD', '1', '1'), ('PD', '2', '2'), ('PD', '3', '3')]}, '172.1.128.151': {'monfront': [('PD', '1', '1')], 'monprobe': [('PD', '1', '1')], 'monagent': [('PD', '11', '11'), ('PD', '12', '12'), ('PD', '13', '13'), ('PD', '14', '14'), ('PD', '15', '15'), ('PD', '16', '16'), ('PD', '17', '17'), ('PD', '18', '18'), ('PD', '19', '19')], 'synconfig': [('PD', '1', '1')]}, '172.1.128.153': {'monprobe': [('PD', '2', '2')], 'monslog': [('PD', '1', '1')]}, '172.1.128.152': {'monquery': [('PD', '1', '1 off')], 'monagent': [('PD', '30', '30')]}, '172.1.128.158': {'monprobe': [('PD', '7', '7')]}, '172.1.128.156': {'monprobe': [('PD', '5', '5')]}}, 'ip': '172.1.128.151', 'cmd1': 'show', 'cmd2': 'showCmd', 'host': 'mon-console', 'cmd_flag': 1, 'files_map': {}, 'ipnext_map': {'': [''], '172.1.128.157': [''], '172.1.128.156': [''], '172.1.128.158': ['']}}
+ip[172.1.128.151] [show] [showCmd] PD.monfront.1 [1]
+ip[172.1.128.151] [show] [showCmd] PD.monprobe.1 [1]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.11 [11]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.12 [12]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.13 [13]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.14 [14]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.15 [15]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.16 [16]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.17 [17]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.18 [1start daemon
+Daemon pid [2563] run
+8]
+ip[172.1.128.151] [show] [showCmd] PD.monagent.19 [19]
+ip[172.1.128.151] [show] [showCmd] PD.synconfig.1 [1]
+--------RTN [mon-blade01]--------
+0
+--------OUT [mon-blade01]--------
+mon-blade06 python version[2.4.3] is too old!
+mon-blade07 python version[2.4.3] is too old!
+mon-blade08 python version[2.4.3] is too old!
+
+--------ERR [mon-blade01]--------
+
+
+[001] show for [ PD.monagent.1         ] SUCC
+[002] show for [ PD.monagent.11        ] SUCC
+[003] show for [ PD.monagent.12        ] SUCC
+[004] show for [ PD.monagent.13        ] SUCC
+[005] show for [ PD.monagent.14        ] SUCC
+[006] show for [ PD.monagent.15        ] SUCC
+[007] show for [ PD.monagent.16        ] SUCC
+[008] show for [ PD.monagent.17        ] SUCC
+[009] show for [ PD.monagent.18        ] SUCC
+[010] show for [ PD.monagent.19        ] SUCC
+[011] show for [ PD.monagent.2         ] SUCC
+[012] show for [ PD.monagent.3         ] SUCC
+[013] show for [ PD.monagent.30        ] FAILED
+[014] show for [ PD.monevent.1         ] FAILED
+[015] show for [ PD.monfibclient.1     ] FAILED
+[016] show for [ PD.monfront.1         ] FAILED
+[017] show for [ PD.monprobe.1         ] SUCC
+[018] show for [ PD.monprobe.2         ] SUCC
+[019] show for [ PD.monprobe.3         ] FAILED
+[020] show for [ PD.monprobe.4         ] FAILED
+[021] show for [ PD.monprobe.5         ] FAILED
+[022] show for [ PD.monprobe.6         ] FAILED
+[023] show for [ PD.monprobe.7         ] FAILED
+[024] show for [ PD.monquery.1         ] FAILED
+[025] show for [ PD.monslog.1          ] SUCC
+[026] show for [ PD.synconfig.1        ] SUCC
+
+LINE:['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t1\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t11\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t12\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t13\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t14\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t15\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t16\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t17\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t18\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t19\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t2\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t3\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t30\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t1\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t1\t\toff\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t1\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t1\t', 'PD.monprobe.10\tPD\t\tmonprobe\t\t10\t\t10\t', 'PD.monprobe.12\tPD\t\tmonprobe\t\t12\t\t12\t', 'PD.monprobe.13\tPD\t\tmonprobe\t\t13\t\t13\t', 'PD.monprobe.14\tPD\t\tmonprobe\t\t14\t\t14\t', 'PD.monprobe.15\tPD\t\tmonprobe\t\t15\t\t15\t', 'PD.monprobe.16\tPD\t\tmonprobe\t\t16\t\t16\t', 'PD.monprobe.17\tPD\t\tmonprobe\t\t17\t\t17\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t2\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t3\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t4\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t5\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t6\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t7\t', 'PD.monprobe.8\tPD\t\tmonprobe\t\t8\t\t8\t', 'PD.monprobe.9\tPD\t\tmonprobe\t\t9\t\t9\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t1\t\toff\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t1\t', 'PD.snmpmanager.1\tPD\t\tsnmpmanager\t\t1\t\t1\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t1\t']
+LINE:['PD.monagent.1\tPD\t\tmonagent\t\t1\t\t172.1.128.170\t', 'PD.monagent.11\tPD\t\tmonagent\t\t11\t\t172.1.128.151\t', 'PD.monagent.12\tPD\t\tmonagent\t\t12\t\t172.1.128.151\t', 'PD.monagent.13\tPD\t\tmonagent\t\t13\t\t172.1.128.151\t', 'PD.monagent.14\tPD\t\tmonagent\t\t14\t\t172.1.128.151\t', 'PD.monagent.15\tPD\t\tmonagent\t\t15\t\t172.1.128.151\t', 'PD.monagent.16\tPD\t\tmonagent\t\t16\t\t172.1.128.151\t', 'PD.monagent.17\tPD\t\tmonagent\t\t17\t\t172.1.128.151\t', 'PD.monagent.18\tPD\t\tmonagent\t\t18\t\t172.1.128.151\t', 'PD.monagent.19\tPD\t\tmonagent\t\t19\t\t172.1.128.151\t', 'PD.monagent.2\tPD\t\tmonagent\t\t2\t\t172.1.128.170\t', 'PD.monagent.3\tPD\t\tmonagent\t\t3\t\t172.1.128.170\t', 'PD.monagent.30\tPD\t\tmonagent\t\t30\t\t172.1.128.152\t', 'PD.monevent.1\tPD\t\tmonevent\t\t1\t\t172.1.128.155\t', 'PD.monfibclient.1\tPD\t\tmonfibclient\t\t1\t\t172.1.128.154\t', 'PD.monfront.1\tPD\t\tmonfront\t\t1\t\t172.1.128.151\t', 'PD.monfront.2\tPD\t\tmonfront\t\t2\t\t172.1.128.151\t', 'PD.monprobe.1\tPD\t\tmonprobe\t\t1\t\t172.1.128.151\t', 'PD.monprobe.2\tPD\t\tmonprobe\t\t2\t\t172.1.128.153\t', 'PD.monprobe.3\tPD\t\tmonprobe\t\t3\t\t172.1.128.154\t', 'PD.monprobe.4\tPD\t\tmonprobe\t\t4\t\t172.1.128.155\t', 'PD.monprobe.5\tPD\t\tmonprobe\t\t5\t\t172.1.128.156\t', 'PD.monprobe.6\tPD\t\tmonprobe\t\t6\t\t172.1.128.157\t', 'PD.monprobe.7\tPD\t\tmonprobe\t\t7\t\t172.1.128.158\t', 'PD.monquery.1\tPD\t\tmonquery\t\t1\t\t172.1.128.152\t', 'PD.monslog.1\tPD\t\tmonslog\t\t1\t\t172.1.128.153\t', 'PD.synconfig.1\tPD\t\tsynconfig\t\t1\t\t172.1.128.151\t']
+LINE:[001] show for [ PD.monagent.1         ] SUCC
+SRV[PD.monagent.1] STATUS[SUCC]
+LINE:[002] show for [ PD.monagent.11        ] SUCC
+SRV[PD.monagent.11] STATUS[SUCC]
+LINE:[003] show for [ PD.monagent.12        ] SUCC
+SRV[PD.monagent.12] STATUS[SUCC]
+LINE:[004] show for [ PD.monagent.13        ] SUCC
+SRV[PD.monagent.13] STATUS[SUCC]
+LINE:[005] show for [ PD.monagent.14        ] SUCC
+SRV[PD.monagent.14] STATUS[SUCC]
+LINE:[006] show for [ PD.monagent.15        ] SUCC
+SRV[PD.monagent.15] STATUS[SUCC]
+LINE:[007] show for [ PD.monagent.16        ] SUCC
+SRV[PD.monagent.16] STATUS[SUCC]
+LINE:[008] show for [ PD.monagent.17        ] SUCC
+SRV[PD.monagent.17] STATUS[SUCC]
+LINE:[009] show for [ PD.monagent.18        ] SUCC
+SRV[PD.monagent.18] STATUS[SUCC]
+LINE:[010] show for [ PD.monagent.19        ] SUCC
+SRV[PD.monagent.19] STATUS[SUCC]
+LINE:[011] show for [ PD.monagent.2         ] SUCC
+SRV[PD.monagent.2] STATUS[SUCC]
+LINE:[012] show for [ PD.monagent.3         ] SUCC
+SRV[PD.monagent.3] STATUS[SUCC]
+LINE:[013] show for [ PD.monagent.30        ] FAILED
+SRV[PD.monagent.30] STATUS[FAILED]
+SET:PD.monagent.30 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[014] show for [ PD.monevent.1         ] FAILED
+SRV[PD.monevent.1] STATUS[FAILED]
+SET:PD.monevent.1 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[015] show for [ PD.monfibclient.1     ] FAILED
+SRV[PD.monfibclient.1] STATUS[FAILED]
+SET:PD.monfibclient.1 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[016] show for [ PD.monfront.1         ] FAILED
+SRV[PD.monfront.1] STATUS[FAILED]
+SET:PD.monfront.1 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[017] show for [ PD.monprobe.1         ] SUCC
+SRV[PD.monprobe.1] STATUS[SUCC]
+LINE:[018] show for [ PD.monprobe.2         ] SUCC
+SRV[PD.monprobe.2] STATUS[SUCC]
+LINE:[019] show for [ PD.monprobe.3         ] FAILED
+SRV[PD.monprobe.3] STATUS[FAILED]
+SET:PD.monprobe.3 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[020] show for [ PD.monprobe.4         ] FAILED
+SRV[PD.monprobe.4] STATUS[FAILED]
+SET:PD.monprobe.4 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[021] show for [ PD.monprobe.5         ] FAILED
+SRV[PD.monprobe.5] STATUS[FAILED]
+SET:PD.monprobe.5 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[022] show for [ PD.monprobe.6         ] FAILED
+SRV[PD.monprobe.6] STATUS[FAILED]
+SET:PD.monprobe.6 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[023] show for [ PD.monprobe.7         ] FAILED
+SRV[PD.monprobe.7] STATUS[FAILED]
+SET:PD.monprobe.7 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[024] show for [ PD.monquery.1         ] FAILED
+SRV[PD.monquery.1] STATUS[FAILED]
+SET:PD.monquery.1 0 1481524458
+LEN(srv_status_map):[26]
+LINE:[025] show for [ PD.monslog.1          ] SUCC
+SRV[PD.monslog.1] STATUS[SUCC]
+LINE:[026] show for [ PD.synconfig.1        ] SUCC
+SRV[PD.synconfig.1] STATUS[SUCC]
+-------------------------------Srv list---------------------------------
+[1] PD.monagent.1 3 0    1481524458
+
+[2] PD.monagent.11 3 0    1481524458
+
+[3] PD.monagent.12 3 0    1481524458
+
+[4] PD.monagent.13 3 0    1481524458
+
+[5] PD.monagent.14 3 0    1481524458
+
+[6] PD.monagent.15 3 0    1481524458
+
+[7] PD.monagent.16 3 0    1481524458
+
+[8] PD.monagent.17 3 0    1481524458
+
+[9] PD.monagent.18 3 0    1481524458
+
+[10] PD.monagent.19 3 0    1481524458
+
+[11] PD.monagent.2 3 0    1481524458
+
+[12] PD.monagent.3 3 0    1481524458
+
+[13] PD.monagent.30 0 0    1481524458
+
+[14] PD.monevent.1 0 0    1481524458
+
+[15] PD.monfibclient.1 0 0    1481524458
+
+[16] PD.monfront.1 0 0    1481524458
+
+[17] PD.monprobe.1 3 0    1481524458
+
+[18] PD.monprobe.2 3 0    1481524458
+
+[19] PD.monprobe.3 0 0    1481524458
+
+[20] PD.monprobe.4 0 0    1481524458
+
+[21] PD.monprobe.5 0 0    1481524458
+
+[22] PD.monprobe.6 0 0    1481524458
+
+[23] PD.monprobe.7 0 0    1481524458
+
+[24] PD.monquery.1 0 0    1481524458
+
+[25] PD.monslog.1 2 16831 172.1.128.153 Dec05 ./monslog 1 1481524458
+
+[26] PD.synconfig.1 1 0    1481524458
+
+-------------------------------------------------------------------------
+Total [26] SRVs, UN/UD/R/S = [10/1/1/14]
+
+process[2563] doTask  end  at 1481524458.38
+doTask cost time [21] secs
+ScanTaskList at 1481524458 Length of TaskList is [0]
+ScanTaskList at 1481524458 Length of TaskList is [0]
+ScanTaskList at 1481524459 Length of TaskList is [0]
+ScanTaskList at 1481524459 Length of TaskList is [0]
+ScanTaskList at 1481524460 Length of TaskList is [0]
+ScanTaskList at 1481524460 Length of TaskList is [0]
+ScanTaskList at 1481524461 Length of TaskList is [0]
+ScanTaskList at 1481524461 Length of TaskList is [0]
+ScanTaskList at 1481524462 Length of TaskList is [0]
+ScanTaskList at 1481524462 Length of TaskList is [0]
+ScanTaskList at 1481524463 Length of TaskList is [0]
+ScanTaskList at 1481524463 Length of TaskList is [0]
+ScanTaskList at 1481524464 Length of TaskList is [0]
+ScanTaskList at 1481524464 Length of TaskList is [0]
+ScanTaskList at 1481524465 Length of TaskList is [0]
+ScanTaskList at 1481524465 Length of TaskList is [0]
+ScanTaskList at 1481524466 Length of TaskList is [0]
+ScanTaskList at 1481524466 Length of TaskList is [0]
+ScanTaskList at 1481524467 Length of TaskList is [0]
+ScanTaskList at 1481524467 Length of TaskList is [0]
+ScanTaskList at 1481524468 Length of TaskList is [0]
+ScanTaskList at 1481524468 Length of TaskList is [0]
+ScanTaskList at 1481524469 Length of TaskList is [0]
+ScanTaskList at 1481524469 Length of TaskList is [0]
+ScanTaskList at 1481524470 Length of TaskList is [0]
+ScanTaskList at 1481524470 Length of TaskList is [0]
+ScanTaskList at 1481524471 Length of TaskList is [0]
+ScanTaskList at 1481524471 Length of TaskList is [0]
+ScanTaskList at 1481524472 Length of TaskList is [0]
+ScanTaskList at 1481524472 Length of TaskList is [0]
+ScanTaskList at 1481524473 Length of TaskList is [0]
+ScanTaskList at 1481524473 Length of TaskList is [0]
+ScanTaskList at 1481524474 Length of TaskList is [0]
+ScanTaskList at 1481524474 Length of TaskList is [0]
+ScanTaskList at 1481524475 Length of TaskList is [0]
+ScanTaskList at 1481524475 Length of TaskList is [0]
+ScanTaskList at 1481524476 Length of TaskList is [0]
+ScanTaskList at 1481524476 Length of TaskList is [0]
+ScanTaskList at 1481524477 Length of TaskList is [0]
+ScanTaskList at 1481524477 Length of TaskList is [0]
+ScanTaskList at 1481524478 Length of TaskList is [0]
+ScanTaskList at 1481524478 Length of TaskList is [0]
+ScanTaskList at 1481524479 Length of TaskList is [0]
+ScanTaskList at 1481524479 Length of TaskList is [0]
+ScanTaskList at 1481524480 Length of TaskList is [0]
+ScanTaskList at 1481524480 Length of TaskList is [0]
+ScanTaskList at 1481524481 Length of TaskList is [0]
+ScanTaskList at 1481524481 Length of TaskList is [0]
+ScanTaskList at 1481524482 Length of TaskList is [0]
+ScanTaskList at 1481524482 Length of TaskList is [0]
+ScanTaskList at 1481524483 Length of TaskList is [0]
+ScanTaskList at 1481524483 Length of TaskList is [0]
+ScanTaskList at 1481524484 Length of TaskList is [0]
+ScanTaskList at 1481524484 Length of TaskList is [0]
+ScanTaskList at 1481524485 Length of TaskList is [0]
+ScanTaskList at 1481524485 Length of TaskList is [0]
+ScanTaskList at 1481524486 Length of TaskList is [0]
+ScanTaskList at 1481524486 Length of TaskList is [0]
+ScanTaskList at 1481524487 Length of TaskList is [0]
+ScanTaskList at 1481524487 Length of TaskList is [0]
+ScanTaskList at 1481524488 Length of TaskList is [0]
+ScanTaskList at 1481524488 Length of TaskList is [0]
+ScanTaskList at 1481524489 Length of TaskList is [0]
+ScanTaskList at 1481524489 Length of TaskList is [0]
+ScanTaskList at 1481524490 Length of TaskList is [0]
+ScanTaskList at 1481524490 Length of TaskList is [0]
+ScanTaskList at 1481524491 Length of TaskList is [0]
+ScanTaskList at 1481524491 Length of TaskList is [0]
+ScanTaskList at 1481524492 Length of TaskList is [0]
+ScanTaskList at 1481524492 Length of TaskList is [0]
+ScanTaskList at 1481524493 Length of TaskList is [0]
+ScanTaskList at 1481524493 Length of TaskList is [0]
+ScanTaskList at 1481524494 Length of TaskList is [0]
+ScanTaskList at 1481524494 Length of TaskList is [0]
+ScanTaskList at 1481524495 Length of TaskList is [0]
+ScanTaskList at 1481524495 Length of TaskList is [0]
+ScanTaskList at 1481524496 Length of TaskList is [0]
+ScanTaskList at 1481524496 Length of TaskList is [0]
+ScanTaskList at 1481524497 Length of TaskList is [0]
+ScanTaskList at 1481524497 Length of TaskList is [0]
+ScanTaskList at 1481524498 Length of TaskList is [0]
+ScanTaskList at 1481524498 Length of TaskList is [0]
+ScanTaskList at 1481524499 Length of TaskList is [0]
+ScanTaskList at 1481524499 Length of TaskList is [0]
+ScanTaskList at 1481524500 Length of TaskList is [0]
+ScanTaskList at 1481524500 Length of TaskList is [0]
+ScanTaskList at 1481524501 Length of TaskList is [0]
+ScanTaskList at 1481524501 Length of TaskList is [0]
+ScanTaskList at 1481524502 Length of TaskList is [0]
+ScanTaskList at 1481524502 Length of TaskList is [0]
+ScanTaskList at 1481524503 Length of TaskList is [0]
+ScanTaskList at 1481524503 Length of TaskList is [0]
+ScanTaskList at 1481524504 Length of TaskList is [0]
+ScanTaskList at 1481524504 Length of TaskList is [0]
+ScanTaskList at 1481524505 Length of TaskList is [0]
+ScanTaskList at 1481524505 Length of TaskList is [0]
+ScanTaskList at 1481524506 Length of TaskList is [0]
+ScanTaskList at 1481524506 Length of TaskList is [0]
+ScanTaskList at 1481524507 Length of TaskList is [0]
+ScanTaskList at 1481524507 Length of TaskList is [0]
+ScanTaskList at 1481524508 Length of TaskList is [0]
+ScanTaskList at 1481524508 Length of TaskList is [0]
+ScanTaskList at 1481524509 Length of TaskList is [0]
+ScanTaskList at 1481524509 Length of TaskList is [0]
+ScanTaskList at 1481524510 Length of TaskList is [0]
+ScanTaskList at 1481524510 Length of TaskList is [0]
+ScanTaskList at 1481524511 Length of TaskList is [0]
+ScanTaskList at 1481524511 Length of TaskList is [0]
+ScanTaskList at 1481524512 Length of TaskList is [0]
+ScanTaskList at 1481524512 Length of TaskList is [0]
+ScanTaskList at 1481524513 Length of TaskList is [0]
+ScanTaskList at 1481524513 Length of TaskList is [0]
+ScanTaskList at 1481524514 Length of TaskList is [0]
+ScanTaskList at 1481524514 Length of TaskList is [0]
+ScanTaskList at 1481524515 Length of TaskList is [0]
+ScanTaskList at 1481524515 Length of TaskList is [0]
+ScanTaskList at 1481524516 Length of TaskList is [0]
+ScanTaskList at 1481524516 Length of TaskList is [0]
+ScanTaskList at 1481524517 Length of TaskList is [0]
+ScanTaskList at 1481524517 Length of TaskList is [0]
+ScanTaskList at 1481524518 Length of TaskList is [0]
+ScanTaskList at 1481524518 Length of TaskList is [0]
+ScanTaskList at 1481524519 Length of TaskList is [0]
+ScanTaskList at 1481524519 Length of TaskList is [0]
+ScanTaskList at 1481524520 Length of TaskList is [0]
+ScanTaskList at 1481524520 Length of TaskList is [0]
+ScanTaskList at 1481524521 Length of TaskList is [0]
+ScanTaskList at 1481524521 Length of TaskList is [0]
+ScanTaskList at 1481524522 Length of TaskList is [0]
+ScanTaskList at 1481524522 Length of TaskList is [0]
+ScanTaskList at 1481524523 Length of TaskList is [0]
+ScanTaskList at 1481524523 Length of TaskList is [0]
+ScanTaskList at 1481524524 Length of TaskList is [0]
+ScanTaskList at 1481524524 Length of TaskList is [0]
+ScanTaskList at 1481524525 Length of TaskList is [0]
+ScanTaskList at 1481524525 Length of TaskList is [0]
+ScanTaskList at 1481524526 Length of TaskList is [0]
+ScanTaskList at 1481524526 Length of TaskList is [0]
+ScanTaskList at 1481524527 Length of TaskList is [0]
+ScanTaskList at 1481524527 Length of TaskList is [0]
+ScanTaskList at 1481524528 Length of TaskList is [0]
+ScanTaskList at 1481524528 Length of TaskList is [0]

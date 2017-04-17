@@ -1,0 +1,29 @@
+html,
+body {
+ height: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+#container {
+  min-height: 100%;
+  height: 100%;
+}
+
+#content {
+  padding-bottom: 60px; /*高度等于footer的高度*/
+  clear: both;
+}
+
+#panelbar {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#footer {
+  position: relative;
+  margin-top: -60px;
+  height: 60px;
+  clear:both;
+  background: #417690;
+}

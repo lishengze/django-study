@@ -1,0 +1,29 @@
+<div class="modal fade" id="modalAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="myModalLabel">告警信息: </h4>
+      </div>
+      <div class="modal-body">
+        <p id='warningMsg' style= 'font-size:20px'> </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭告警</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+#myModalLabel {
+  color: red;
+}
+</style>
+
+<script>
+  function modalAlert(message) {
+    console.log (message);
+    $('#warningMsg').text(message);
+    $('#modalAlert').modal('show');
+  }
+</script>

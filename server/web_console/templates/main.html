@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+    <head profile="http://gmpg.org/xfn/11">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>XG'Blog</title>
+        <script type="text/javascript" src="root/colorpaper/js/jquery-1.2.6.min.js">
+        </script>
+        <script type='text/javascript' src='root/colorpaper/js/jquery/jquery.js?ver=1.3.2'>
+        </script>
+        <script type="text/javascript">
+            var AKPC_IDS = "";
+        </script>
+        <link rel="stylesheet" href="root/colorpaper/styles/teal.css" type="text/css" />
+        <link rel="stylesheet" href="root/colorpaper/style.css" type="text/css" />
+        <script>
+            function switchCss(type){
+            
+            }
+        </script>
+
+    </head>
+    <body>
+        <a name="top"></a>
+        <div id="footer-back">
+            <div id="footer-bg">
+                <div id="main">
+                    <div id="main-top">
+                        <div id="navigationed">
+                            <ul id="navigation" class="clearfix">
+                                <li>
+                                    <a href="/1/" title="My Web Blog">首页</a>
+                                </li>
+                                <li class="page_item page-item-50">
+                                    <a href="/1/15/" title="Contact">生活随笔</a>
+                                </li>
+                                <li class="page_item page-item-53">
+                                    <a href="/1/" title="Extras">其他</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li>
+                                    <a href="/account/login/" >{{user.username}}</a>                                
+                                </li>
+                                <li>
+                                    <a href="/account/logout/" >退出</a>
+                                </li>                                
+                                {% else %}
+                                <li>
+                                    <a href="/account/login/" >登录</a>                                
+                                </li>
+                                <li>
+                                    <a href="/account/register/" >注册</a>
+                                </li>
+                               {% endif %}
+                            </ul>
+                        </div>
+                        <div id="container">
+                            <div id="content-back" class="clearfix">
+                                <div id="content-bottom">
+                                    <div id="left-col">
+                                        <div class="clearfix">
+                                            <div id="colors">
+                                                <a href="#" onclick="switchCss('Blue')" class="color-blue">Blue</a>
+                                                <a href="#" onclick="switchCss('Orange')" class="color-orange">Orange</a>
+                                                <a href="#" onclick="switchCss('Green')" class="color-green">Green</a>
+                                                <a href="#" onclick="switchCss('Pink')" class="color-pink">Pink</a>
+                                                <a href="#" onclick="switchCss('Purple')" class="color-purple">Purple</a>
+                                            </div>
+                                            <div id="featured">
+                                                <div class="featured-content">
+                                                    <h3><a href="/essay/{{welcome.id}}/" rel="bookmark" title="个人网站介绍">一个Java程序员的空间</a></h3>
+                                                    <p>
+                                                        {{welcome.abstract|safe}}
+                                                    </p>
+                                                    <script type="text/javascript">
+                                                        AKPC_IDS += "81,";
+                                                    </script>
+                                                    <div class="post-meta">
+                                                        <a href="/essay/{{welcome.id}}/" rel="bookmark" title="浏览全文" class="btn btn-orange">浏览全部</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="left-content">
+                                            {%for essay in page.object_list%}
+                                            <div class="post">
+                                                <div class="post-date">
+                                                    <span class="month block">{{essay.pub_date.ctime.split.1}} </span>
+                                                    <span class="day">{{essay.pub_date.day}}</span>
+                                                </div>
+                                                <h4><a href="/essay/{{essay.id}}/" rel="bookmark" title="{{essay.title}}">{{essay.title}}</a></h4>
+                                                <p>
+                                                    {{essay.abstract|safe}}
+                                                </p>
+                                                <script type="text/javascript">
+                                                    AKPC_IDS += "95,";
+                                                </script>
+                                                <p class="akpc_pop">
+                                                    浏览: {{essay.view_count}}   次
+                                                </p>
+                                                <div class="post-meta">
+                                                    <a href="/essay/{{essay.id}}/#more-95" rel="bookmark" title="{{essay.title}}" class="btn btn-teal">浏览全部</a>
+                                                    <a href="/essay/{{essay.id}}/#comments" title="关于{{essay.title}}的评论">{{essay.essay_comment.all.count}} Comments</a>
+                                                    &nbsp; | &nbsp;  许刚
+                                                </div>
+                                            </div>
+                                            {%endfor%}
+                                            <div class="clearfix pagination bluegray">
+                                                {%if page.has_previous%}<a href="/{{page.previous_page_number}}/">上一页</a>
+                                                {%endif%}<span class="extralarge">{{page.number}} of {{pcount}}</span>
+                                                {%if page.has_next%}<a href="/{{page.next_page_number}}/">下一页</a>
+                                                {%endif%}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="right-col">
+                                        <div id="logo">
+                                            <h1>许刚的博客</h1>
+                                        </div>
+                                        <ul id="right-content">
+                                            <li id="categories-357617861" class="widget widget_categories">
+                                                <h5 class="widgettitle">文章分类</h5>
+                                                <ul>
+                                                    {%for etype in essay_type%}
+                                                    <li class="cat-item cat-item-4">
+                                                        <a href="/1/{{etype.id}}/" title="{{etype}}">{{etype}}({{etype.essay_set.count}})</a>
+                                                    </li>
+                                                    {%endfor%}
+                                                </ul>
+                                            </li>
+                                            <li id="recent-posts-2" class="widget widget_recent_entries">
+                                                <h5 class="widgettitle">最近文章</h5>
+                                                <ul>
+                                                    {%for essay in recent%}
+                                                    <li>
+                                                        <a href="/essay/{{essay.id}}/" title="{{essay.title}}">{{essay.title}}</a>
+                                                    </li>
+                                                    {%endfor%}
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h5>存档</h5>
+                                                <ul>
+                                                    {%for a in archives%}
+                                                    <li>
+                                                        <a href='/essay/{{a.essay.id}}/' title='{{a.essay.title}}'>{{a.pub_date|date:'Y年m月d日 H时i分'}}---{{a.essay.title}}</a>
+                                                    </li>
+                                                    {%endfor%}
+                                                </ul>
+                                            </li>
+                                            <form enctype="multipart/form-data" action="/uploadFile/" method="post">  
+                                                {% csrf_token %}
+                                                <input type="file" name="myfile" />  
+                                                <br/>  
+                                                <input type="submit" value="upload"/>  
+                                            </form> 
+                                             <form method="post" id="freq_form" action="/downloadFile/">  
+                                                {% csrf_token %}
+                                                 <div>
+                                                     <input type="text" value="" name="filename" id="filename" class="text" size="40" />
+                                                     <div id="keywordTip" style="width:150px">
+                                                     </div>
+                                                     <input type="submit" id="freq_submit" value="Request" class="btn submit btn-green" />
+                                                 </div>
+                                            </form> 
+                                            <h5>关键字</h5>
+                                            <ul>
+                                                <div class="box">
+                                                    <form method="post" id="search_form" action="/search/">
+                                                        {% csrf_token %}
+                                                        <div>
+                                                            <input type="text" value="" name="keyword" id="keyword" class="text" size="40" />
+                                                            <div id="keywordTip" style="width:150px">
+                                                            </div>
+                                                            <input type="submit" id="searchsubmit" value="Search" class="btn submit btn-green" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </ul>
+                                        </ul>
+                                        <br/>
+                                        <a href="/latest/feed/"><img src="root/colorpaper/images/rss.gif" hspace="22" border="0" /></a>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="footer" class="clearfix">
+                                <div>
+                                    <ul class="footer-pages clearfix">
+                                        <li>
+                                            <a href="/1/" title="My Web Blog">首页</a>
+                                        </li>
+                                        <li class="page_item page-item-2">
+                                            <a href="/1/15/" title="About">生活随笔</a>
+                                        </li>
+                                        <li class="page_item page-item-53 current_page_item">
+                                            <a href="/1/" title="Extras">其他</a>
+                                        </li>
+                                    </ul>
+                                    <br>
+                                    <p>
+                                        <big>
+                                            <strong>&copy; Copyright XuGang. All rights reserved.</strong>
+                                        </big>
+                                        <br>
+                                    </p>
+                                </div>
+                                <a href="#top" class="btn btn-footer right">返回顶部</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

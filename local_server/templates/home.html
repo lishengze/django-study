@@ -1,0 +1,28 @@
+<!DOCTYPE html >
+<html >
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>上期技术版本控制系统</title>
+  {% include 'dependence.html' %}
+</head>
+<body>
+    <div id = 'container'>
+      {% include 'nav.html' %}
+      <div id ='page' style="clear:both;">
+        <div id="left">{% include 'leftcontentmenu.html' %}</div>
+				<div id="content">{% include 'rightBlock.html' %}</div>
+        </div>
+      </div>
+      <!-- footer -->
+      {% include 'footer.html' %}
+   <script>
+      
+      $(document).ready(function() {
+          $("#panelbar").kendoPanelBar({
+              // expandMode: "single"
+          });
+          // $("#calendar").kendoCalendar();
+      });
+    </script>
+</body>
+</html>

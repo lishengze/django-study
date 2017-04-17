@@ -1,0 +1,39 @@
+<html>
+<meta charset="utf-8">
+
+<head>
+<script>
+function ajax_request()
+{
+var xmlhttp;
+if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {
+    // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+xmlhttp.onreadystatechange=function() {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("result").innerHTML=xmlhttp.responseText;
+  }
+}
+
+var a = document.getElementById("a").value;
+var b = document.getElementById("b").value;
+xmlhttp.open("GET", "/add/" + a + "/" + b + "/", true);
+xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+xmlhttp.send();
+// ajax 教程：http://www.ziqiangxuetang.com/ajax/ajax-tutorial.html
+}
+</script>
+
+</head><body>
+<div id="myDiv"><h2>输入两个数求和</h2></div>
+a: <input id="a"><br>
+b: <input id="b"><br>
+<button type="button" onclick="ajax_request()">求和</button>
+<div>结果：<span id="result"></span></div>
+</body>
+</html>
