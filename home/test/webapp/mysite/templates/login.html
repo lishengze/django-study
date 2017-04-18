@@ -121,11 +121,12 @@
       /*padding: 1em 2em 1em 3em;*/
       padding: 10px ;
       font-size: 20px;
-      color: #003399;
+      color: #0033CC;
     }
     .form-control{
        width: 100%;
-       padding: 0em 2em;
+       padding: 0em 0em 0em 2em;
+       border: 0px;
        /*color: #dd3e3e;*/
        font-size: 18px;
        /*outline: none;
@@ -180,7 +181,7 @@
       <div class="form-group">
         <label class="col-sm-4 control-label inputLabel">环境选择</label>
         <div class="col-sm-8 ">
-            <select id = 'EvrKeySelect' class = ' form-control'>
+            <select id = 'EvrKeySelect' class = 'form-control'>
               {% for item in ENV_KEY %}
               <option >{{ item }}</option>
               {% endfor %}
