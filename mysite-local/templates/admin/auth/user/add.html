@@ -1,0 +1,71 @@
+<html lang="en-us">
+  <head>
+  <title>添加用户</title>
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+  <script src="/static/js/jquery-1.8.3/jquery.min.js"></script>
+	<script src="/static/js/admin/user/add.js"></script>
+  </head>
+  <body class=" app-auth model-user change-form" data-admin-utc-offset="28800">
+    <!-- Container -->
+    <div id="container" style="height:100%">
+      <!-- Header -->
+      {% include '../../header.html' %}
+      <!-- END Header -->
+      <div class="breadcrumbs">
+      <a href="/admin/">主页</a>
+      › <a href="/admin/auth/">身份认证与授权管理</a>
+      › <a href="/admin/auth/user/">用户</a>
+      › 添加用户
+      </div>
+      <!-- Content -->
+      <div id="content" class="colM" style="*width:100%;padding:20px 40px">
+        <h1>添加用户</h1>
+        <div id="content-main">
+          <form enctype="multipart/form-data" action="" method="post" id="user_form" novalidate="">
+            <input type="hidden" name="csrfmiddlewaretoken" value="rlOOTMlqPu51OKTIWgVK7Tiaeitk5HiLXho52rMyoFKTHuKfqaEFNhxrO8NLtlw2">
+            <p>首先输入用户名和密码.然后便可以有更多的编辑选项.</p>
+            <div>
+              <fieldset class="module aligned wide">
+                <div class="form-row field-username">
+                  <div>
+                    <label class="required" for="id_username">Username:</label>
+                        <input autofocus="" id="id_username" maxlength="150" name="username" type="text" required="">
+                    <p class="help">150个字符内的数字字母</p>
+                  </div>
+                </div>
+                <div class="form-row field-password1">
+                  <div>
+                    <label class="required" for="id_password1">密码:</label>
+                    <input id="id_password1" name="password1" type="password" required="">
+                  </div>
+                </div>
+                <div class="form-row field-password2">
+                  <div>
+                    <label class="required" for="id_password2">确认密码:</label>
+                        <input id="id_password2" name="password2" type="password" required="">
+                    <p class="help">请再次输入密码进行确认.</p>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="submit-row">
+                <input type="button" value="保存" class="default" name="_save">
+                <input type="button" value="保存并继续添加" name="_addanother">
+              </div>
+              <script type="text/javascript" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" data-model-name="user">
+              </script>
+              <script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
+              </script>
+            </div>
+          </form>
+        </div>
+        <br class="clear">
+      </div>
+      <!-- END Content -->
+    </div>
+    <!-- END Container -->
+    <!-- Footer -->
+		{% include '../../footer.html' %}
+		<!-- END Footer -->
+  </body>
+</html>

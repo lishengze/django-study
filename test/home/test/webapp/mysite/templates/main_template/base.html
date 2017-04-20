@@ -1,0 +1,42 @@
+<!DOCTYPE html >
+<html >
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title> {% block title %}{% endblock%} </title>
+  {% block dependence %}
+  {% include 'main_template/dependence.html' %}
+  {% endblock %}
+
+  {% block innerScript %} {% endblock %}
+
+  {% block innerStyle %} {% endblock %}
+
+  {% block uniqueDependence %} {% endblock %}
+</head>
+<body>
+    <div id = 'container'>
+        {% block navigator%}
+        {% include 'main_template/nav.html' %}
+        {% endblock %}
+
+        {% block modalAlertContent%}
+        {% include 'main_template/modal-alert.html' %}
+        {% endblock%}
+
+        {% block admin_content%} {% endblock %}
+
+        {% block main_content%}
+        <div id ='content'>
+          <div id="leftMenu"> {% include 'main_template/leftcontentmenu.html' %} </div>
+          <div id="rightBlock">
+            {% block rightBlockContent %} {% endblock %}
+          </div>
+        </div>
+        {% endblock%}
+    </div>
+    <!-- footer -->
+    {% block footer%}
+    {% include 'main_template/footer.html' %}
+    {% endblock%}
+</body>
+</html>

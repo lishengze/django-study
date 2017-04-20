@@ -1,0 +1,254 @@
+{% extends "main_template/base.html" %}
+{% block title %} 上期技术监控专用版本控制系统 {% endblock %}
+
+{% block innerStyle%}
+{% endblock%}
+
+{% block innerScript %}
+<script>
+   $(document).ready(function() {
+       $("#panelbar").kendoPanelBar({});
+       $("a").removeClass('k-state-selected');
+       $('#roll-back').addClass('k-state-selected');
+
+       init();
+       var FAILED_FLAG = 0;
+
+       function init() {
+         $('#searchSubmit').click(submitSearchVersion);
+
+         keyDownEvent();
+
+         initDropdownList();
+       }
+
+       function initDropdownList() {
+         $('#inputObject').kendoDropDownList({
+             dataSource : ['xml','server','client']
+         });
+
+         $('#inputAttr').kendoDropDownList({
+             dataSource : ['版本号','版本提交时间']
+         });
+
+         var rollbackAttrData = getRollbackAttrData();
+
+         $('#inputVersion').kendoDropDownList({
+             dataSource : rollbackAttrData['XMLversionArray']
+         });
+
+         $('#inputObject').change(function() {
+           inputConditionChange(rollbackAttrData);
+         });
+
+         $('#inputAttr').change(function() {
+           inputConditionChange(rollbackAttrData);
+         });
+       }
+
+       function getRollbackAttrData () {
+         var XMLversionArray = [];
+         var XMLTimeArray = [];
+         var ServerVersionArray = [];
+         var ServerTimeArray = [];
+         var ClientVersionArray = [];
+         var ClientTimeArray = [];
+
+         for(var i = 0; i < allVersionData.length; i ++) {
+           if(allVersionData[i].object == 'xml') {
+             XMLversionArray.push(allVersionData[i].version)
+             XMLTimeArray.push(allVersionData[i].datetime);
+           } else if (allVersionData[i].object == 'server') {
+             ServerVersionArray.push(allVersionData[i].version);
+             ServerTimeArray.push(allVersionData[i].datetime);
+           } else {
+             ClientVersionArray.push(allVersionData[i].version);
+             ClientTimeArray.push(allVersionData[i].datetime);
+           }
+         }
+         var rollbackAttrData = [];
+         rollbackAttrData['XMLversionArray'] = XMLversionArray;
+         rollbackAttrData['XMLTimeArray'] = XMLTimeArray;
+         rollbackAttrData['ServerVersionArray'] = ServerVersionArray;
+         rollbackAttrData['ServerTimeArray'] = ServerTimeArray;
+         rollbackAttrData['ClientVersionArray'] = ClientVersionArray;
+         rollbackAttrData['ClientTimeArray'] = ClientTimeArray;
+         return rollbackAttrData;
+       }
+
+       function inputConditionChange (rollbackAttrData) {
+         var inputObjectValue = $('#inputObject').val();
+         var inputAttrValue = $('#inputAttr').val();
+         if (inputAttrValue === '版本号') {
+           if(inputObjectValue == 'xml'){
+             $('#inputVersion').kendoDropDownList({
+                 dataSource : rollbackAttrData['XMLversionArray']
+             });
+           } else if(inputObjectValue == 'server'){
+             $('#inputVersion').kendoDropDownList({
+                 dataSource : rollbackAttrData['ServerVersionArray']
+             });
+           } else {
+             $('#inputVersion').kendoDropDownList({
+                 dataSource : rollbackAttrData['ClientVersionArray']
+             });
+           }
+         } else {
+           if(inputObjectValue == 'xml'){
+             $('#inputVersion').kendoDropDownList({
+                 dataSource : rollbackAttrData['XMLTimeArray']
+             });
+           } else if(inputObjectValue == 'server'){
+             $('#inputVersion').kendoDropDownList({
+                 dataSource : rollbackAttrData['ServerTimeArray']
+             });
+           } else {
+             $('#inputVersion').kendoDropDownList({
+                 dataSource : rollbackAttrData['ClientTimeArray']
+             });
+           }
+         }
+       }
+
+       function submitSearchVersion() {
+         var objType = $('#inputObject').val();
+         var args = objType + ':';
+         var versionName = $('#inputVersion').val();
+         if ($('#inputAttr').val() === "版本号") {
+           args = args + 'ver=' + versionName;
+         } else {
+           args = args + 'dt=' + versionName;
+         }
+         unbindEvent('searchSubmit');
+         reqSearchResult(args);
+       }
+
+       function reqSearchResult(args) {
+         var req_data = {
+           'ENV_KEY':sessionStorage.getItem('ENV_KEY'),
+           'type': 'version_control',
+           "--cmd" : "rollback",
+           "--args": args
+         }
+         $.ajax({
+           url: '/AJAX/Request_Real_Time_VersionCtr_Task/',
+           data: {'req_json': JSON.stringify(req_data)},
+           dataType: 'json',
+           type: 'POST',
+           traditional: true,
+           success: function (result) {
+             if (result.status === FAILED_FLAG) {
+               modalAlert(result.error);
+               window.location.reload();
+             } else {
+               responseReleaseResult(result);
+               rebindEvent('searchSubmit');
+             }
+           }
+         });
+       }
+
+       function responseReleaseResult(responseJSON) {
+         $('h3').remove();
+         $('#releaseResult').before("<h3>版本信息为： </h3>");
+         $('#releaseResult').kendoGrid({
+          allowCopy: true,
+          scrollable: false,
+          columns : [
+            {
+             field: "SEQ" ,
+             title: 'SEQ',
+             attributes: { style: "text-align: left"}
+            },
+            {
+             field: "version" ,
+             title: '版本',
+             attributes: { style: "text-align: left"}
+            },
+            {
+              field: "datetime",
+              title: '提交时间',
+              attributes: { style: "text-align: left"}
+            },
+            {
+             field: "status" ,
+             title: '状态',
+             attributes: { style: "text-align: left"}
+            }
+          ]
+         });
+         var dataSource = new kendo.data.DataSource({
+           data: responseJSON.rsp_data
+         })
+         $('#releaseResult').data("kendoGrid").setDataSource(dataSource);
+       }
+
+       function translateRspData (originalData) {
+         transData = originalData;
+         return transData;
+       }
+
+       function isRightversionType(data) {
+         if(data.length === 0) {
+           modalAlert("请输入版本号！");
+           return false;
+         }
+         if(allVersionData.length === 0) {
+           modalAlert("获取版本信息失败");
+         }
+         for(var i = 0; i < allVersionData.length; i ++) {
+           if(allVersionData[i].version == data) {
+             return true;
+           }
+         }
+         modalAlert("输入的版本号不存在");
+         return false;
+       }
+
+       function keyDownEvent() {
+         $(document).bind('keydown', function(event) {
+           if(event.keyCode == 13){
+              submitSearchVersion();
+           }
+         })
+       }
+
+       function unbindEvent(id) {
+         $(document).unbind('keydown');
+         $('#' + id).attr('disabled', 'disabled');
+       }
+
+       function rebindEvent(id) {
+         keyDownEvent();
+         $('#' + id).removeAttr('disabled');
+       }
+   });
+ </script>
+{% endblock %}
+
+{% block rightBlockContent %}
+<div  class="col-md-9" >
+  <div class="rollbackLeftContainer " style = 'float:left;width: 70%' >
+    <div class="tmp1" style = 'border-bottom: 1px solid #BDBDBD; margin-top: 1em'>
+     <div id = 'object'>
+       <div class="form-group">
+         <label style= 'width:150px; float:left'><h4>对象选择：</h4></label>
+         <input style= 'width:100px;float:left;' id="inputObject" >
+         <label class="col-md-2" style= 'width:auto;margin-left: 20px;border-left:1px solid #BDBDBD; padding:0px 10px;'>
+           <h4 >回退条件：</h4>
+         </label>
+         <input  style= 'width:auto;float:left' id="inputAttr" >
+         <div class="col-md-4">
+           <div id = 'inputVersion' class = 'inputValue'></div>
+         </div>
+         <div class="=col-md-2">
+           <button type="button" class="btn btn-primary btn-default" id ='searchSubmit'>回退</button>
+         </div>
+       </div>
+     </div>
+   </div>
+    <div id = 'releaseResult' style = 'margin-top:2em;'></div>
+  </div>
+  {% include 'main_template/object-version.html' %}
+</div>
+{% endblock %}

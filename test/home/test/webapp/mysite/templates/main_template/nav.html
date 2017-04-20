@@ -1,0 +1,105 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">请先登录</h4>
+      </div>
+      <div class="modal-body"style= 'font-size:20px'>
+        尚未登录。不能进行操作<br><br><br>
+        <a href = '/login.html' style= 'font-size:30px'>点此登录</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消登录</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="envChange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">重要提醒</h3>
+      </div>
+      <div  id = 'tips' class="modal-body"style= 'font-size:20px'>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"  onclick="cancelChange()">取消切换</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="saveChange()">确认切换</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="header" style="background-color:#417690; height:60px;margin-bottom:20px;padding:10px 40px;line-height:40px">
+    <div  style= 'float:left;'>
+      <div style= 'font-size:24px;font-weigth:300'>
+        <a href="/home.html" style="color: #f5dd5d"><div id = 'navTitle'>慧眼监控发布控制系统</div></a></div>
+    </div>
+    <div  style=" float:right;">
+      <div id="userMessage" style = 'color:white;font-size:15px;'>
+        <div >
+          <span style = ''>用户信息：</span>
+          <span  id = 'permission' class = 'username_nav' style = 'font-weight:bold;color:#ffc'></span>
+          <span style=""> &nbsp/&nbsp </span >
+          <span >环境选择： </span>
+          <select class = 'EvrKeySelect' id = 'keySelect' style = 'color:black'>
+          </select>
+          <span style=""> &nbsp/&nbsp </span >
+          <a href = '/login.html' style = 'color:white;'>退出登录</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+  if(sessionStorage.getItem('logName') == null) {
+    $('#myModal').modal('show');
+  }
+  titleInit();
+  getEnvKeySet();
+  initEnv();
+
+  function saveChange() {
+    sessionStorage.setItem('ENV_KEY', $('#keySelect').val());
+  }
+
+  function cancelChange() {
+    $('#keySelect').val(sessionStorage.getItem('ENV_KEY'));
+
+  }
+
+  function titleInit() {
+    $('h1').text(sessionStorage.getItem('ENV_KEY_TITLE'));
+    $('title').text(sessionStorage.getItem('ENV_KEY_TITLE'));
+    $('#navTitle').text(sessionStorage.getItem('ENV_KEY_TITLE'));
+  }
+
+  function initEnv() {
+    //ENV_KEY 为当前环境值， ENV_KEY_SET为后台给的可选择环境集合
+
+    if(sessionStorage.getItem('ADMIN_PERMISSION') == 'true') {
+      $('#permission').after("<span> &nbsp/&nbsp </span ><a href = '/admin.html' style = 'color:white;'>权限管理</a>")
+    }
+    $('#keySelect').val(sessionStorage.getItem('ENV_KEY'));
+    $(".username_nav").text(sessionStorage.getItem('logName'));
+    $("#currentEvr").text(sessionStorage.getItem('ENV_KEY'));
+    $("#keySelect").change(function(){
+      $('#tips').text("确定要将环境切换成" + $('#keySelect').val() + "吗？")
+      $('#envChange').modal('show');
+    })
+  }
+
+  function getEnvKeySet() {
+    var str  = sessionStorage.getItem('ENV_KEY_SET');
+    var obj = JSON.parse(str);
+    if(obj === null) {
+      return;
+    }
+    for(var i = 0; i < obj.length; i++) {
+      $("#keySelect").append("<option>" + obj[i] + "</option>")
+    }
+  }
+</script>

@@ -1,0 +1,76 @@
+{% extends "main_template/base.html" %}
+{% block title %} 上期技术监控专用版本控制系统 {% endblock %}
+
+{% block uniqueDependence %}
+<script type="text/javascript" src="static/jsdifflib/diffview.js"></script>
+<script type="text/javascript" src="static/jsdifflib/difflib.js"></script>
+{% endblock %}
+
+{% block innerStyle%}
+<style>
+ .diff {
+   width: 500px;
+ }
+</style>
+{% endblock%}
+
+{% block innerScript %}
+<script>
+   $(document).ready(function() {
+       $("#panelbar").kendoPanelBar({
+       });
+   $("a").removeClass('k-state-selected');
+   $('#diff').addClass('k-state-selected');
+
+   function diffUsingJS(viewType) {
+   	// "use strict";
+   	var byId = function (id) { return document.getElementById(id); },
+   		base = difflib.stringAsLines(byId("baseText").value),
+   		newtxt = difflib.stringAsLines(byId("newText").value),
+   		sm = new difflib.SequenceMatcher(base, newtxt),
+   		opcodes = sm.get_opcodes(),
+   		diffoutputdiv = byId("diffoutput");
+
+   	diffoutputdiv.innerHTML = "";
+   	contextSize = null;
+   	diffoutputdiv.appendChild(diffview.buildView({
+   		baseTextLines: base,
+   		newTextLines: newtxt,
+   		opcodes: opcodes,
+   		baseTextName: "Base Text",
+   		newTextName: "New Text",
+   		contextSize: contextSize,
+   		viewType: viewType
+   	}));
+   }
+  });
+ </script>
+{% endblock %}
+
+{% block rightBlockContent %}
+<div  class="col-md-9" > <p>请选择要比较的版本：</p>
+  <div style = 'float: left;width: 49%' >
+     <div>
+       <div class="textInput" >
+         <h2>Base Text</h2>
+         <textarea id="baseText" style='width: 100%;min-height:100px;'></textarea>
+       </div>
+    </div>
+  </div>
+  <div style = 'float: right;width: 49%'>
+    <div class="textInput spacer">
+  		<h2>New Text</h2>
+  		<textarea id="newText"  style='width: 100%;min-height:100px;'></textarea>
+  	 </div>
+  </div>
+  <div></div>
+  <div class="viewType" style="font-size: 16px;	clear: both;	text-align: center;	padding: 1em;">
+		<input type="radio" name="_viewtype" id="sidebyside" onclick="diffUsingJS(0);" /> <label for="sidebyside">Side by Side Diff</label>
+		&nbsp; &nbsp;
+		<input type="radio" name="_viewtype" id="inline" onclick="diffUsingJS(1);" /> <label for="inline">Inline Diff</label>
+	</div>
+  <div >
+    <div id="diffoutput" style=" overflow:scroll" > </div>
+  </div>
+</div>
+{% endblock %}
