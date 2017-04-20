@@ -3,13 +3,45 @@
 
 {% block innerStyle%}
   <style>
+  #instructionDiv{
+    border:2px dashed #607d8b;
+  }
+  .instruction{
+    font: bold 22px arial;
+    margin:5px 0px;
+  }
+  #paramArea {
+    border:2px solid #BDBDBD;
+    background-color:#eceff1;
+    margin-top:10px;
+    padding-bottom:10px
+  }
    .parameterSelect {
-     border:2px solid gray;
+     border:2px solid #BDBDBD;
      margin-top:5px;
-     background-color: #C0C0c0;
+     background-color: #b0bec5;
    }
    .onSelect {
      background-color: #FF6347;
+   }
+   .row {
+     padding: 3px;
+     margin-left: 0px;
+   }
+   .text {
+     position: relative;
+     top:3px;
+     padding: 0px, 0px;
+   }
+   .col-xs-4{
+     padding: 0px;
+   }
+   .col-xs-3{
+     padding: 0px;
+   }
+   input {
+     position: relative;
+     button:2px;
    }
   </style>
 {% endblock%}
@@ -237,33 +269,109 @@
 
 {% block rightBlockContent %}
 <div class="col-md-9 op-states" >
-  <div style="border:4px dashed gray;" class="col-md-12">
-    <div id ='instruction' style="font: bold 25px arial;">使用说明(点击显示/隐藏):</div>
+  <div id="instructionDiv" class="col-md-12">
+    <div id ='instruction' class="instruction">使用说明(点击显示/隐藏):</div>
     <p style='display: none' id = 'instructionContent'><br>
         待更新
       </p>
   </div>
-  <div id = 'paramArea' class="col-md-12" style="border:2px solid gray; background-color:#F0F8ff;margin-top:10px;padding-bottom:10px">
-    <div id = 'param' style="font: bold 25px arial;">参数设定(点击显示/隐藏)</div>
+  <div id = 'paramArea' class="col-md-12">
+    <div id = 'param' class="instruction">参数设定(点击显示/隐藏)</div>
     <div class = 'parameterContent'>
       <div class = 'parameterSelect' >
         <div class = 'row'>
-          <div  class="col-xs-2" > 类型参数：</div>
-          <div class="col-xs-3">
-            <div id = 'parameter' class = 'inputValue'></div>
-          </div>
+            <div class="col-xs-4">
+              <div class = 'row'>
+                <div  class="col-xs-3 text" >类型参数:</div>
+                <div class="col-xs-3">
+                  <div id = 'parameter' class = 'inputValue'></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-4">
+              <div class = 'row'>
+                <div class="col-xs-3 text">对象组:</div>
+                <div class="col-xs-3">
+                  <div id = 'grp' class = 'inputValue'></div>
+                </div>
+              </div>
+            </div>
+
         </div>
       </div>
-      <div class = 'parameterSelect'  >
+
+      <!-- <div class = 'parameterSelect'  >
         <div class="row" >
           <div class="col-xs-2">对象组：</div>
           <div class="col-xs-3">
             <div id = 'grp' class = 'inputValue'></div>
           </div>
         </div>
+      </div> -->
 
-      </div>
       <div class = 'parameterSelect' >
+
+        <div  class="row">
+          <div style = 'font: bold 20px arial '>对象参数：</div>
+          <div class="col-xs-4">
+              <div class="row">
+                <div class="col-xs-3 text">数据中心:</div>
+                <div class="col-xs-3">
+                    <div id = 'ctr' class = 'inputValue'></div>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-xs-4">
+            <div class="row">
+              <div class="col-xs-3 text">进程名:</div>
+              <div class="col-xs-3">
+                <div id = 'srv' class = 'inputValue'></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-4">
+            <div class="row">
+              <div class="col-xs-3 text">进程编号:</div>
+              <div class="col-xs-3">
+                <input type="text" class="form-control inputValue" id = 'srvno' placeholder="1-3,6,8">
+              </div>
+            </div>
+          </div>
+
+          <div style = 'font: bold 18px arial '>[取反模式]：</div>
+          <div class="col-xs-4">
+              <div class="row">
+                <div class="col-xs-3 text">数据中心:</div>
+                <div class="col-xs-3">
+                    <div id = 'ictr' class = 'inputValue'></div>
+                </div>
+              </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="row">
+              <div class="col-xs-3 text">进程名:</div>
+              <div class="col-xs-3">
+                <div id = 'isrv' class = 'inputValue'></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="row">
+              <div class="col-xs-3 text">进程编号:</div>
+              <div class="col-xs-3">
+                <input type="text" class="form-control inputValue" id = 'isrvno' placeholder="1-3,6,8">
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- <div class = 'parameterSelect' >
         <div style = 'font: bold 20px arial '>对象参数：</div>
         <div  class="row">
           <div class="col-xs-4">
@@ -291,8 +399,9 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class = 'parameterSelect' >
+      </div> -->
+
+      <!-- <div class = 'parameterSelect' >
         <div style = 'font: bold 20px arial '>排除对象参数(取反模式)：</div>
         <div class="row">
           <div class="col-xs-4">
@@ -320,12 +429,16 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+
     </div>
-    <button  id = 'reqBtn' class="btn btn-primary btn-default" style="margin-top:5px;float:left">提交</button>
+    <!-- <button  id = 'reqBtn' class="btn btn-primary btn-default" style="margin-top:5px;">提交</button>
+    <div id= 'getarg' style=" margin-top:5px;font-size:20px;">执行结果：<br></div>
+    <div style="clear:both"></div>
+    <div id= 'result' style="margin-top:5px"> </div> -->
   </div>
-  <div id= 'getarg' style=" margin-top:5px;font-size:20px;">执行结果：<br></div>
+  <!-- <div id= 'getarg' style=" margin-top:5px;font-size:20px;">执行结果：<br></div> -->
   <div style="clear:both"></div>
-  <div id= 'result' style="margin-top:5px"> </div>
+  <div id= 'result' style="margin-top:25px"> </div>
 </div>
 {% endblock%}

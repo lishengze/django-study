@@ -7,14 +7,12 @@
     margin-bottom: 10px;
   }
 
-  #objectText{
-    width:auto;
+  .text{
     display:inline-block;
+    width:120px;
   }
 
   #rollbackText {
-    display:inline-block;
-    width:auto;
     border-left:1px solid #BDBDBD;
     padding:0px 10px;
   }
@@ -23,8 +21,10 @@
     width:auto;
     display:inline-block;
     font-size: 17px;
-    margin: 0px 10px;
+    margin: 0px 20px;
     vertical-align: middle;
+    position: relative;
+    bottom: 5px;
   }
 
   #buttonDiv{
@@ -37,9 +37,9 @@
     display:inline-block;
     position:relative;
     left:20px;
+    bottom: 5px;
     font-size: 16px;
   }
-
 </style>
 {% endblock%}
 
@@ -271,14 +271,14 @@
     <div class="tmp1" style = 'border-bottom: 1px solid #BDBDBD; margin-top: 1em'>
      <div id = 'object'>
        <div id="group" class="form-group">
-         <label id="objectText" ><h4>对象选择：</h4></label>
+         <label class="text"><h4>对象选择：</h4></label>
          <input id="inputObject" class="inputValue">
-         <label id="rollbackText" >
+         <label class="text" id="rollbackText" >
            <h4 >回退条件：</h4>
          </label>
          <input id="inputAttr" class="inputValue">
          <input id="inputVersion" class="inputValue">
-         <button type="button" class="btn btn-primary btn-default" id ='searchSubmit'>回退</button>
+         <button type="button" class="btn btn-primary btn-default " id ='searchSubmit'>回退</button>
        </div>
      </div>
    </div>
