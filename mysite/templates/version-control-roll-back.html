@@ -2,6 +2,45 @@
 {% block title %} 上期技术监控专用版本控制系统 {% endblock %}
 
 {% block innerStyle%}
+<style>
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .text{
+    display:inline-block;
+    width:120px;
+  }
+
+  #rollbackText {
+    border-left:1px solid #BDBDBD;
+    padding:0px 10px;
+  }
+
+  .inputValue {
+    width:auto;
+    display:inline-block;
+    font-size: 17px;
+    margin: 0px 20px;
+    vertical-align: middle;
+    position: relative;
+    bottom: 5px;
+  }
+
+  #buttonDiv{
+    display:inline-block;
+    position:relative;
+    left:20px;
+  }
+
+  #searchSubmit{
+    display:inline-block;
+    position:relative;
+    left:20px;
+    bottom: 5px;
+    font-size: 16px;
+  }
+</style>
 {% endblock%}
 
 {% block innerScript %}
@@ -231,19 +270,15 @@
   <div class="rollbackLeftContainer " style = 'float:left;width: 70%' >
     <div class="tmp1" style = 'border-bottom: 1px solid #BDBDBD; margin-top: 1em'>
      <div id = 'object'>
-       <div class="form-group">
-         <label style= 'width:150px; float:left'><h4>对象选择：</h4></label>
-         <input style= 'width:100px;float:left;' id="inputObject" >
-         <label class="col-md-2" style= 'width:auto;margin-left: 20px;border-left:1px solid #BDBDBD; padding:0px 10px;'>
+       <div id="group" class="form-group">
+         <label class="text"><h4>对象选择：</h4></label>
+         <input id="inputObject" class="inputValue">
+         <label class="text" id="rollbackText" >
            <h4 >回退条件：</h4>
          </label>
-         <input  style= 'width:auto;float:left' id="inputAttr" >
-         <div class="col-md-4">
-           <div id = 'inputVersion' class = 'inputValue'></div>
-         </div>
-         <div class="=col-md-2">
-           <button type="button" class="btn btn-primary btn-default" id ='searchSubmit'>回退</button>
-         </div>
+         <input id="inputAttr" class="inputValue">
+         <input id="inputVersion" class="inputValue">
+         <button type="button" class="btn btn-primary btn-default " id ='searchSubmit'>回退</button>
        </div>
      </div>
    </div>

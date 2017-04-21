@@ -1,4 +1,4 @@
-<div class="col-md-2"  style=" border-style: solid;border-width: 0 2px 0px 0px;border-right-color: gray; margin-left: 5px;margin-bottom:60px">
+<div class="col-md-2"  id="mainDiv">
    <ul id="panelbar">
      <li class="k-state-active" style="display:none"> 运维管理
       <ul>
@@ -30,9 +30,22 @@
     </ul>
 </div>
 <style>
+    #mainDiv {
+      border-style: solid;
+      border-width: 0 2px 0px 0px;
+      border-right-color: #BDBDBD;
+      margin-left: 5px;
+      margin-bottom:60px
+    }
+    #panelbar {
+      border: 1px solid #BDBDBD;
+    }
    .k-link {
     color:#2e2e2e ;
-  }
+    }
+    /*.k-state-selected,.k-state-selected:link  {
+      background-color: #673ab7;
+    }*/
 </style>
 <script>
   $(document).ready(function() {

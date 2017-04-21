@@ -725,7 +725,6 @@ class HandleFileAjaxFunc(object):
 			req_data = request.POST.getlist('req_json')[0]
 			req_data = json.loads(req_data)
 			ENV_KEY  = req_data['ENV_KEY']
-			req_info = ReqInfo(0, cfg.FLAG_REQTYPE_UPDATE)
 
 			daemaon_ip, daemon_port = getKey(ENV_KEY)
 			sock = sock_conn(daemaon_ip, daemon_port)
@@ -1252,14 +1251,12 @@ class ProcessAjaxRspData(object):
 
 	def get_version_ctr_array_result(self, origin_data, data_type):
 		tmpdata = origin_data.split('\n')
+		if '' in tmpdata:
+			tmpdata.remove('')
+		output_msg('tmpdata.len', len(tmpdata))
 		array_data = []
-		tmpdata = tmpdata[len(tmpdata)-2].split('\t')
+		tmpdata = tmpdata[len(tmpdata)-1].split('\t')
 		array_data.append(tmpdata)
-		# if data_type.find('show')!= -1 or data_type.find('rollback')!= -1 or data_type.find('drop')!= -1:
-		# 	tmpdata = tmpdata[len(tmpdata)-2].split('\t')
-		# 	array_data.append(tmpdata)
-		# else:
-		# 	array_data.append(tmpdata[1:])
 
 		return array_data
 
@@ -1297,11 +1294,46 @@ class ProcessAjaxRspData(object):
 
 class SimulationData(object):
 	 def get_simu_real_time_info_task_data(self):
-		 data = []
+		 data = '[HEAD][RPC]149274281714572' + '\n' + \
+				'[info]001: BJ.monagent.007                172.23.128.153       ./monagent 7'  + '\n' + \
+				'[info]002: BJ.monagent.008                172.23.128.153       ./monagent 8' + '\n' + \
+				'[info]003: BJ.monagent.009                172.23.128.153       ./monagent 9'   + '\n' + \
+				'[info]004: BJ.monevent.003                172.23.128.153       ./monevent 3' + '\n' + \
+				'[info]005: BJ.monfibclient.003            172.23.128.153       ./monfibclient 3 off' + '\n' + \
+				'[info]006: BJ.monfront.005                172.23.128.153       ./monfront 5'  + '\n' + \
+				'[info]007: BJ.monprobe.001                172.23.128.153       ./monprobe 1'  + '\n' + \
+				'[info]008: BJ.monprobe.002                172.23.128.153       ./monprobe 2'  + '\n' + \
+				'[info]009: BJ.monprobe.003                172.23.128.153       ./monprobe 3'   + '\n' + \
+				'[info]010: BJ.monprobe.004                172.23.128.153       ./monprobe 4'   + '\n' + \
+				'[info]011: BJ.monprobe.005                172.23.128.153       ./monprobe 5'   + '\n' + \
+				'[info]012: BJ.monprobe.006                172.23.128.153       ./monprobe 6'   + '\n' + \
+				'[info]013: BJ.monprobe.007                172.23.128.153       ./monprobe 7'   + '\n' + \
+				'[info]014: BJ.monprobe.008                172.23.128.153       ./monprobe 8'   + '\n' + \
+				'[info]015: BJ.monprobe.009                172.23.128.153       ./monprobe 9'   + '\n' + \
+				'[info]016: BJ.monprobe.010                172.23.128.153       ./monprobe 10'   + '\n' + \
+				'[info]017: BJ.monprobe.011                172.23.128.153       ./monprobe 11'   + '\n' + \
+				'[info]018: BJ.monprobe.012                172.23.128.153       ./monprobe 12'   + '\n' + \
+				'[info]019: BJ.monprobe.013                172.23.128.153       ./monprobe 13'   + '\n' + \
+				'[info]020: BJ.monprobe.014                172.23.128.153       ./monprobe 14'   + '\n' + \
+				'[info]021: BJ.monprobe.015                172.23.128.153       ./monprobe 15'   + '\n' + \
+				'[info]022: BJ.monprobe.016                172.23.128.153       ./monprobe 16'   + '\n' + \
+				'[info]023: BJ.monprobe.017                172.23.128.153       ./monprobe 17'   + '\n' + \
+				'[info]024: BJ.monprobe.018                172.23.128.153       ./monprobe 18'   + '\n' + \
+				'[info]025: BJ.monprobe.019                172.23.128.153       ./monprobe 19'   + '\n' + \
+				'[info]026: BJ.monprobe.020                172.23.128.153       ./monprobe 20'   + '\n' + \
+				'[info]027: BJ.monprobe.021                172.23.128.153       ./monprobe 21'   + '\n' + \
+				'[info]028: BJ.monprobe.022                172.23.128.153       ./monprobe 22'   + '\n' + \
+				'[info]029: BJ.monprobe.023                172.23.128.153       ./monprobe 23'   + '\n' + \
+				'[info]030: BJ.monprobe.024                172.23.128.153       ./monprobe 24'    
+
 		 return data
 
 	 def get_simu_real_time_versionCtr_task_data(self):
-		 data = []
+		 data = '[HEAD][RPC]149274328114572'+ '\n' + \
+				'------------------------------------------------------------'+ '\n' + \
+				'OBJECT:[xml]'+ '\n' + \
+				'SEQ	version 	        datetime	status'+ '\n' + \
+				'*	0.0.3   	 20170418_150936	 C'
 		 return data
 
 	 def get_simu_ntf_task_data(self):
@@ -1325,15 +1357,75 @@ class SimulationData(object):
 		 return data
 
 	 def get_simu_all_group_data(self):
-		 data = []
+		 data = '[HEAD][RSP]149274176706700' + '\n' + \
+				'TopAgent'+ '\n' + \
+				'AllEvent'+ '\n' + \
+				'AllClient'+ '\n' + \
+				'FlowApp'+ '\n' + \
+				'AllAgent'+ '\n' + \
+				'AllTest'+ '\n' + \
+				'Front50Test'+ '\n' + \
+				'AllFront'+ '\n' + \
+				'AllInternal'+ '\n' + \
+				'AllSlog'+ '\n' + \
+				'AllQuery'+ '\n' + \
+				'AllProbe'+ '\n' + \
+				'New'+ '\n' + \
+				'AllPTestProbe'+ '\n' + \
+				'AllManager'+ '\n' + \
+				'MidAgent'+ '\n' + \
+				'AllServices'
 		 return data
 
 	 def get_simu_all_srvname_data(self):
-		 data = []
+		 data = '[HEAD][RSP]149274273106700' + '\n' + \
+				'monquery' + '\n' + \
+				'monfibclient' + '\n' + \
+				'monprobe' + '\n' + \
+				'monevent' + '\n' + \
+				'monfront' + '\n' + \
+				'monagent' + '\n' + \
+				'monslog' + '\n' + \
+				'monmanager'
+
 		 return data
 
 	 def get_simu_all_version_data(self):
-		 data = []
+		 data = '[HEAD][RSP]149274312710680' + '\n' + \
+				'[VERINFO]xml::0.0.3::20170418_150936::C' + '\n' + \
+				'[VERINFO]xml::0.0.5::20170417_142546::H' + '\n' + \
+				'[VERINFO]xml::0.0.2::20170417_142510::H' + '\n' + \
+				'[VERINFO]xml::0.0.1::20170417_115941::H' + '\n' + \
+				'[VERINFO]xml::0.0.4::20170329_152457::H' + '\n' + \
+				'[VERINFO]server::0.0.29::20170419_165735::C' + '\n' + \
+				'[VERINFO]server::0.0.28::20170418_151051::H' + '\n' + \
+				'[VERINFO]server::0.0.30::20170330_102118::H' + '\n' + \
+				'[VERINFO]server::0.0.27::20170329_161147::H' + '\n' + \
+				'[VERINFO]server::0.0.26::20170329_152506::H' + '\n' + \
+				'[VERINFO]server::0.0.25::20170329_152500::H' + '\n' + \
+				'[VERINFO]server::0.0.24::20170329_142546::H' + '\n' + \
+				'[VERINFO]server::0.0.23::20170328_132251::H' + '\n' + \
+				'[VERINFO]server::0.0.22::20170328_101258::H' + '\n' + \
+				'[VERINFO]server::0.0.21::20170328_100902::H' + '\n' + \
+				'[VERINFO]server::0.0.20::20170322_153312::H' + '\n' + \
+				'[VERINFO]server::0.0.19::20170322_152241::H' + '\n' + \
+				'[VERINFO]server::0.0.18::20170322_152214::H' + '\n' + \
+				'[VERINFO]server::0.0.17::20170322_152145::H' + '\n' + \
+				'[VERINFO]server::0.0.16::20170322_152143::H' + '\n' + \
+				'[VERINFO]server::0.0.15::20170322_152101::H' + '\n' + \
+				'[VERINFO]server::0.0.14::20170322_152059::H' + '\n' + \
+				'[VERINFO]server::0.0.13::20170322_150942::H' + '\n' + \
+				'[VERINFO]server::0.0.12::20170322_150940::H' + '\n' + \
+				'[VERINFO]server::0.0.11::20170322_150931::H' + '\n' + \
+				'[VERINFO]server::0.0.10::20170322_150930::H' + '\n' + \
+				'[VERINFO]server::0.0.9::20170322_150831::H' + '\n' + \
+				'[VERINFO]server::0.0.8::20170322_150829::H' + '\n' + \
+				'[VERINFO]server::0.0.7::20170320_165258::H' + '\n' + \
+				'[VERINFO]server::0.0.6::20170320_164947::H' + '\n' + \
+				'[VERINFO]server::0.0.5::20170320_164411::H' + '\n' + \
+				'[VERINFO]server::0.0.4::20170320_162332::H' + '\n' + \
+				'[VERINFO]server::0.0.3::20170320_154044::H'
+
 		 return data
 
 	 def get_simu_version_difference_data(self):
@@ -1456,8 +1548,6 @@ class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 			cmd = req_data['cmd']
 
 			original_rsp_data = ''
-			task_info = TaskInfo(state=cfg.FLAG_TASK_READY, TID=0, PID=int(cfg.PID), exec_time=0, \
-						cmd=cmd.strip(), cmdline=cmdline.strip(), task_type=int(task_type))
 			trans_rsp_data = {}
 
 			daemaon_ip, daemon_port = getKey(ENV_KEY)
@@ -1542,7 +1632,6 @@ class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 		status = SUCCESS_FLAG
 		error = ""
 		try:
-			req_info = ReqInfo(task_id, cfg.FLAG_REQTYPE_TASKINFO)
 			task_list = []
 
 			daemaon_ip, daemon_port = getKey(ENV_KEY)
@@ -1586,7 +1675,6 @@ class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 		status = SUCCESS_FLAG
 		error = ""
 		try:
-			req_info = ReqInfo(task_id, cfg.FLAG_REQTYPE_TASKRESULT)
 			task_result = ''
 			trans_result = {}
 
@@ -1732,7 +1820,6 @@ class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 			req_data = request.POST.getlist('req_json')[0]
 			req_data = json.loads(req_data)
 			ENV_KEY = req_data['ENV_KEY']
-			req_info = ReqInfo(0, cfg.FLAG_REQTYPE_GROUP)
 
 			daemaon_ip, daemon_port = getKey(ENV_KEY)
 			rsp = self.get_simu_all_group_data()
@@ -1768,7 +1855,6 @@ class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 			req_data = json.loads(req_data)
 			output_msg('req_data', req_data)
 			ENV_KEY  = req_data['ENV_KEY']
-			req_info = ReqInfo(0, cfg.FLAG_REQTYPE_SRVNAME)
 
 			daemaon_ip, daemon_port = getKey(ENV_KEY)
 			rsp = self.get_simu_all_srvname_data()
@@ -1803,8 +1889,6 @@ class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 			req_data = request.POST.getlist('req_json')[0]
 			req_data = json.loads(req_data)
 			ENV_KEY = req_data['ENV_KEY']
-
-			req_info = ReqInfo(0, cfg.FLAG_REQTYPE_VERSION)
 
 			daemaon_ip, daemon_port = getKey(ENV_KEY)
 			rsp = self.get_simu_all_version_data()

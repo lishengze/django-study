@@ -9,20 +9,36 @@
   th,td {
     padding: 0.2em 1em;
   }
+  .rightContainer {
+    float: right;
+    width: 25%;
+    height:550px;
+    border-left: 2px solid #BDBDBD;
+    padding: 0px 15px;
+  }
+  .tableDiv{
+    margin: 5px 0px;
+  }
+  .text {
+    margin-bottom: 5px;
+  }
 </style>
 
-<div class="rightContainer"  style = 'float: right;width: 25%;height:550px;border-left: 1px solid #BDBDBD;'>
+<div class="rightContainer"  style = ''>
   <div>
     <div style = 'border-bottom: 1px solid #BDBDBD;'>版本信息(最近5次)：</div>
-    <div style= '' > XML:<br>
+    <div class="tableDiv" >
+      <p class="text">XML:</p>
       <table border="1"  class = 'xmlContext' >
       </table>
     </div>
-    <div style= ''> Server:<br>
+    <div class="tableDiv">
+      <p class="text">Server:</p>
       <table border="1"  class = 'serverContext' >
       </table>
     </div>
-    <div style= '' > Client:<br>
+    <div class="tableDiv">
+      <p class="text">Client:</p>
       <table class = 'clientContext'>
       </table>
     </div>
