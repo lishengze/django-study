@@ -17,7 +17,8 @@ from django.db.models import Q
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.csrf import csrf_exempt
 
-
+import config as cfg
+from taskinfo import *
 import json
 from models import Person
 from models import GroupInfo
@@ -73,8 +74,8 @@ class RpcResult(object):
 	def __init__(self, data_type, data_array):
 		if data_type == 'default':
 			self.__dict__ = {
-				'object_info': data_array[1],
-				'ip_address': data_array[0],
+				'object_info': data_array[0],
+				'ip_address': data_array[1],
 				'cmd_line': ' '.join(data_array[2:])
 			}
 		if data_type == 'relay':
@@ -1324,7 +1325,7 @@ class SimulationData(object):
 				'[info]027: BJ.monprobe.021                172.23.128.153       ./monprobe 21'   + '\n' + \
 				'[info]028: BJ.monprobe.022                172.23.128.153       ./monprobe 22'   + '\n' + \
 				'[info]029: BJ.monprobe.023                172.23.128.153       ./monprobe 23'   + '\n' + \
-				'[info]030: BJ.monprobe.024                172.23.128.153       ./monprobe 24'    
+				'[info]030: BJ.monprobe.024                172.23.128.153       ./monprobe 24'
 
 		 return data
 
@@ -1434,11 +1435,11 @@ class SimulationData(object):
 
 class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 	def get_task_type(self, trans_req_json):
-		task_type = cfg.TASK_TYPE_ECALL
+		task_type = 1
 		cmdline = ''
 		if 'type' in trans_req_json and trans_req_json['type'] == 'version_control':
 			data_type = 'version_control_' + trans_req_json['--cmd']
-			task_type = cfg.TASK_TYPE_VERCONTROL
+			task_type = 0
 		elif '--args' not in trans_req_json or trans_req_json['--args'] == '' or \
 			trans_req_json['--args'] =='app':
 			data_type = 'default'
@@ -1552,7 +1553,7 @@ class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 
 			daemaon_ip, daemon_port = getKey(ENV_KEY)
 
-			original_rsp_data = recv_end(sock)
+			original_rsp_data = self.get_simu_real_time_versionCtr_task_data()
 
 			output_msg('original_rsp_data: ', original_rsp_data)
 			trans_rsp_data = self.process_rsp_result(original_rsp_data, data_type)
@@ -1602,12 +1603,9 @@ class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 			output_msg('Transed Req_Json!', trans_req_json)
 
 			tasktime = int(time.time()) + trans_req_json['exec_time']
-			task_info = TaskInfo(state = cfg.FLAG_TASK_READY, TID = 0, PID = int(cfg.PID), exec_time=tasktime, \
-								 cmd = cmd.strip(), cmdline = cmdline.strip(), task_type = int(task_type))
 
 			daemaon_ip, daemon_port = getKey(ENV_KEY)
 
-			output_msg('task_info: ', task_info.__dict__)
 			rsp = [task_info.TID, data_type]
 
 		except Exception as exception:
@@ -1892,6 +1890,7 @@ class TaskAjaxFunc(ProcessAjaxRspData, SimulationData):
 
 			daemaon_ip, daemon_port = getKey(ENV_KEY)
 			rsp = self.get_simu_all_version_data()
+			output_msg('version rsp', rsp)
 			rsp_list = rsp.split("\n")
 			version_list = []
 

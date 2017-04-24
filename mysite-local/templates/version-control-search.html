@@ -1,6 +1,67 @@
 {% extends "main_template/base.html" %}
 {% block title %} 上期技术监控专用版本控制系统 {% endblock %}
 
+{% block innerStyle%}
+  <style>
+  #paramArea {
+    /*border:1px solid #BDBDBD;*/
+    background-color:#eceff1;
+    padding:0px 0px;
+    margin: 0px 10px;
+    width: 56%;
+  }
+  .row {
+     width: 100%;
+     padding: 10px 0px;
+     /*border-bottom:2px solid #BDBDBD;*/
+     margin-left: 0px;
+   }
+  .text {
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    color: rgb(0,0,0);
+    position: relative;
+    height: 36px;
+    margin: 0;
+    min-width: 64px;
+    padding: 0 16px;
+    display: inline-block;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0;
+    overflow: hidden;
+    will-change: box-shadow;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 36px;
+    vertical-align: middle;
+   }
+   .col-xs-4{
+     padding: 0px;
+     width: 40%;
+     margin: 5px 0px 5px 10px;
+     position: relative;
+     left: 10px;
+   }
+   .col-xs-3{
+     padding: 0px;
+     width: auto;
+     margin: 0px 10px 0px 0px;
+   }
+   .mdl-button {
+     margin-right: 10px;
+     text-transform:capitalize;
+   }
+  </style>
+{% endblock%}
+
 {% block innerScript %}
 <script>
    $(document).ready(function() {
@@ -163,7 +224,23 @@
 {% endblock %}
 
 {% block rightBlockContent %}
-<div  class="col-md-9" >
+<div id = 'paramArea' class="col-md-9">
+      <div class = 'row'>
+          <div class="col-xs-4">
+              <button class="mdl-button mdl-js-button mdl-button--raised"> XML </button>
+              <button class="mdl-button mdl-js-button mdl-button--raised"> Server </button>
+              <button class="mdl-button mdl-js-button mdl-button--raised"> Client </button>
+          </div>
+
+          <div class="col-xs-4">
+              <div class="col-xs-3 text">版本号:</div>
+              <div class="col-xs-3">
+                <div id = 'inputVersion' class = 'inputValue'></div>
+              </div>
+          </div>
+      </div>
+</div>
+<!-- <div  class="col-md-9" >
   <div class="searchLeftContainer " style = 'float: left;width: 70%' >
     <div style = 'border-bottom: 1px solid #BDBDBD; margin-top: 1em'>
      <div id = 'object'>
@@ -181,7 +258,7 @@
      </div>
    </div>
     <div id = 'releaseResult' style = 'margin-top:2em;'></div>
-  </div>
+  </div> -->
   {% include 'main_template/object-version.html' %}
 </div>
 {% endblock %}

@@ -3,14 +3,62 @@
 
 {% block innerStyle%}
   <style>
-   .parameterSelect {
-     border:2px solid gray;
-     margin-top:5px;
-     background-color: #C0C0c0;
+  #paramArea {
+    border:2px solid #BDBDBD;
+    background-color:#cfd8dc;
+    padding:0px 0px;
+  }
+  .row {
+     width: 100%;
+     padding: 3px;
+     border-bottom:2px solid #BDBDBD;
+     margin-left: 0px;
    }
-   .onSelect {
-     background-color: #FF6347;
+  .lastrow {
+     border-bottom: 0px;
+     background-color: #b0bec5;
    }
+  .text {
+     position: relative;
+     top:3px;
+     padding: 0px, 0px;
+   }
+   .col-xs-4{
+     padding: 0px;
+     width: 30%;
+     margin: 5px 10px 5px 0px;
+   }
+   .col-xs-3{
+     padding: 0px;
+     width: auto;
+     margin: 0px 10px 0px 0px;
+   }
+   input {
+     position: relative;
+     /*button:2px;*/
+   }
+   .searchIcon {
+     background-image: url(/static/images/search.png);
+     position: absolute;
+     left: 90%; top: 10px;
+     z-index:5;
+     background-repeat: no-repeat;
+     background-position: 0px 0px;
+     width: 20px;
+     height: 20px;
+   }
+   /*#instructionDiv{
+     border:2px dashed #607d8b;
+   }
+   .instruction{
+     font: bold 22px arial;
+     margin:5px 0px;
+   }
+    .parameterSelect {
+      border:2px solid #BDBDBD;
+      margin-top:5px;
+      background-color: #b0bec5;
+    }*/
   </style>
 {% endblock%}
 
@@ -21,16 +69,18 @@
        });
        $("a").removeClass('k-state-selected');
        $('#info').addClass('k-state-selected');
-
+       var FAILED_FLAG = 0;
+       var defaultChooseString = "默认全选";
+       var defaultNegationString = "默认不选[取反模式]";
         eventInit();
         kendoParamInit();
         initResult();
-
-        var FAILED_FLAG = 0;
-
-        $("#reqBtn").click(submitReq);
+        submitReq();
 
         function eventInit() {
+          $("#reqBtn").click(submitReq);
+          $(".inputValue").change(submitReq);
+          $(".searchIcon").click(submitReq);
           showOrHide();
           $(window).resize(function() {
             resizeHeight();
@@ -53,16 +103,25 @@
         function kendoParamInit() {
           getAjaxParam();
           $('#ctr').kendoDropDownList({
-            optionLabel: "请选择参数类型",
+            optionLabel: defaultChooseString,
             dataSource : ['PD','BJ','ZJ']
           })
           $('#ictr').kendoDropDownList({
-            optionLabel: "请选择参数类型",
+            optionLabel: defaultNegationString,
             dataSource : ['PD','BJ','ZJ']
           })
           $('#parameter').kendoDropDownList({
-            optionLabel: "请选择参数类型",
+            optionLabel: defaultChooseString,
             dataSource : ['host','app','relay']
+          })
+          $('#srv').kendoDropDownList({
+            optionLabel: defaultChooseString
+          })
+          $('#isrv').kendoDropDownList({
+            optionLabel: defaultNegationString
+          })
+          $('#grp').kendoDropDownList({
+            optionLabel: defaultChooseString
           })
         }
 
@@ -86,11 +145,11 @@
                   modalAlert(result.error);
                 } else {
                   $('#srv').kendoDropDownList({
-                    optionLabel: "请选择参数类型",
+                    optionLabel: defaultChooseString,
                     dataSource : result.rsp_data
                   })
                   $('#isrv').kendoDropDownList({
-                    optionLabel: "请选择参数类型",
+                    optionLabel: defaultNegationString,
                     dataSource : result.rsp_data
                   })
                 }
@@ -99,25 +158,24 @@
         }
 
         function getParAllGroup(req_data) {
+          $.ajax({
+              url: '/AJAX/Get_All_Group/',
+              data: {'req_json': JSON.stringify(req_data)},
+              dataType: 'json',
+              type: 'POST',
+              traditional: true,
+              success: function (result) {
 
-        $.ajax({
-            url: '/AJAX/Get_All_Group/',
-            data: {'req_json': JSON.stringify(req_data)},
-            dataType: 'json',
-            type: 'POST',
-            traditional: true,
-            success: function (result) {
-
-              if (result.status === FAILED_FLAG) {
-                modalAlert(result.error);
-              } else {
-                $('#grp').kendoDropDownList({
-                  optionLabel: "请选择参数类型",
-                  dataSource : result.rsp_data
-                })
+                if (result.status === FAILED_FLAG) {
+                  modalAlert(result.error);
+                } else {
+                  $('#grp').kendoDropDownList({
+                    optionLabel: defaultChooseString,
+                    dataSource : result.rsp_data
+                  })
+                }
               }
-            }
-          });
+            });
         }
 
         function showOrHide() {
@@ -139,7 +197,25 @@
           }
         }
 
+        function getReq_data(){
+           var req_data = {
+              'ENV_KEY':sessionStorage.getItem('ENV_KEY'),
+              '--cmd': 'info',
+              '--args': $('#parameter').data("kendoDropDownList").text() == defaultChooseString ? '' : $('#parameter').data("kendoDropDownList").text(),
+              '--grp': $('#grp').data("kendoDropDownList").text() == defaultChooseString ? '' : $('#grp').data("kendoDropDownList").text(),
+              '--ctr': $('#ctr').data("kendoDropDownList").text() == defaultChooseString ? '' : $('#ctr').data("kendoDropDownList").text(),
+              '--srv': $('#srv').data("kendoDropDownList").text() == defaultChooseString ? '' : $('#srv').data("kendoDropDownList").text(),
+              '--srvno': $('#srvno').val(),
+              '--ictr': $('#ictr').data("kendoDropDownList").text() == defaultNegationString ? '' : $('#ictr').data("kendoDropDownList").text(),
+              '--isrv': $('#isrv').data("kendoDropDownList").text() == defaultNegationString ? '' : $('#isrv').data("kendoDropDownList").text(),
+              '--isrvno': $('#isrvno').val()
+            }
+          console.log(req_data);
+          return req_data;
+        }
+
         function submitReq() {
+          console.log ('submitReq');
           $('#reqBtn').attr('disabled', 'disabled');
           var req_data = getReq_data()
           $.ajax({
@@ -159,23 +235,6 @@
               }
             }
           });
-        }
-
-        function getReq_data(){
-           var req_data = {
-              'ENV_KEY':sessionStorage.getItem('ENV_KEY'),
-              '--cmd': 'info',
-              '--args': $('#parameter').data("kendoDropDownList").text() == "请选择参数类型" ? '' : $('#parameter').data("kendoDropDownList").text(),
-              '--grp': $('#grp').data("kendoDropDownList").text() == "请选择参数类型" ? '' : $('#grp').data("kendoDropDownList").text(),
-              '--ctr': $('#ctr').data("kendoDropDownList").text() == "请选择参数类型" ? '' : $('#ctr').data("kendoDropDownList").text(),
-              '--srv': $('#srv').data("kendoDropDownList").text() == "请选择参数类型" ? '' : $('#srv').data("kendoDropDownList").text(),
-              '--srvno': $('#srvno').val(),
-              '--ictr': $('#ictr').data("kendoDropDownList").text() == "请选择参数类型" ? '' : $('#ictr').data("kendoDropDownList").text(),
-              '--isrv': $('#isrv').data("kendoDropDownList").text() == "请选择参数类型" ? '' : $('#isrv').data("kendoDropDownList").text(),
-              '--isrvno': $('#isrvno').val()
-            }
-          console.log(req_data);
-          return req_data;
         }
 
         function resizeHeight() {
@@ -223,7 +282,7 @@
               { field: "os_type" ,title: '操作系统类型'},
               {field: "host_name" ,title: '主机名'},
             ]
-          }else {
+          } else {
             return [
               { field: "object_info" ,title: '对象信息'},
               { field: "ip_address" ,title: 'IP地址'},
@@ -237,95 +296,76 @@
 
 {% block rightBlockContent %}
 <div class="col-md-9 op-states" >
-  <div style="border:4px dashed gray;" class="col-md-12">
-    <div id ='instruction' style="font: bold 25px arial;">使用说明(点击显示/隐藏):</div>
+  <!-- <div id="instructionDiv" class="col-md-12">
+    <div id ='instruction' class="instruction">使用说明(点击显示/隐藏):</div>
     <p style='display: none' id = 'instructionContent'><br>
         待更新
       </p>
-  </div>
-  <div id = 'paramArea' class="col-md-12" style="border:2px solid gray; background-color:#F0F8ff;margin-top:10px;padding-bottom:10px">
-    <div id = 'param' style="font: bold 25px arial;">参数设定(点击显示/隐藏)</div>
+  </div> -->
+  <div id = 'paramArea' class="col-md-12">
+    <!-- <div id = 'param' class="instruction">参数设定(点击显示/隐藏)</div> -->
     <div class = 'parameterContent'>
-      <div class = 'parameterSelect' >
         <div class = 'row'>
-          <div  class="col-xs-2" > 类型参数：</div>
-          <div class="col-xs-3">
-            <div id = 'parameter' class = 'inputValue'></div>
-          </div>
-        </div>
-      </div>
-      <div class = 'parameterSelect'  >
-        <div class="row" >
-          <div class="col-xs-2">对象组：</div>
-          <div class="col-xs-3">
-            <div id = 'grp' class = 'inputValue'></div>
-          </div>
-        </div>
+            <div class="col-xs-4">
+                <div  class="col-xs-3 text" >类型参数:</div>
+                <div class="col-xs-3">
+                  <div id = 'parameter' class = 'inputValue'></div>
+                </div>
+            </div>
 
-      </div>
-      <div class = 'parameterSelect' >
-        <div style = 'font: bold 20px arial '>对象参数：</div>
+            <div class="col-xs-4">
+                <div class="col-xs-3 text">对象组:</div>
+                <div class="col-xs-3">
+                  <div id = 'grp' class = 'inputValue'></div>
+                </div>
+            </div>
+        </div>
         <div  class="row">
           <div class="col-xs-4">
-              <div class="row">
-                <div class="col-xs-3">数据中心:</div>
-                <div class="col-xs-6">
+                <div class="col-xs-3 text">数据中心:</div>
+                <div class="col-xs-3">
                     <div id = 'ctr' class = 'inputValue'></div>
                 </div>
-              </div>
           </div>
           <div class="col-xs-4">
-            <div class="row">
-              <div class="col-xs-3">进程名:</div>
-              <div class="col-xs-6">
+              <div class="col-xs-3 text">进程名:</div>
+              <div class="col-xs-3">
                 <div id = 'srv' class = 'inputValue'></div>
               </div>
-            </div>
           </div>
           <div class="col-xs-4">
-            <div class="row">
-              <div class="col-xs-3">进程编号:</div>
-              <div class="col-xs-6">
+              <div class="col-xs-3 text">进程编号:</div>
+              <div class="col-xs-3">
+                <i class="searchIcon"> </i>
                 <input type="text" class="form-control inputValue" id = 'srvno' placeholder="1-3,6,8">
               </div>
-            </div>
           </div>
         </div>
-      </div>
-      <div class = 'parameterSelect' >
-        <div style = 'font: bold 20px arial '>排除对象参数(取反模式)：</div>
-        <div class="row">
+        <div  class="row lastrow" >
+          <!-- <div style = 'font: bold 18px arial '>[取反模式]：</div> -->
           <div class="col-xs-4">
-              <div class="row">
-                <div class="col-xs-3">数据中心:</div>
-                <div class="col-xs-3">
-                    <div id = 'ictr' class = 'inputValue'></div>
-                </div>
+              <div class="col-xs-3 text">数据中心:</div>
+              <div class="col-xs-3">
+                  <div id = 'ictr' class = 'inputValue'></div>
               </div>
           </div>
           <div class="col-xs-4">
-            <div class="row">
-              <div class="col-xs-3">进程名:</div>
-              <div class="col-xs-6">
+              <div class="col-xs-3 text">进程名:</div>
+              <div class="col-xs-3">
                 <div id = 'isrv' class = 'inputValue'></div>
               </div>
-            </div>
           </div>
           <div class="col-xs-4">
-            <div class="row">
-              <div class="col-xs-3">进程编号:</div>
-              <div class="col-xs-6">
-                <input type="text" class="form-control inputValue" id = 'isrvno' placeholder="1-3,6,8">
+              <div class="col-xs-3 text">进程编号:</div>
+              <div class="col-xs-3">
+                <i class="searchIcon"> </i>
+                <input type="text" class="form-control inputValue" id = 'isrvno' placeholder="[取反模式]">
               </div>
-            </div>
           </div>
         </div>
-      </div>
     </div>
-    <button  id = 'reqBtn' class="btn btn-primary btn-default" style="margin-top:5px;float:left">提交</button>
   </div>
-  <div id= 'getarg' style=" margin-top:5px;font-size:20px;">执行结果：<br></div>
   <div style="clear:both"></div>
-  <div id= 'result' style="margin-top:5px"> </div>
+  <div id= 'result' style="margin-top:25px"> </div>
 </div>
 {% endblock%}
