@@ -1239,7 +1239,7 @@ class ProcessAjaxRspData(object):
 			if is_version_control_req(data_type):
 				array_data = self.get_version_ctr_array_result(origin_data, data_type)
 			else:
-				array_data = self.get_operation_management_array_result(origin_data)
+				array_data = self.get_operation_management_array_result(origin_data, data_type)
 
 			# output_msg('array_data', array_data)
 			dict_data = self.get_dict_result(array_data, data_type)
@@ -1281,7 +1281,7 @@ class ProcessAjaxRspData(object):
 		array_data.append(tmpdata)
 		return array_data
 
-	def get_operation_management_array_result(self, origin_data):
+	def get_operation_management_array_result(self, origin_data, data_type):
 		tmpdata = origin_data.split('\n')
 		tmpdata = tmpdata[1:len(tmpdata)-1]
 		index = 0
@@ -1300,17 +1300,24 @@ class ProcessAjaxRspData(object):
 			for value in tmpdata[index]:
 				if value != '':
 					tmp_result.append(value)
-			final_result.append(tmp_result)
+			if data_type == 'srvname' or data_type == "group":
+				final_result.append(tmp_result[0])
+			else:
+				final_result.append(tmp_result)
 			index += 1
+		print final_result
 		return final_result
 
 	def get_dict_result(self, array_data, data_type):
 		index = 0
 		dict_data = []
-		while index < len(array_data):
-			tmp_dict_data = RpcResult(data_type, array_data[index])
-			dict_data.append(tmp_dict_data.__dict__)
-			index += 1
+		if data_type == "srvname" or data_type == "group":
+			dict_data = array_data
+		else:
+			while index < len(array_data):
+				tmp_dict_data = RpcResult(data_type, array_data[index])
+				dict_data.append(tmp_dict_data.__dict__)
+				index += 1
 		return dict_data
 
 class TaskAjaxFunc(ProcessAjaxRspData):

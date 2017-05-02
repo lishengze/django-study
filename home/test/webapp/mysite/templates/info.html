@@ -35,7 +35,6 @@
    }
    input {
      position: relative;
-     /*button:2px;*/
    }
    .searchIcon {
      background-image: url(/static/images/search.png);
@@ -47,26 +46,13 @@
      width: 20px;
      height: 20px;
    }
-   /*#instructionDiv{
-     border:2px dashed #607d8b;
-   }
-   .instruction{
-     font: bold 22px arial;
-     margin:5px 0px;
-   }
-    .parameterSelect {
-      border:2px solid #BDBDBD;
-      margin-top:5px;
-      background-color: #b0bec5;
-    }*/
   </style>
 {% endblock%}
 
 {% block innerScript %}
    <script>
    $(document).ready(function() {
-       $("#panelbar").kendoPanelBar({
-       });
+       $("#panelbar").kendoPanelBar({});
        $("a").removeClass('k-state-selected');
        $('#info').addClass('k-state-selected');
        var FAILED_FLAG = 0;
@@ -126,16 +112,28 @@
         }
 
         function getAjaxParam() {
-          var req_data = {
-              'ENV_KEY': sessionStorage.getItem('ENV_KEY')
-            }
-          getParAllSrvName(req_data);
-          getParAllGroup(req_data);
+          getParAllSrvName();
+          getParAllGroup();
         }
 
-        function getParAllSrvName(req_data) {
+        function getParAllSrvName() {
+          var req_data = {
+           'ENV_KEY':sessionStorage.getItem('ENV_KEY'),
+           'type': '',
+           '--cmd': 'info',
+           '--args':'srvname',
+           '--grp': '',
+           '--ctr': '',
+           '--srv': '',
+           '--srvno': '',
+           '--ictr': '',
+           '--isrv': '',
+           '--isrvno': ''
+         };
+
+          var req_url = '/AJAX/Request_Real_Time_Info_Task/';
           $.ajax({
-            url: '/AJAX/Get_All_SrvName/',
+            url: req_url,
             data: {'req_json': JSON.stringify(req_data)},
             dataType: 'json',
             type: 'POST',
@@ -157,15 +155,29 @@
           });
         }
 
-        function getParAllGroup(req_data) {
+        function getParAllGroup() {
+          var req_data = {
+           'ENV_KEY':sessionStorage.getItem('ENV_KEY'),
+           'type': '',
+           '--cmd': 'info',
+           '--args':'group',
+           '--grp': '',
+           '--ctr': '',
+           '--srv': '',
+           '--srvno': '',
+           '--ictr': '',
+           '--isrv': '',
+           '--isrvno': ''
+         };
+
+          var req_url = '/AJAX/Request_Real_Time_Info_Task/';
           $.ajax({
-              url: '/AJAX/Get_All_Group/',
+              url: req_url,
               data: {'req_json': JSON.stringify(req_data)},
               dataType: 'json',
               type: 'POST',
               traditional: true,
               success: function (result) {
-
                 if (result.status === FAILED_FLAG) {
                   modalAlert(result.error);
                 } else {
@@ -252,6 +264,9 @@
           var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
           var resizeHeight = windowHeight - $('#result').offset().top - 80;
           var titles = getTitles(data);
+          console.log ('windowHeight: ' + windowHeight);
+          console.log ('resizeHeight: ' + resizeHeight);
+          console.log ($('#result').offset().top);
           $('#result').kendoGrid({
            selectable: "multiple cell",
            allowCopy: true,
@@ -268,6 +283,7 @@
             data: data.rsp_data
           })
           $('#result').data("kendoGrid").setDataSource(dataSource);
+          // $('#result').css('max-height', '400px');
         }
 
         function getTitles(data){
