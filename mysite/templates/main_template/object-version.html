@@ -78,7 +78,7 @@
           var xmlContext = ''
           var serverContext = ''
           var clientContext = ''
-          var title = '<tr style = "background-color:#A7C942"><td>version</td><td>datetime</td></tr>'
+          var title = '<tr style = "background-color:#bdbdbd"><td>版本号</td><td>发布时间</td></tr>'
           for(var i = 0; i < data1.length; i++) {
             if(data1[i].object == 'xml' && xmlCount< 5) {
                 if(xmlCount == 0){
@@ -116,13 +116,13 @@
   function statusJudge(data) {
     var text = ''
     if(data.status == 'C') {
-      text +='<tr style ="background-color:#0066ff;margin:110px;"><td>'+ data.version + '</td>';
+      text +='<tr style ="background-color:#78909c;margin:110px;"><td>'+ data.version + '</td>';
       text +='<td>'+ data.datetime + '</td></tr>';
     } else if(data.status == 'D'){
       text +='<tr style ="background-color:gray;margin:110px;"><td>'+ data.version + '</td>';
       text +='<td>'+ data.datetime + '</td></tr>';
     } else if(data.status == 'H'){
-      text +='<tr style ="background-color:#6699FF;margin:110px;"><td>'+ data.version + '</td>';
+      text +='<tr style ="background-color:#b0bec5;margin:110px;"><td>'+ data.version + '</td>';
       text +='<td>'+ data.datetime + '</td></tr>';
     }
     return text;

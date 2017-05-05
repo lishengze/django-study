@@ -49,8 +49,9 @@
     }
     #reqBtn {
       width: 30%;
-      background-color: #f5f5f5;
+      background-color: #e0e0e0;
       font-size: 15px;
+      border-radius: 2px;
     }
     #reqBtn:hover {
       background-color: #bdbdbd;
@@ -276,7 +277,7 @@
                rebindEvent('reqBtn');
              }
              reqResult_data = {
-               'ENV_KEY': localStorage.getItem('ENV_KEY'),
+               'ENV_KEY': sessionStorage.getItem('ENV_KEY'),
                'task_data': ntf_task_data
              }
              console.log(ntf_task_data);
@@ -335,7 +336,7 @@
          function getReq_data(){
             //  var select = $('#parameter').data("kendoDropDownList").text();
             //  var req_data = {
-            //    'ENV_KEY':localStorage.getItem('ENV_KEY'),
+            //    'ENV_KEY':sessionStorage.getItem('ENV_KEY'),
             //    'exec_time': 1,
             //    '--cmd': select,
             //    '--grp': $('#grp').data("kendoDropDownList").text() == "请选择参数类型" ? '' : $('#grp').data("kendoDropDownList").text(),
@@ -347,7 +348,7 @@
             //    '--isrvno': $('#isrvno').val()
             //  }
            var req_data = {
-              'ENV_KEY': localStorage.getItem('ENV_KEY'),
+              'ENV_KEY': sessionStorage.getItem('ENV_KEY'),
               'exec_time': 1,
               '--cmd': $('#parameter').data("kendoDropDownList").text(),
               '--grp': $('#grp').data("kendoDropDownList").text() == defaultChooseString ? '' : $('#grp').data("kendoDropDownList").text(),

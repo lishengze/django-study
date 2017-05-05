@@ -1,0 +1,23 @@
+{% extends "main_template/base.html" %}
+{% block title %} 上期技术监控专用版本控制系统 {% endblock %}
+
+{% block rightBlockContent %}
+  <div class="col-md-8" >
+    <!-- <button id='testModal'>Test Modal</button> -->
+     <br><br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br>
+   </div>
+{% endblock %}
+
+{% block innerScript %}
+<script>
+  $(document).ready(function(){
+    $('#testModal').click(function(){
+      console.log ('testModal!');
+      var message = "This is modal-alert";
+      modalAlert(message);
+    })
+  })
+
+</script>
+{% endblock %}

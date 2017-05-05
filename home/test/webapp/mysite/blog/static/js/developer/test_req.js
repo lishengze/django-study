@@ -495,4 +495,31 @@ $(document).ready(function(){
             console.log (rsp_result)
         });
     })
+
+    initStorageData();
+
+    function initStorageData() {
+      if (sessionStorage.getItem('sessionValue') === undefined ) {
+        sessionStorage.setItem('sessionValue', 0);
+      }
+      if (localStorage.getItem('localValue') === undefined) {
+        localStorage.setItem('localValue', 0);
+      }
+      // sessionStorage.setItem('sessionValue', 0);
+      // localStorage.setItem('localValue', 0);
+      $("#sessionData").text(sessionStorage.getItem('sessionValue'));
+      $("#localData").text(localStorage.getItem('localValue'));
+    }
+
+    $("#Set_Storage_Data").click(function() {
+      sessionStorage.setItem('sessionValue', sessionStorage.getItem('sessionValue') + 1);
+      localStorage.setItem('localValue', localStorage.getItem('localValue') + 1);
+      $("#sessionData").text(sessionStorage.getItem('sessionValue'));
+      $("#localData").text(localStorage.getItem('localValue'));
+    })
+
+    window.addEventListener("storage", function (e) {
+        alert(e.newValue);
+    }, false);
+
 })

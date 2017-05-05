@@ -656,7 +656,7 @@ class HandleFileAjaxFunc(object):
 			args = 1
 
 			filepath = os.path.join(cfg.WORK_PATH_TEMP, myFile.name)
-			# output_msg('FilePath: ', filepath)
+			output_msg('FilePath: ', filepath)
 			destination = open(filepath,'wb+')
 			for chunk in myFile.chunks():
 				destination.write(chunk)
@@ -712,11 +712,11 @@ class HandleFileAjaxFunc(object):
 			print('filename: ' , filename)
 			print('genExecUpdateHead(filename): ' , genExecUpdateHead(filename))
 
-			daemaon_ip, daemon_port = getKey(ENV_KEY)
-			sock = sock_conn(daemaon_ip, daemon_port)
-			sock.send(genExecUpdateHead(filename) + cfg.TIP_INFO_EOF)
-			rsp = recv_end(sock)
-			sock.close()
+			# daemaon_ip, daemon_port = getKey(ENV_KEY)
+			# sock = sock_conn(daemaon_ip, daemon_port)
+			# sock.send(genExecUpdateHead(filename) + cfg.TIP_INFO_EOF)
+			# rsp = recv_end(sock)
+			# sock.close()
 
 			output_msg('release_update: ', rsp)
 
@@ -753,7 +753,6 @@ class HandleFileAjaxFunc(object):
 			sock.send(genReqHead() + req_info.encode() + cfg.TIP_INFO_EOF)
 			rsp = recv_end(sock)
 			sock.close()
-			# raise Exception("--- Test Exception ----")
 			rsp = rsp.split('\n')
 			if "" in rsp:
 				rsp.remove("")

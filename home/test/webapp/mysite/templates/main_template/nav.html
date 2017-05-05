@@ -61,13 +61,13 @@
   titleInit();
   getEnvKeySet();
   initEnv();
-  
+
   $("#changeEnv").click(saveChange);
 
   function saveChange() {
     sessionStorage.setItem('ENV_KEY', $('#keySelect').val());
+    console.log (sessionStorage.getItem('ENV_KEY'));
   }
-
   function cancelChange() {
     $('#keySelect').val(sessionStorage.getItem('ENV_KEY'));
 

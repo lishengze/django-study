@@ -92,7 +92,7 @@
            if(filePath.indexOf("zip")==-1 && filePath.indexOf("tar.gz")==-1){
                modalAlert('上传的文件类型错误!');
            }else{
-               $(".a-upload>b").text('压缩包为: ' + filePath);
+               $(".a-upload>b").text('发布包为: ' + filePath);
            }
        })
 
@@ -131,7 +131,6 @@
            success: function (responseJSON) {
                console.log (responseJSON);
                getAllUnUpdateVersionInfo();
-
            }
          });
        })
@@ -150,7 +149,6 @@
            success: function (responseJSON) {
                console.log (responseJSON);
                getAllUnUpdateVersionInfo();
-
            }
          });
        })
@@ -232,7 +230,7 @@
         <a href="javascript:;" class="atomElement a-upload ">
           <input type="file" id="file_upload"> <b> 选择上传的发布包 </b>
         </a>
-        <button id= 'upload' class="atomElement btn btn-primary btn-default">上传到Django</button>
+        <button id= 'upload' class="atomElement btn btn-primary btn-default">上传到网站</button>
       </div>
       <div class="subContainer">
         <label class='text atomElement'>待发布版本:</label>
