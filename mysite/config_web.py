@@ -1,6 +1,6 @@
 #coding=utf-8
 
-CONSOLE_PATH = "/home/test/console/"
+CONSOLE_PATH = "/home/test/pconsole/"
 CONSOLE_WORK_PATH = CONSOLE_PATH + "scripts/"
 
 PROJECT_NAME = "mysite"

@@ -67,6 +67,8 @@
           $("#reqBtn").click(submitReq);
           $(".inputValue").change(submitReq);
           $(".searchIcon").click(submitReq);
+          $("#changeEnv").click(getAjaxParam);
+          
           showOrHide();
           $(window).resize(function() {
             resizeHeight();

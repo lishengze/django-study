@@ -87,6 +87,7 @@
 
          function eventInit() {
            $('#reqBtn').click(submitReq);
+           $("#changeEnv").click(getAjaxParam);
            showOrHide();
            $(window).resize(function() {
              resizeHeight();

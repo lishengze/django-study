@@ -5,15 +5,21 @@
 <style>
   .form-group {
     margin-bottom: 10px;
+    position: relative;
   }
 
   .text{
     display:inline-block;
     width:120px;
+    font-size: 16px;
+  }
+
+  .selectValue {
+    display: inline-block;
+    border-left:1px solid #BDBDBD;
   }
 
   #rollbackText {
-    border-left:1px solid #BDBDBD;
     padding:0px 10px;
   }
 
@@ -24,20 +30,12 @@
     margin: 0px 20px;
     vertical-align: middle;
     position: relative;
-    bottom: 5px;
-  }
-
-  #buttonDiv{
-    display:inline-block;
-    position:relative;
-    left:20px;
   }
 
   #searchSubmit{
     display:inline-block;
-    position:relative;
-    left:20px;
-    bottom: 5px;
+    position:absolute;
+    right: 0px;
     font-size: 16px;
   }
 </style>
@@ -52,17 +50,19 @@
        $('#search').addClass('k-state-selected');
 
        init();
+
+       $("#changeEnv").click(init);
+
        var FAILED_FLAG = 0;
 
        function init() {
          $('#searchSubmit').click(submitSearchVersion);
          keyDownEvent();
-         $('#inputObject').kendoDropDownList({
-             dataSource : ['xml','server','client']
-         });
+
          var XMLversionArray = [];
          var ServerVersionArray = [];
          var ClientVersionArray = [];
+
          for(var i = 0; i < allVersionData.length; i ++) {
            if(allVersionData[i].object == 'xml') {
              XMLversionArray.push(allVersionData[i].version)
@@ -72,25 +72,33 @@
              ClientVersionArray.push(allVersionData[i].version);
            }
          }
-         $('#inputVersion').kendoDropDownList({
-             dataSource : XMLversionArray
+
+         $('#inputObject').kendoDropDownList({
+             dataSource : ['xml','server','client']
          });
+
+         setInputVersionValue($("#inputObject").val(),XMLversionArray, ServerVersionArray, ClientVersionArray);
+
          $('#inputObject').change(function(){
-           var inputvalue = $(this).val()
-           if(inputvalue == 'xml'){
-             $('#inputVersion').kendoDropDownList({
-                 dataSource : XMLversionArray
-             });
-           } else if(inputvalue == 'server'){
-             $('#inputVersion').kendoDropDownList({
-                 dataSource : ServerVersionArray
-             });
-           } else {
-             $('#inputVersion').kendoDropDownList({
-                 dataSource : ClientVersionArray
-             });
-           }
+           var inputvalue = $(this).val();
+           setInputVersionValue(inputvalue, XMLversionArray, ServerVersionArray, ClientVersionArray);
          });
+       }
+
+       function setInputVersionValue(inputvalue, XMLversionArray, ServerVersionArray, ClientVersionArray) {
+         if(inputvalue == 'xml'){
+           $('#inputVersion').kendoDropDownList({
+               dataSource : XMLversionArray
+           });
+         } else if(inputvalue == 'server'){
+           $('#inputVersion').kendoDropDownList({
+               dataSource : ServerVersionArray
+           });
+         } else {
+           $('#inputVersion').kendoDropDownList({
+               dataSource : ClientVersionArray
+           });
+         }
        }
 
        function submitSearchVersion() {
@@ -211,12 +219,12 @@
     <div style = 'border-bottom: 1px solid #BDBDBD; margin-top: 1em'>
      <div id = 'object'>
        <div class="form-group">
-         <label class="text"><h4>对象选择：</h4></label>
+         <label class="text">对象选择：</label>
          <input id="inputObject" class="inputValue" >
-         <label  class="text" id="rollbackText" >
-           <h4>版本号：</h4>
-         </label>
-         <input id="inputVersion" class="inputValue">
+         <div class="selectValue">
+           <label  class="text" id="rollbackText" >版本号：</label>
+           <input id="inputVersion" class="inputValue">
+         </div>
          <button type="button" class="btn btn-primary btn-default " id ='searchSubmit'>查询</button>
        </div>
      </div>
